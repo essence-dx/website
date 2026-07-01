@@ -51,13 +51,13 @@ export function PreAccounting() {
           <div className="flex flex-col justify-start items-center space-y-8 z-20 px-4 sm:px-6">
             {/* Accounting Illustration */}
             <div className="flex justify-center w-full relative">
-              <div className="h-[90px] sm:h-[110px] w-full flex items-center justify-center">
+              <div className="h-[90px] sm:h-[110px] w-full flex items-center justify-center relative">
                 <Image
                   src="/images/accounting-light.png"
                   alt="Accounting Interface"
-                  width={112}
-                  height={400}
-                  className="h-full w-auto object-contain dark:hidden transition-all duration-700 ease-out"
+                  fill
+                  sizes="100vw"
+                  className="object-contain dark:hidden transition-all duration-700 ease-out"
                   style={{
                     filter: isLightLoaded ? "blur(0px)" : "blur(20px)",
                     transform: isLightLoaded ? "scale(1)" : "scale(1.02)",
@@ -68,9 +68,9 @@ export function PreAccounting() {
                 <Image
                   src="/images/accounting-dark.png"
                   alt="Accounting Interface"
-                  width={112}
-                  height={400}
-                  className="h-full w-auto object-contain hidden dark:block transition-all duration-700 ease-out"
+                  fill
+                  sizes="100vw"
+                  className="object-contain hidden dark:block transition-all duration-700 ease-out"
                   style={{
                     filter: isDarkLoaded ? "blur(0px)" : "blur(20px)",
                     transform: isDarkLoaded ? "scale(1)" : "scale(1.02)",
@@ -136,13 +136,13 @@ export function PreAccounting() {
           <div className="flex-1 flex flex-col justify-center items-center space-y-8 z-20 px-4 pb-32">
             {/* Accounting Illustration - Centered */}
             <div className="flex justify-center w-full relative">
-              <div className="h-[140px] w-full flex items-center justify-center">
+              <div className="h-[140px] w-full flex items-center justify-center relative">
                 <Image
                   src="/images/accounting-light.png"
                   alt="Accounting Interface"
-                  width={112}
-                  height={400}
-                  className="h-full w-auto object-contain dark:hidden transition-all duration-700 ease-out"
+                  fill
+                  sizes="100vw"
+                  className="object-contain dark:hidden transition-all duration-700 ease-out"
                   style={{
                     filter: isLightLoaded ? "blur(0px)" : "blur(20px)",
                     transform: isLightLoaded ? "scale(1)" : "scale(1.02)",
@@ -153,9 +153,9 @@ export function PreAccounting() {
                 <Image
                   src="/images/accounting-dark.png"
                   alt="Accounting Interface"
-                  width={112}
-                  height={400}
-                  className="h-full w-auto object-contain hidden dark:block transition-all duration-700 ease-out"
+                  fill
+                  sizes="100vw"
+                  className="object-contain hidden dark:block transition-all duration-700 ease-out"
                   style={{
                     filter: isDarkLoaded ? "blur(0px)" : "blur(20px)",
                     transform: isDarkLoaded ? "scale(1)" : "scale(1.02)",

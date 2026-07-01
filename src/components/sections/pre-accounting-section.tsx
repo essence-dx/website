@@ -13,16 +13,16 @@ export function PreAccountingSection() {
             <Image
               src="/images/accounting-light.png"
               alt="Accounting Icon"
-              width={112}
-              height={100}
-              className="w-full h-full object-contain rounded-none dark:hidden"
+              fill
+              sizes="112px"
+              className="object-contain dark:hidden"
             />
             <Image
               src="/images/accounting-dark.png"
               alt="Accounting Icon"
-              width={112}
-              height={100}
-              className="w-full h-full object-contain rounded-none hidden dark:block"
+              fill
+              sizes="112px"
+              className="object-contain hidden dark:block"
             />
           </div>
           <h2 className="font-serif text-2xl sm:text-2xl text-foreground">

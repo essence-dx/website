@@ -158,13 +158,13 @@ export function Footer() {
             {/* Compliance Section */}
             <div className="flex items-center gap-4">
               <div className="flex flex-col items-center gap-2">
-                <div className="w-9 h-9">
+                <div className="w-9 h-9 relative">
                   <Image
                     src="/images/gdpr.png"
                     alt="GDPR Compliant"
-                    width={36}
-                    height={36}
-                    className="w-full h-full object-contain"
+                    fill
+                    sizes="36px"
+                    className="object-contain"
                   />
                 </div>
                 <div className="text-center">
@@ -175,13 +175,13 @@ export function Footer() {
                 </div>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <div className="w-9 h-9">
+                <div className="w-9 h-9 relative">
                   <Image
                     src="/images/soc2.png"
                     alt="SOC2 In Progress"
-                    width={36}
-                    height={36}
-                    className="w-full h-full object-contain"
+                    fill
+                    sizes="36px"
+                    className="object-contain"
                   />
                 </div>
                 <div className="text-center">

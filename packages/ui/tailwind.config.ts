@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         sans: "var(--font-hedvig-sans)",
         mono: "var(--font-hedvig-sans)",
-        serif: "var(--font-hedvig-serif)",
+        serif: "var(--font-hedvig-sans)",
       },
       colors: {
         border: "hsl(var(--border))",

@@ -120,8 +120,8 @@ export default function Layout({ children }: { children: ReactElement }) {
       <head>
         <link rel="icon" type="image/svg+xml" href="/dx/dx-icon.svg" />
         <link rel="alternate icon" href="/dx/favicon.svg" />
-        <link rel="preconnect" href="https://cdn.dx.tips" />
-        <link rel="dns-prefetch" href="https://cdn.dx.tips" />
+        <link rel="preconnect" href="https://cdn.midday.ai" />
+        <link rel="dns-prefetch" href="https://cdn.midday.ai" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
