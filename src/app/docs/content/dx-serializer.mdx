@@ -1,0 +1,43 @@
+---
+title: DX Serializer
+description: Token-optimized data serialization in three formats.
+section: dx-tools
+order: 4
+---
+
+The DX Serializer provides three serialization formats optimized for different use cases: human-readable SR, LLM-optimized LLM, and high-performance Machine format.
+
+## Formats
+
+### SR (Human-readable)
+Structured, readable format for configuration and data files. Used as the backbone format for DX configuration.
+
+### LLM (LLM-optimized)
+Token-optimized format that achieves ~49% token savings vs JSON. Designed for AI agent context windows and prompts. Used by check, cli, forge, www, style, driven, and flow.
+
+### Machine (Zero-copy)
+rkyv-based binary format for maximum performance: ~48-51ns serialize, 196-229x faster than JSON. Supports zero-copy deserialization and memory-mapped files.
+
+## Performance
+
+| Format | Serialize | Deserialize | Size vs JSON |
+|--------|-----------|-------------|--------------|
+| SR | ~1µs | ~5µs | ~60% |
+| LLM | ~10µs | ~20µs | ~51% (token) |
+| Machine | 48-51ns | 0ns (mmap) | ~40% |
+
+## Usage
+
+```bash
+# Convert JSON to SR
+dx serialize to-sr input.json
+
+# Convert JSON to LLM format
+dx serialize to-llm input.json
+
+# Convert to Machine format
+dx serialize to-machine input.sr
+
+# Convert back to JSON
+dx serialize to-json input.llm
+```

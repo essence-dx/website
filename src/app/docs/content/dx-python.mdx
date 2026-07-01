@@ -1,0 +1,43 @@
+---
+title: DX Python
+description: Python acceleration hub with uv and CPython.
+section: build-runtime
+order: 3
+---
+
+DX Python provides Python acceleration through [uv](https://github.com/astral-sh/uv) package management and CPython native execution research.
+
+## Features
+
+**uv-powered package management.** 10-100x faster package installation than pip. Drop-in replacement.
+
+**CPython JIT research.** Native execution research targeting 5x-22.5x speedup for Python workloads.
+
+**Workspace integration.** Seamless integration with DX Forge and DX Build for Python projects.
+
+## Usage
+
+```bash
+# Initialize Python project
+dx python init my-project
+
+# Install dependencies
+dx python install
+
+# Run Python script
+dx python run script.py
+
+# Create virtual environment
+dx python venv create
+
+# Build Python package
+dx python build
+```
+
+## Performance
+
+| Operation | pip | uv (DX Python) | Speedup |
+|-----------|-----|----------------|---------|
+| Package install (cold) | ~30s | ~1.5s | 20x |
+| Package install (warm) | ~8s | ~0.3s | 26x |
+| Lockfile resolution | ~15s | ~1s | 15x |

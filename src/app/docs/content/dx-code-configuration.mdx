@@ -1,0 +1,63 @@
+---
+title: DX Code Configuration
+description: Customize your DX Code editor.
+section: dx-code
+order: 2
+---
+
+DX Code is configured through a JSON settings file located at `~/.config/dx/code/settings.json`.
+
+## Settings reference
+
+```json
+{
+  "theme": "one-dark",
+  "font_family": "Zed Mono",
+  "font_size": 14,
+  "line_height": "comfortable",
+  "tab_size": 2,
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 80,
+  "autosave": "on_focus_change",
+  "format_on_save": true,
+  "lsp": {
+    "rust-analyzer": {},
+    "typescript-language-server": {}
+  }
+}
+```
+
+## Themes
+
+Built-in themes include One Dark, One Light, Solarized, Dracula, Nord, and more. Custom themes can be added via extensions.
+
+## LSP configuration
+
+DX Code supports the Language Server Protocol. Language servers are automatically detected for common languages. To configure:
+
+```json
+{
+  "lsp": {
+    "rust-analyzer": {
+      "rust-analyzer.check.command": "clippy"
+    }
+  }
+}
+```
+
+## Keybindings
+
+Keybindings are configured in `~/.config/dx/code/keymap.json`:
+
+```json
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-shift-p": "command_palette::Toggle",
+      "ctrl-/": "editor::ToggleComments"
+    }
+  }
+]
+```

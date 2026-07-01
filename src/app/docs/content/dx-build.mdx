@@ -1,0 +1,37 @@
+---
+title: DX Build
+description: Rolldown-based JavaScript/TypeScript bundler.
+section: build-runtime
+order: 1
+---
+
+DX Build is a JavaScript/TypeScript bundler based on [Rolldown](https://github.com/rolldown/rolldown). It provides fast, reliable bundling with DX-native optimizations.
+
+## Features
+
+**Rolldown-powered.** Built on the Rust-based Rolldown bundler for fast compilation.
+
+**DX cache integration.** Opt-in `.machine` cache for package.json metadata, speeding up repeated builds by 1.9-2.5x.
+
+**Tree shaking.** Dead code elimination for smaller bundles.
+
+**Code splitting.** Automatic and manual code splitting for optimal loading.
+
+## Usage
+
+```bash
+# Build project
+dx build
+
+# Build for development
+dx build --dev
+
+# Build for production
+dx build --prod
+
+# Watch mode
+dx build --watch
+
+# Analyze bundle
+dx build --analyze
+```

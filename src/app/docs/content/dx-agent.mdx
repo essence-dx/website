@@ -1,0 +1,54 @@
+---
+title: DX Agent
+description: AI agent runtime with multi-channel messaging and multi-provider LLM support.
+section: dx-agent
+order: 1
+---
+
+DX Agent is a Rust-based AI agent runtime, forked from ZeroClaw. It provides a production-ready platform for autonomous AI agents with extensive integrations.
+
+## Features
+
+**Multi-channel messaging.** Connect to 25+ messaging platforms including Telegram, Discord, Slack, Signal, WhatsApp, email, and more.
+
+**Multi-provider LLM support.** Use OpenAI, Anthropic, Google, Groq, Ollama, local models, and 180+ others through the DX provider catalog.
+
+**Persistent memory.** SQLite and PostgreSQL backends for conversation history, user profiles, and learned behaviors.
+
+**Scheduled tasks.** Cron-based scheduling for automated agent operations.
+
+**Skills & SOPs.** Extensible skill system with Standard Operating Procedures for complex workflows.
+
+**Hardware control.** STM32, Raspberry Pi GPIO integration for physical automation.
+
+**Security.** Ed25519 cryptographic signatures, sandboxed execution, capability-based permissions.
+
+## Getting started
+
+```bash
+# Initialize agent
+dx agent init
+
+# Start the agent
+dx agent start
+
+# Ask a question
+dx agent ask "What's on my schedule today?"
+```
+
+## Configuration
+
+Agent configuration is in `~/.config/dx/agent/config.yaml`:
+
+```yaml
+provider: openai
+model: gpt-4o
+memory:
+  type: sqlite
+  path: ~/.dx/agent/memory.db
+channels:
+  - type: telegram
+    enabled: true
+  - type: discord
+    enabled: false
+```

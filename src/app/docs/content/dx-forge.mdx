@@ -1,0 +1,44 @@
+---
+title: DX Forge
+description: Content-addressed version control and build system.
+section: dx-forge
+order: 1
+---
+
+DX Forge is a content-addressed storage (CAS) system with a Git-like CLI. It provides version control for both code and media assets, with built-in package management.
+
+## Features
+
+**Content-addressed storage.** Files are addressed by their content hash (FastCDC + zstd), ensuring deduplication and integrity.
+
+**Git-like CLI.** Familiar commands for version control operations.
+
+**Package management.** Lockfile-based dependency resolution with package publishing.
+
+**Multi-remote sync.** Sync to 12 backend types including local, SSH, S3, and IPFS.
+
+**QUIC transport.** Fast, reliable network transport for remote operations.
+
+**Durable job engine.** Background processing for long-running operations.
+
+## Usage
+
+```bash
+# Initialize a forge project
+dx forge init
+
+# Add files
+dx forge add .
+
+# Commit
+dx forge commit -m "Initial commit"
+
+# Push to remote
+dx forge push origin main
+
+# Build
+dx forge build
+
+# Package
+dx forge package --output dist/
+```

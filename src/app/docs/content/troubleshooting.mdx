@@ -1,0 +1,54 @@
+---
+title: Troubleshooting
+description: Common issues and solutions when using DX tools.
+section: getting-started
+order: 4
+---
+
+## CLI not found
+
+If `dx` is not recognized after installation:
+
+```bash
+# Check installation path
+which dx
+
+# Add to PATH manually (bash/zsh)
+export PATH="$HOME/.dx/bin:$PATH"
+
+# Add to PATH manually (PowerShell)
+$env:Path += ";$env:USERPROFILE\.dx\bin"
+```
+
+## Build errors
+
+If you encounter Rust compilation errors:
+
+```bash
+# Update Rust
+rustup update
+
+# Clean and rebuild
+cargo clean
+cargo build --release
+```
+
+## DX Code won't start
+
+- Ensure your GPU drivers are up to date
+- Try running with software rendering: `dx code --software-render`
+- Check logs: `~/.dx/logs/code.log`
+
+## MCP connection issues
+
+If MCP tools aren't connecting:
+
+1. Verify your API key is valid
+2. Check that the MCP server is running: `dx mcp status`
+3. Restart the MCP server: `dx mcp restart`
+
+## Getting help
+
+- Run `dx help <command>` for specific command help
+- Check the `~/.dx/logs/` directory for detailed logs
+- Open an issue on [GitHub](https://github.com/essence-dx)

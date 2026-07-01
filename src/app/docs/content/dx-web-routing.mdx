@@ -1,0 +1,57 @@
+---
+title: DX Web Routing
+description: File-based routing system in DX Web.
+section: dx-web
+order: 2
+---
+
+DX Web uses a file-based routing system where pages are defined by their location in the file system.
+
+## Route conventions
+
+```
+src/app/page.tsx              # /
+src/app/about/page.tsx        # /about
+src/app/blog/[slug]/page.tsx  # /blog/:slug
+src/app/blog/[...catchAll]/page.tsx  # /blog/* (catch-all)
+```
+
+## Layouts
+
+Layouts wrap child routes and persist across navigations:
+
+```tsx
+// src/app/layout.tsx
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+```
+
+## Dynamic routes
+
+```tsx
+// src/app/blog/[slug]/page.tsx
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  return <article>Blog post: {params.slug}</article>;
+}
+```
+
+## Data fetching
+
+DX Web supports both static generation and server-side rendering:
+
+```tsx
+// Static generation with data
+export async function generateStaticParams() {
+  const posts = await fetchPosts();
+  return posts.map(post => ({ slug: post.slug }));
+}
+```

@@ -1,0 +1,43 @@
+---
+title: DX Media
+description: Universal digital asset acquisition engine.
+section: dx-media
+order: 1
+---
+
+DX Media is a universal digital asset engine for acquiring and processing media from 34+ providers.
+
+## Supported providers
+
+- **Openverse** — 700M+ openly licensed images, audio, video
+- **Wikimedia Commons** — 92M+ media files
+- **Europeana** — 50M+ cultural heritage artifacts
+- **Unsplash** — High-resolution stock photos
+- **Pexels** — Free stock photos and video
+- **Pixabay** — Free images, vectors, and video
+- **Flickr** — Photo community
+- And 27+ more providers
+
+## Processing capabilities
+
+- **Images** — Resize, crop, format conversion, optimization
+- **Video** — Transcoding, thumbnail generation, metadata extraction
+- **Audio** — Format conversion, waveform generation
+- **Documents** — PDF extraction, OCR, text extraction
+- **Archives** — Zip, tar, gz extraction and creation
+
+## Usage
+
+```bash
+# Search for media
+dx media search "sunset landscape" --provider unsplash
+
+# Download media
+dx media get https://example.com/image.jpg -o output/
+
+# Process media
+dx media process input.jpg --resize 800x600 --format webp
+
+# List providers
+dx media list
+```

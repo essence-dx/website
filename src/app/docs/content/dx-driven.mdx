@@ -1,0 +1,53 @@
+---
+title: DX Driven
+description: Multi-editor AI rule orchestrator.
+section: dx-tools
+order: 6
+---
+
+DX Driven is a multi-editor AI rule orchestrator that parses, transforms, and synchronizes AI assistant configuration across different editors and tools.
+
+## Features
+
+**Multi-format parsing.** Reads rules from .cursorrules, copilot-instructions.md, .windsurfrules, CLAUDE.md, .aider.conf.yml, and .clinerules.
+
+**Multi-target emitter.** Generates rules for any target format from a single source of truth.
+
+**Template system.** Define reusable rule templates with variables.
+
+**Sync engine.** Keep rules synchronized across your team and across editors.
+
+**Strategy lane/pass system.** Organize rules by priority and scope.
+
+## Usage
+
+```bash
+# Initialize driven config
+dx driven init
+
+# Sync rules to all editors
+dx driven sync
+
+# Parse existing rules
+dx driven parse .cursorrules
+
+# Generate rules for specific editor
+dx driven generate --target cursor
+
+# Watch for changes
+dx driven watch
+```
+
+## Configuration
+
+```yaml
+# .driven/config.yaml
+sources:
+  - .cursorrules
+  - CLAUDE.md
+targets:
+  - cursor
+  - windsurf
+  - aider
+  - copilot
+```

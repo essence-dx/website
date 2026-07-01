@@ -1,0 +1,47 @@
+---
+title: DX Check
+description: Validation and scoring engine for DX projects.
+section: dx-tools
+order: 3
+---
+
+DX Check is a validation and scoring engine that evaluates projects across 5 categories using Ed25519-signed rule packs. It integrates with Lighthouse and provides adapter support for clippy, rustfmt, biome, eslint, ruff, and black.
+
+## Features
+
+**500-point scoring system.** Projects scored across 5 categories with weighted criteria.
+
+**Signed rule packs.** Rules are cryptographically signed for integrity verification.
+
+**Lighthouse integration.** Web performance, accessibility, and SEO auditing.
+
+**Multi-tool adapter.** Plugs into clippy, rustfmt, biome, eslint, ruff, black, and more.
+
+## Usage
+
+```bash
+# Run full check
+dx check run
+
+# Score project
+dx check score
+
+# List available rules
+dx check rules list
+
+# Run specific category
+dx check run --category performance
+
+# Install rule pack
+dx check rules install <pack-id>
+```
+
+## Score categories
+
+| Category | Points | Description |
+|----------|--------|-------------|
+| Correctness | 100 | Compilation, type checking, linting |
+| Performance | 100 | Benchmark results, optimization |
+| Security | 100 | Vulnerability scanning, dependency audit |
+| Style | 100 | Code formatting, conventions |
+| Testing | 100 | Test coverage, test quality |

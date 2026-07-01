@@ -1,0 +1,56 @@
+---
+title: DX CLI
+description: Central command-line interface for the DX ecosystem.
+section: dx-cli
+order: 1
+---
+
+The DX CLI is the central control plane for all DX tools. It provides a unified interface for managing code, builds, agents, web frameworks, media, and more.
+
+## Overview
+
+The CLI routes to all DX tools either through direct integration or process dispatch. Every command writes machine-readable JSON receipts under `.dx/receipts/` for auditable operation history.
+
+## Basic usage
+
+```bash
+dx <command> [subcommand] [options]
+```
+
+## Command categories
+
+- **`dx code`** — DX Code editor
+- **`dx web`** — DX Web framework
+- **`dx agent`** — AI agent management
+- **`dx flow`** — Workflow automation
+- **`dx forge`** — Version control & build
+- **`dx style`** — CSS engine
+- **`dx media`** — Media acquisition
+- **`dx search`** — Metasearch
+- **`dx icon`** — Icon search
+- **`dx check`** — Validation & scoring
+- **`dx serialize`** — Data serialization
+- **`dx dcp`** — Development Context Protocol
+- **`dx i18n`** — Translation & localization
+
+## Configuration
+
+The CLI is configured via `~/.config/dx/cli/config.json`:
+
+```json
+{
+  "default_output": "pretty",
+  "receipts_enabled": true,
+  "workspace": "default"
+}
+```
+
+## Output formats
+
+Commands support multiple output formats:
+
+```bash
+dx agent list --format json
+dx agent list --format yaml
+dx agent list --format pretty
+```

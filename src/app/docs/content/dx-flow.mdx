@@ -1,0 +1,48 @@
+---
+title: DX Flow
+description: Local-first AI workflow automation.
+section: dx-flow
+order: 1
+---
+
+DX Flow is a local-first AI input and runtime layer. It enables dictation with wake word activation, grammar/clarity/tone correction, local model routing, and safe OS control.
+
+## Features
+
+**Voice control.** Wake word activation with local STT (Whisper). Dictate commands and code hands-free.
+
+**AI enhancement.** Grammar, clarity, and tone correction powered by local models.
+
+**Model routing.** Automatic routing between Qwen3, XLAM, and other local models based on task type.
+
+**Browser extension.** WASM ONNX runtime for in-browser AI features.
+
+**Safe OS control.** Sandboxed execution of system commands with approval gates.
+
+## Getting started
+
+```bash
+# Initialize flow
+dx flow init
+
+# Start voice capture
+dx flow listen
+
+# Run a workflow
+dx flow run daily-briefing
+```
+
+## Workflow definition
+
+Workflows are defined in YAML:
+
+```yaml
+# ~/.dx/flow/workflows/daily-briefing.yaml
+name: daily-briefing
+schedule: "0 9 * * 1-5"
+steps:
+  - agent: "Check my schedule for today"
+  - agent: "Summarize unread messages"
+  - agent: "List priority tasks"
+output: email
+```

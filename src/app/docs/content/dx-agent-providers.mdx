@@ -1,0 +1,45 @@
+---
+title: DX Agent — LLM Providers
+description: Connect AI models to DX Agent.
+section: dx-agent
+order: 2
+---
+
+DX Agent supports 184+ LLM providers with 6,245+ models through the DX provider catalog.
+
+## Provider configuration
+
+```yaml
+# ~/.config/dx/agent/config.yaml
+provider: openai
+model: gpt-4o
+api_key: ${OPENAI_API_KEY}
+```
+
+## Available providers
+
+- **OpenAI** — GPT-4o, GPT-4, GPT-3.5 Turbo
+- **Anthropic** — Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku
+- **Google** — Gemini 2.0 Flash, Gemini 1.5 Pro
+- **Groq** — Llama 3, Mixtral, Gemma (fast inference)
+- **Ollama** — Local models (Llama, Mistral, Qwen)
+- **Together AI** — 100+ open-source models
+- **Fireworks AI** — Optimized inference
+- **Custom** — Any OpenAI-compatible endpoint
+
+## Browse providers
+
+```bash
+# List all providers
+dx agent providers list
+
+# Search models
+dx agent providers search "gpt-4"
+
+# Test a provider
+dx agent providers test openai gpt-4o
+```
+
+## Provider catalog
+
+The full catalog comes from the DX Providers package, which indexes 184 providers and 6,245 models. The catalog is stored as a zero-copy rkyv archive (655KB, 38µs load time).

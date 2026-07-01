@@ -1,0 +1,66 @@
+---
+title: Installation
+description: Download and install DX tools on your platform.
+section: getting-started
+order: 3
+---
+
+DX runs on macOS, Windows, and Linux. Choose your installation method.
+
+## Quick install (macOS & Linux)
+
+```bash
+curl -fsSL https://dx.tips/install.sh | sh
+```
+
+## Quick install (Windows)
+
+```powershell
+irm https://dx.tips/install.ps1 | iex
+```
+
+## Using npm / bun
+
+```bash
+npx @dx/cli@latest
+# or
+bun x @dx/cli@latest
+```
+
+## Pre-built binaries
+
+Download the latest release for your platform:
+
+- **macOS (Apple Silicon):** `dx-aarch64-apple-darwin.tar.gz`
+- **macOS (Intel):** `dx-x86_64-apple-darwin.tar.gz`
+- **Linux:** `dx-x86_64-unknown-linux-gnu.tar.gz`
+- **Windows:** `dx-x86_64-pc-windows-msvc.zip`
+
+Available on the [GitHub releases page](https://github.com/essence-dx/cli/releases).
+
+## Building from source
+
+DX tools are written in Rust. To build from source:
+
+```bash
+git clone https://github.com/essence-dx/cli.git
+cd cli
+cargo build --release
+```
+
+## Verifying installation
+
+```bash
+dx --version
+dx --help
+```
+
+## What's included
+
+The DX CLI includes all core tools. Additional tools like DX Code, DX Web, and DX Agent can be installed on demand:
+
+```bash
+dx code install
+dx web install
+dx agent install
+```

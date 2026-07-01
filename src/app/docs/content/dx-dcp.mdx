@@ -1,0 +1,58 @@
+---
+title: DCP — Development Context Protocol
+description: Binary-first replacement for MCP with zero-copy tool invocation.
+section: dx-tools
+order: 5
+---
+
+DCP (Development Context Protocol) is a binary-first protocol that replaces MCP (Model Context Protocol). It provides faster, more secure communication between AI tools and development environments.
+
+## Features
+
+**Binary-first.** 8-byte Binary Message Envelope for minimal overhead and maximum throughput.
+
+**Zero-copy tool invocation.** Tools are invoked with zero serialization overhead using shared memory mapping.
+
+**O(1) Binary Trie Router.** Ultra-fast routing of tool calls with constant-time lookup.
+
+**Ed25519 security.** Every message is cryptographically signed and verified.
+
+**MCP backward compatible.** Full compatibility with MCP 2025 specification. Existing MCP tools work without modification.
+
+## SDKs
+
+- **TypeScript SDK** — `@dx/dcp`
+- **Python SDK** — `dx-dcp`
+
+## Usage
+
+```bash
+# Start DCP server
+dx dcp server start --port 3100
+
+# List available tools
+dx dcp tools list
+
+# Call a tool
+dx dcp call filesystem.read --path /path/to/file
+
+# Generate spec
+dx dcp spec generate --format openapi
+
+# Run MCP compatibility
+dx dcp mcp-bridge --mcp-port 3101 --dcp-port 3100
+```
+
+## Architecture
+
+```
+AI Client → DCP Server → Binary Envelope → Binary Trie Router → Tool Handler
+                ↓
+          Ed25519 Verify
+                ↓
+          Execution + Response
+                ↓
+          Binary Envelope → Client
+```
+
+DCP includes 263+ tests ensuring protocol correctness and backward compatibility.

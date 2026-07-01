@@ -1,0 +1,54 @@
+---
+title: DX Agent — Channels
+description: Messaging integrations for DX Agent.
+section: dx-agent
+order: 3
+---
+
+DX Agent connects to 25+ messaging platforms, enabling users to interact with agents from their preferred interface.
+
+## Supported channels
+
+- **Telegram** — Full bot API, inline queries
+- **Discord** — Slash commands, threads, embeds
+- **Slack** — Events API, block kit, modals
+- **Signal** — End-to-end encrypted messaging
+- **WhatsApp** — Business API, media support
+- **Email** — IMAP/SMTP, HTML parsing
+- **SMS** — Twilio integration
+- **Web** — WebSocket-based chat widget
+- **CLI** — Terminal-based interaction
+- **REST API** — Programmatic access
+
+## Configuration
+
+```yaml
+# ~/.config/dx/agent/channels.yaml
+channels:
+  - type: telegram
+    enabled: true
+    config:
+      bot_token: ${TELEGRAM_BOT_TOKEN}
+  
+  - type: slack
+    enabled: true
+    config:
+      bot_token: ${SLACK_BOT_TOKEN}
+      signing_secret: ${SLACK_SIGNING_SECRET}
+```
+
+## Commands
+
+```bash
+# List configured channels
+dx agent channels list
+
+# Enable a channel
+dx agent channels enable telegram
+
+# Disable a channel
+dx agent channels disable discord
+
+# Test a channel
+dx agent channels test slack
+```

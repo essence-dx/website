@@ -1,0 +1,54 @@
+---
+title: DX Web
+description: Rust web framework with TSX authoring and App Router.
+section: dx-web
+order: 1
+---
+
+DX Web (dx-www) is a Rust-based web framework that provides a React/Next.js-familiar TSX authoring model. It features file-based routing, static/no-JS output by default, micro-runtime interactivity, and client islands.
+
+## Key features
+
+**TSX authoring.** Write components using JSX/TSX syntax, compiled to native Rust. Familiar mental model, zero JavaScript overhead.
+
+**File-based routing.** Routes are defined by the file system structure, similar to Next.js App Router.
+
+**Static-first.** Pages are rendered to static HTML by default. Zero JavaScript shipped unless you opt in.
+
+**Client islands.** Add interactivity only where needed. Micro-runtimes for specific components.
+
+**Zero node_modules.** No JavaScript runtime required. Built entirely in Rust with WASM micro/macro runtime support.
+
+**DX Style integration.** Built-in support for DX Style CSS framework.
+
+## Getting started
+
+```bash
+# Create a new project
+dx web init my-project
+
+# Start development
+cd my-project
+dx web dev
+
+# Build for production
+dx web build
+```
+
+## Project structure
+
+```
+my-project/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx        # / route
+│   │   ├── about/
+│   │   │   └── page.tsx    # /about route
+│   │   └── layout.tsx      # Root layout
+│   └── components/
+│       └── header.tsx
+├── public/
+│   └── images/
+├── dx-web.toml             # Framework config
+└── package.json
+```

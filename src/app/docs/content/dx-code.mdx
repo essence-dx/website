@@ -1,0 +1,57 @@
+---
+title: DX Code
+description: GPU-accelerated code editor forked from Zed.
+section: dx-code
+order: 1
+---
+
+DX Code is a high-performance code editor built on GPUI, a GPU-accelerated UI framework. Forked from [Zed](https://github.com/zed-industries/zed), it adds DX-native integrations, custom panels, and enhanced AI capabilities.
+
+## Features
+
+**GPU-accelerated rendering.** The editor renders at 60+ FPS with no jank, even for files with tens of thousands of lines.
+
+**Built-in AI panel.** Chat with AI models without leaving the editor. Context-aware suggestions based on your current file and project.
+
+**DX-native panels.** Web preview, media panel, shader UI, plugin system, and agent skills panel — all built into the editor.
+
+**Liquid Glass effects.** GPU-powered visual effects for a modern, polished interface.
+
+**9 built-in web apps.** 3D, Design, Graphics, Music, Presentations, Spreadsheets, Video, Whiteboard, and Shader apps accessible directly from the editor.
+
+## Getting started
+
+```bash
+# Launch DX Code
+dx code
+
+# Open a project
+dx code /path/to/project
+
+# Open a specific file
+dx code /path/to/file.ts
+```
+
+## Configuration
+
+DX Code uses a JSON configuration file at `~/.config/dx/code/settings.json`:
+
+```json
+{
+  "theme": "one-dark",
+  "font_size": 14,
+  "tab_size": 2,
+  "soft_wrap": "preferred_line_length",
+  "autosave": "on_focus_change"
+}
+```
+
+## Extensions
+
+DX Code supports WASM-based extensions. Browse and install from the extensions panel or via CLI:
+
+```bash
+dx code extensions install <name>
+```
+
+See the [Extensions documentation](/docs/dx-code-extensions) for details.

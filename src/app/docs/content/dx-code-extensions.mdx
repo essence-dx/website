@@ -1,0 +1,38 @@
+---
+title: DX Code Extensions
+description: Extend DX Code with plugins and extensions.
+section: dx-code
+order: 3
+---
+
+DX Code supports extensions built as WebAssembly (WASM) modules. Extensions can add language support, themes, panels, and custom functionality.
+
+## Extension registry
+
+DX Code includes a built-in extension registry. Browse and install from the extensions panel:
+
+```bash
+# List available extensions
+dx code extensions list
+
+# Install an extension
+dx code extensions install <extension-id>
+
+# Remove an extension
+dx code extensions uninstall <extension-id>
+```
+
+## Building extensions
+
+Extensions are WASM modules written in Rust. A scaffold tool is available:
+
+```bash
+dx code extensions scaffold my-extension
+cd my-extension
+cargo build --target wasm32-wasi
+dx code extensions install --dev ./target/wasm32-wasi/debug/my-extension.wasm
+```
+
+## Host extensions
+
+DX Code integrates with the DX Extensions system for broader tool integrations. See the [Extensions documentation](/docs/extensions) for details on VS Code, Cursor, Windsurf, and other host adapters.

@@ -1,0 +1,51 @@
+---
+title: DX Style
+description: Rust-native CSS engine with Tailwind-compatible utility classes.
+section: dx-style
+order: 1
+---
+
+DX Style is a Rust-native CSS engine designed as a replacement for PostCSS and Tailwind. It provides 80+ utility families with Tailwind v4.3 color palette compatibility.
+
+## Features
+
+**80+ utility families.** Complete utility class system covering layout, typography, colors, spacing, animations, and more.
+
+**Tailwind compatible.** Supports Tailwind v4.3 color palettes and syntax conventions.
+
+**Grouping syntax.** Nested group utilities for component-level styling.
+
+**Blazing fast.** Claims 178x faster than Tailwind v4 on incremental rebuilds.
+
+**Standalone binary.** No Node.js dependency. Works as a CLI tool or library.
+
+## Usage
+
+```bash
+# Compile CSS
+dx style compile input.css -o output.css
+
+# Watch mode
+dx style watch input.css -o output.css
+
+# Initialize config
+dx style init
+```
+
+## Example
+
+```css
+/* input.css */
+@utility container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 1;
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+```

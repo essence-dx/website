@@ -1,0 +1,72 @@
+---
+title: Quick Start
+description: Get up and running with DX in 5 minutes.
+section: getting-started
+order: 2
+---
+
+This guide walks you through setting up DX in about 5 minutes. By the end, you'll have the CLI installed and be ready to use DX tools.
+
+## Step 1: Install the CLI
+
+The fastest way to start is with the DX CLI:
+
+```bash
+npx @dx/cli@latest
+```
+
+Or download a pre-built binary from the [releases page](https://github.com/essence-dx/cli/releases).
+
+## Step 2: Verify installation
+
+```bash
+dx --version
+```
+
+You should see version output confirming the CLI is installed.
+
+## Step 3: Explore available tools
+
+```bash
+dx --help
+```
+
+This lists all available commands. The CLI organizes tools by category:
+
+- `dx code` — Launch DX Code editor
+- `dx web` — Scaffold a web project
+- `dx agent` — Configure AI agent
+- `dx flow` — Set up workflows
+
+## Step 4: Set up DX Code
+
+```bash
+dx code
+```
+
+This launches the DX Code editor. The first launch will set up default configuration. See the [DX Code documentation](/docs/dx-code) for customization options.
+
+## Step 5: Try the agent
+
+```bash
+dx agent init
+```
+
+Follow the prompts to configure your AI provider. Once set up, you can:
+
+```bash
+dx agent ask "How do I configure the build system?"
+```
+
+## What's next?
+
+- [Explore DX Code features](/docs/dx-code)
+- [Learn about DX Web framework](/docs/dx-web)
+- [Set up DX Agent channels](/docs/dx-agent-channels)
+- [Configure DX Flow workflows](/docs/dx-flow)
+
+## Need help?
+
+- Read the [troubleshooting guide](/docs/troubleshooting)
+- Open an issue on [GitHub](https://github.com/essence-dx)
+- Join the community

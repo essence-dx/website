@@ -1,0 +1,36 @@
+---
+title: DX Native
+description: Tauri-based desktop native shell.
+section: build-runtime
+order: 2
+---
+
+DX Native is a desktop native shell based on [Tauri](https://github.com/tauri-apps/tauri). It provides a lightweight, secure runtime for desktop applications using web technologies.
+
+## Features
+
+**Tauri-based.** Leverages Tauri for secure, cross-platform desktop applications.
+
+**DX cache integration.** Opt-in `.machine` caches for 2.3-3.06x faster CLI operations.
+
+**Minimal footprint.** Tiny binary size compared to Electron-based alternatives.
+
+**Secure by default.** No Node.js in the renderer. Capability-based security model.
+
+## Usage
+
+```bash
+# Initialize a native project
+dx native init my-app
+
+# Development build
+dx native dev
+
+# Production build
+dx native build
+
+# Platform targets
+dx native build --target windows
+dx native build --target linux
+dx native build --target macos
+```

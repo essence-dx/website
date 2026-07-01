@@ -1,0 +1,48 @@
+---
+title: DX Icon
+description: World's fastest icon search engine.
+section: dx-tools
+order: 2
+---
+
+DX Icon is the fastest icon search engine available, indexing 305,612+ icons from 229 icon packs. It uses FST, rkyv, perfect hashing, bloom filters, and SIMD-accelerated Levenshtein distance for instant search.
+
+## Performance
+
+- **Cold cache:** 1.89ms search
+- **Warm cache:** 98,787 searches/second
+- **Index size:** 6MB (compressed from 1.5B+ raw)
+- **Indexed icons:** 305,612+ from 229 packs
+
+## Usage
+
+```bash
+# Search icons
+dx icon search "arrow"
+
+# Search with exact match
+dx icon search "settings" --exact
+
+# List icon packs
+dx icon list --packs
+
+# Get icon as SVG
+dx icon get lucide-arrow-right --format svg
+
+# Get icon as PNG
+dx icon get lucide-arrow-right --format png --size 24
+
+# Start web UI
+dx icon web --port 3000
+```
+
+## Available interfaces
+
+- **CLI** — Terminal-based search and export
+- **Web UI** — Browser-based icon browser
+- **WASM** — In-browser icon search for web apps
+- **Library** — Rust crate for programmatic use
+
+## Supported packs
+
+Lucide, Material Icons, Font Awesome, Heroicons, Tabler, Phosphor, Feather, Bootstrap Icons, Boxicons, Remix Icon, and 220+ more.

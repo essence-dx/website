@@ -1,0 +1,50 @@
+---
+title: AI Provider Catalog
+description: Universal catalog of 184 AI providers and 6245 models.
+section: providers
+order: 1
+---
+
+DX includes a comprehensive AI provider catalog indexing 184 providers and 6,245 models. The catalog is built from LiteLLM and Models.dev data, stored as a zero-copy rkyv archive.
+
+## Features
+
+**184 providers.** Every major AI provider and many niche/specialized providers.
+
+**6,245 models.** Complete model catalog with metadata, pricing, and capabilities.
+
+**Zero-copy archive.** 655KB compressed, 38µs load time. Memory-mapped for instant access.
+
+**25 runtime providers.** Pre-configured for immediate use with DX Agent.
+
+**Browser cookie extraction.** Auto-detect API keys from 9 browsers for seamless setup.
+
+## Usage
+
+```bash
+# List providers
+dx agent providers list
+
+# Search models
+dx agent providers search "gpt-4"
+
+# Get provider details
+dx agent providers get openai
+
+# List runtime providers
+dx agent providers runtime
+
+# Update catalog
+dx agent providers update
+```
+
+## Example providers
+
+| Provider | Models | Key Feature |
+|----------|--------|-------------|
+| OpenAI | GPT-4o, GPT-4, GPT-3.5 | General purpose |
+| Anthropic | Claude 3.5 Sonnet, Opus | Long context |
+| Google | Gemini 1.5 Pro, Flash | Multimodal |
+| Groq | Llama 3, Mixtral | Fast inference |
+| Ollama | 100+ local models | Privacy |
+| Together AI | 100+ open models | Variety |

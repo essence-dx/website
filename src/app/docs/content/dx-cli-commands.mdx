@@ -1,0 +1,153 @@
+---
+title: DX CLI Commands
+description: Complete command reference for the DX CLI.
+section: dx-cli
+order: 2
+---
+
+## Core commands
+
+### `dx code`
+
+Manage DX Code editor.
+
+```bash
+dx code                          # Launch editor
+dx code /path/to/project         # Open project
+dx code install                  # Install or update DX Code
+dx code extensions               # Manage extensions
+```
+
+### `dx web`
+
+Work with DX Web framework.
+
+```bash
+dx web init my-project           # Create new web project
+dx web dev                       # Start development server
+dx web build                     # Build for production
+dx web deploy                    # Deploy project
+```
+
+### `dx agent`
+
+Manage AI agents.
+
+```bash
+dx agent init                    # Initialize agent
+dx agent ask "question"          # Ask the agent
+dx agent channels list           # List messaging channels
+dx agent providers list          # List LLM providers
+dx agent skills list             # List available skills
+```
+
+### `dx flow`
+
+Workflow automation.
+
+```bash
+dx flow init                     # Initialize workflow
+dx flow run <name>               # Run a workflow
+dx flow list                     # List workflows
+```
+
+### `dx forge`
+
+Version control and build.
+
+```bash
+dx forge init                    # Initialize forge project
+dx forge build                   # Build project
+dx forge push                    # Push to remote
+dx forge package                 # Package for distribution
+```
+
+### `dx style`
+
+CSS engine.
+
+```bash
+dx style compile input.css       # Compile CSS
+dx style watch input.css         # Watch and recompile
+dx style init                    # Initialize config
+```
+
+### `dx media`
+
+Media acquisition.
+
+```bash
+dx media search "query"          # Search for media
+dx media get <url>               # Download media
+dx media list                    # List providers
+```
+
+### `dx search`
+
+Metasearch.
+
+```bash
+dx search "query"                # Search across 180+ engines
+dx search web "query"            # Web search only
+dx search images "query"         # Image search
+```
+
+### `dx icon`
+
+Icon search.
+
+```bash
+dx icon search "arrow"           # Search icons
+dx icon list --packs             # List icon packs
+dx icon get <id> --format svg    # Get icon
+```
+
+### `dx check`
+
+Validation and scoring.
+
+```bash
+dx check run                     # Run validation
+dx check score                   # Score project
+dx check rules list              # List rules
+```
+
+### `dx serialize`
+
+Data serialization.
+
+```bash
+dx serialize to-llm input.json   # Convert to LLM format
+dx serialize to-machine input.sr # Convert to Machine format
+dx serialize to-sr input.json    # Convert to SR format
+```
+
+### `dx dcp`
+
+Development Context Protocol.
+
+```bash
+dx dcp server start              # Start DCP server
+dx dcp tools list                # List available tools
+dx dcp call <tool> [args]        # Call a tool
+```
+
+### `dx i18n`
+
+Internationalization.
+
+```bash
+dx i18n translate <file>         # Translate file
+dx i18n providers list           # List providers
+dx i18n sync                     # Sync translation files
+```
+
+## Global flags
+
+```bash
+--help, -h                       # Show help
+--version, -v                    # Show version
+--format <format>                # Output format (pretty, json, yaml)
+--workspace <name>               # Select workspace
+--receipts                       # Write operation receipts
+```

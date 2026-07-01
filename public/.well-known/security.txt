@@ -1,0 +1,4 @@
+Contact: security@dx.tips
+Preferred-Languages: en
+Canonical: https://dx.tips/.well-known/security.txt
+Policy: https://github.com/essence-dx/blob/main/SECURITY.md

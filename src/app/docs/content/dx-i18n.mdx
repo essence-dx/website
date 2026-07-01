@@ -1,0 +1,58 @@
+---
+title: DX i18n
+description: Multi-provider translation and localization engine.
+section: dx-tools
+order: 7
+---
+
+DX i18n provides multi-provider translation, text-to-speech, and speech-to-text services with a Lingo.dev-compatible pipeline.
+
+## Features
+
+**Multi-provider translation.** Google Translate, Microsoft Translator, and more providers.
+
+**Text-to-speech.** Edge TTS and Google TTS for natural speech synthesis.
+
+**Speech-to-text.** Whisper and Google STT for accurate transcription.
+
+**Lockfile tracking.** SHA-256 delta tracking ensures only changed content is re-translated.
+
+## Usage
+
+```bash
+# Translate a file
+dx i18n translate ./messages.json --from en --to es
+
+# List providers
+dx i18n providers list
+
+# Sync translation files
+dx i18n sync
+
+# Generate speech
+dx i18n tts "Hello, world" --voice en-US
+
+# Transcribe audio
+dx i18n stt audio.mp3
+```
+
+## Configuration
+
+```yaml
+# .dxi18n/config.yaml
+translation:
+  provider: google
+  source_language: en
+  target_languages:
+    - es
+    - fr
+    - de
+    - ja
+    - zh
+tts:
+  provider: edge
+  voice: en-US-JennyNeural
+stt:
+  provider: whisper
+  model: base
+```

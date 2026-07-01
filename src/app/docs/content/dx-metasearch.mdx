@@ -1,0 +1,56 @@
+---
+title: DX Metasearch
+description: Privacy-respecting metasearch engine.
+section: dx-tools
+order: 1
+---
+
+DX Metasearch is a privacy-respecting metasearch engine that aggregates results from 180+ upstream search engines across 15 categories.
+
+## Features
+
+**180+ upstream engines.** Web, images, news, videos, academic, code, social, and more.
+
+**Privacy-first.** No tracking, no profiling, no logs. Your searches stay private.
+
+**3-layer caching.** moka TinyLFU cache for sub-millisecond response on repeated queries.
+
+**Health-aware circuit breaking.** Automatic detection of failing upstream engines with graceful degradation.
+
+**Multiple interfaces.** HTML UI, JSON API, and OpenSearch support.
+
+## Usage
+
+```bash
+# Web search
+dx search "rust programming"
+
+# Image search
+dx search images "mountain landscape"
+
+# News search
+dx search news "technology" --since 7d
+
+# Academic search
+dx search academic "machine learning transformer"
+
+# Start the search server
+dx search server --port 8080
+```
+
+## Configuration
+
+Configure upstream engines in `~/.config/dx/metasearch/config.yaml`:
+
+```yaml
+engines:
+  - name: google
+    enabled: true
+    weight: 1.0
+  - name: duckduckgo
+    enabled: true
+    weight: 0.8
+cache:
+  ttl: 300
+  max_size: 1000
+```
