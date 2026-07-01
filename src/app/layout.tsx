@@ -3,7 +3,7 @@ import { cn } from "@dx/ui/cn";
 import "@dx/ui/globals.css";
 import { Provider as Analytics } from "@dx/events/client";
 import type { Metadata } from "next";
-import { Hedvig_Letters_Sans, Hedvig_Letters_Serif } from "next/font/google";
+import { JetBrains_Mono, Hedvig_Letters_Serif } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { ReactElement } from "react";
 import { Footer } from "@/components/footer";
@@ -14,14 +14,14 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AutoTheme } from "@/components/auto-theme";
 import { baseUrl } from "./sitemap";
 
-const hedvigSans = Hedvig_Letters_Sans({
-  weight: "400",
+const jetbrainsMono = JetBrains_Mono({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "optional",
   variable: "--font-hedvig-sans",
   preload: true,
   adjustFontFallback: true,
-  fallback: ["system-ui", "arial"],
+  fallback: ["monospace", "system-ui", "arial"],
 });
 
 const hedvigSerif = Hedvig_Letters_Serif({
@@ -131,7 +131,7 @@ export default function Layout({ children }: { children: ReactElement }) {
       </head>
       <body
         className={cn(
-          `${hedvigSans.variable} ${hedvigSerif.variable} font-sans`,
+          `${jetbrainsMono.variable} ${hedvigSerif.variable} font-sans`,
           "bg-background overflow-hidden font-sans antialiased",
         )}
       >

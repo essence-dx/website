@@ -6,6 +6,13 @@ import { themePresets } from "@/data/theme-presets";
 import { hexToHsl, isHexColor, isOklch, oklchToHsl } from "@/lib/color";
 
 const THEME_STYLE_ID = "theme-preset-vars";
+const FONT_LINK_ID = "theme-preset-fonts";
+
+const FONT_MAP: Record<string, string> = {
+  "font-sans": "--font-hedvig-sans",
+  "font-serif": "--font-hedvig-serif",
+  "font-mono": "--font-hedvig-sans",
+};
 
 const COLOR_KEYS = new Set([
   "background", "foreground", "card", "card-foreground",
@@ -43,6 +50,45 @@ function toHsl(value: string): string {
   return "";
 }
 
+function getPrimaryFont(raw: string): string | null {
+  const name = raw.split(",")[0]?.trim().replace(/^["']|["']$/g, "");
+  if (!name || name === "serif" || name === "sans-serif" || name === "monospace" || name === "ui-serif" || name === "ui-sans-serif" || name === "ui-monospace" || name === "system-ui") return null;
+  return name;
+}
+
+function buildFontsUrl(families: string[]): string {
+  const params = families.map((name) => {
+    const encoded = name.replace(/ /g, "+");
+    return `family=${encoded}:wght@300;400;500;600;700;800`;
+  });
+  return `https://fonts.googleapis.com/css2?${params.join("&")}&display=swap`;
+}
+
+function loadThemeFonts(presetName: string) {
+  const preset = themePresets[presetName];
+  if (!preset) return;
+
+  const families = new Set<string>();
+  for (const key of ["font-sans", "font-serif", "font-mono"]) {
+    const value = preset.styles.light[key] || preset.styles.dark[key];
+    if (value) {
+      const primary = getPrimaryFont(value);
+      if (primary) families.add(primary);
+    }
+  }
+
+  if (families.size === 0) return;
+
+  const old = document.getElementById(FONT_LINK_ID);
+  old?.remove();
+
+  const link = document.createElement("link");
+  link.id = FONT_LINK_ID;
+  link.rel = "stylesheet";
+  link.href = buildFontsUrl(Array.from(families));
+  document.head.appendChild(link);
+}
+
 function buildPresetCss(presetName: string | null, hueShift: number = 0): string {
   if (!presetName) return "";
   const preset = themePresets[presetName];
@@ -71,8 +117,17 @@ function buildPresetCss(presetName: string | null, hueShift: number = 0): string
     }
   }
 
-  if (!lightVars && !darkVars) return "";
-  return `:root{${lightVars}}.dark{${darkVars}}`;
+  let fontBlock = "";
+  const fontVars = new Set<string>();
+  for (const [key, value] of Object.entries(preset.styles.light)) {
+    if (FONT_MAP[key] && value && !fontVars.has(key)) {
+      fontVars.add(key);
+      fontBlock += `${FONT_MAP[key]}: ${value} !important;`;
+    }
+  }
+
+  if (!lightVars && !darkVars && !fontBlock) return "";
+  return `:root{${lightVars}}.dark{${darkVars}}body{${fontBlock}}`;
 }
 
 function applyStyleTag(css: string) {
@@ -119,6 +174,11 @@ export function useThemePreset() {
   const applyPreset = useCallback((name: string | null) => {
     const shift = name ? randomHueShift() : 0;
     applyStyleTag(buildPresetCss(name, shift));
+    if (name) {
+      loadThemeFonts(name);
+    } else {
+      document.getElementById(FONT_LINK_ID)?.remove();
+    }
     setPresetName(name);
   }, []);
 

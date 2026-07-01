@@ -503,6 +503,7 @@ export function Header({
                                     width={14}
                                     height={14}
                                     className="object-contain opacity-70"
+                                    style={{ width: "auto", height: "auto" }}
                                   />
                                 </div>
                               </div>
@@ -798,6 +799,7 @@ export function Header({
                                       width={14}
                                       height={14}
                                       className="object-contain opacity-70"
+                                      style={{ width: "auto", height: "auto" }}
                                     />
                                   </div>
                                 ))}

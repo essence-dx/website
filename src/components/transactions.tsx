@@ -195,6 +195,7 @@ export function Transactions() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Fortnox
@@ -210,6 +211,7 @@ export function Transactions() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Xero
@@ -225,6 +227,7 @@ export function Transactions() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         QuickBooks
@@ -240,6 +243,7 @@ export function Transactions() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Slack

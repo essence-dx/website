@@ -182,6 +182,7 @@ export function FileStorage() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Dropbox
@@ -194,6 +195,7 @@ export function FileStorage() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Google Drive

@@ -528,6 +528,7 @@ export function PreAccounting() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Gmail
@@ -543,6 +544,7 @@ export function PreAccounting() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Outlook
@@ -558,6 +560,7 @@ export function PreAccounting() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         Slack
@@ -573,6 +576,7 @@ export function PreAccounting() {
                         width={16}
                         height={16}
                         className="object-contain"
+                        style={{ width: "auto", height: "auto" }}
                       />
                       <span className="font-sans text-sm text-foreground">
                         WhatsApp

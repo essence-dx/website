@@ -16,7 +16,7 @@ const InboxMatchAnimation = dynamic(() =>
   ),
 );
 const InvoicePaymentAnimation = dynamic(() =>
-  import("@dx/ui/animations/build-deploy").then(
+  import("@dx/ui/animations/invoice-payment").then(
     (m) => m.InvoicePaymentAnimation,
   ),
 );
@@ -79,49 +79,49 @@ const videos = [
     id: "overview",
     title: "Overview",
     subtitle: "See how DX helps you build without the overhead.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4",
+    url: "https://cdn.midday.ai/videos/login-video.mp4",
   },
   {
     id: "code",
     title: "Code",
     subtitle:
       "Write and edit code with DX code, a high-performance editor built for modern development.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
   {
     id: "build",
     title: "Build",
     subtitle:
       "DX build compiles and bundles your projects with blazing speed and zero configuration.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
   {
     id: "agent",
     title: "Agent",
     subtitle:
       "Create and deploy AI agents with DX agent, integrated directly into your workflow.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
   {
     id: "www",
     title: "Web",
     subtitle:
       "Build modern websites and web apps with DX www, a full-stack web framework.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
   {
     id: "cli",
     title: "CLI",
     subtitle:
       "Powerful command-line tools with DX cli for managing your entire development lifecycle.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
   {
     id: "media",
     title: "Media",
     subtitle:
       "Process images, video, and audio with DX media, built for high-throughput pipelines.",
-    url: "https://cdn.dx.tips/videos/login-video.mp4", // Replace with actual video URL
+    url: "https://cdn.midday.ai/videos/login-video.mp4", // Replace with actual video URL
   },
 ];
 
@@ -448,7 +448,7 @@ export function StartPage() {
                 preload="none"
               >
                 <source
-                  src="https://cdn.dx.tips/videos/login-video.mp4"
+                  src="https://cdn.midday.ai/videos/login-video.mp4"
                   type="video/mp4"
                 />
               </video>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-hedvig-sans: "Hedvig Letters Sans", system-ui, sans-serif;
+  --font-hedvig-sans: "JetBrains Mono", monospace, system-ui, sans-serif;
   --font-hedvig-serif: "Hedvig Letters Serif", Georgia, serif;
 
   /* Light mode syntax highlighting (clear differentiation like dark mode) */

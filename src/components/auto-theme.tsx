@@ -60,16 +60,17 @@ function buildCss(name: string, hueShift: number): string {
     }
   }
 
+  let fontBlock = "";
   const fontVars = new Set<string>();
   for (const [key, value] of Object.entries(preset.styles.light)) {
     if (FONT_MAP[key] && value && !fontVars.has(key)) {
       fontVars.add(key);
-      lv += `${FONT_MAP[key]}: ${value};`;
+      fontBlock += `${FONT_MAP[key]}: ${value} !important;`;
     }
   }
 
-  if (!lv && !dv) return "";
-  return `:root{${lv}}.dark{${dv}}`;
+  if (!lv && !dv && !fontBlock) return "";
+  return `:root{${lv}}.dark{${dv}}body{${fontBlock}}`;
 }
 
 function getPrimaryFont(raw: string): string | null {
