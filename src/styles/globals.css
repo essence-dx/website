@@ -238,10 +238,6 @@ pre code div,
   scrollbar-color: hsl(var(--border)) transparent;
 }
 
-/* Radix ScrollArea scrollbar above fixed header */
-[data-radix-scroll-area-scrollbar] {
-  z-index: 60;
-}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

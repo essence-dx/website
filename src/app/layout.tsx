@@ -142,10 +142,10 @@ export default function Layout({ children }: { children: ReactElement }) {
             enableSystem
             disableTransitionOnChange
           >
+            <Header />
             <ScrollArea className="h-dvh">
               <AutoTheme />
               <SunsetBanner />
-              <Header />
               <main className="container mx-auto px-4 pt-16">
                 {children}
               </main>
