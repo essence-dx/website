@@ -177,8 +177,8 @@ await client.close();`;
                 Financial data in ChatGPT
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                Connect DX to ChatGPT and query your builds, agents,
-                and reports directly in conversations. Authentication is handled
+                Connect DX to ChatGPT and query your builds, agents, and reports
+                directly in conversations. Authentication is handled
                 automatically via OAuth.
               </p>
             </div>

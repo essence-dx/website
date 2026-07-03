@@ -319,28 +319,6 @@ export function Chat() {
     return DEMO_STORIES[currentIndex - 1]?.id ?? null;
   }, []);
 
-  const handleMobileBackTap = useCallback(() => {
-    const previousScenario = getPreviousScenario(mobileScenario);
-    if (!previousScenario) return;
-    selectMobileScenario(previousScenario, { startAtEnd: true });
-  }, [getPreviousScenario, mobileScenario]);
-
-  const handleDesktopBackTap = useCallback(() => {
-    const previousScenario = getPreviousScenario(activeScenario);
-    if (!previousScenario) return;
-    setDesktopStartAtEndScenario(previousScenario);
-    scrollToScenario(previousScenario);
-  }, [activeScenario, getPreviousScenario]);
-
-  useEffect(() => {
-    if (
-      desktopStartAtEndScenario &&
-      activeScenario === desktopStartAtEndScenario
-    ) {
-      setDesktopStartAtEndScenario(null);
-    }
-  }, [activeScenario, desktopStartAtEndScenario]);
-
   const selectMobileScenario = (
     scenario: ChatDemoScenario,
     options?: { startAtEnd?: boolean },
@@ -358,6 +336,28 @@ export function Chat() {
       setMobilePlaying(true);
     }
   };
+
+  const handleMobileBackTap = useCallback(() => {
+    const previousScenario = getPreviousScenario(mobileScenario);
+    if (!previousScenario) return;
+    selectMobileScenario(previousScenario, { startAtEnd: true });
+  }, [getPreviousScenario, mobileScenario, selectMobileScenario]);
+
+  const handleDesktopBackTap = useCallback(() => {
+    const previousScenario = getPreviousScenario(activeScenario);
+    if (!previousScenario) return;
+    setDesktopStartAtEndScenario(previousScenario);
+    scrollToScenario(previousScenario);
+  }, [activeScenario, getPreviousScenario, scrollToScenario]);
+
+  useEffect(() => {
+    if (
+      desktopStartAtEndScenario &&
+      activeScenario === desktopStartAtEndScenario
+    ) {
+      setDesktopStartAtEndScenario(null);
+    }
+  }, [activeScenario, desktopStartAtEndScenario]);
 
   return (
     <div className="min-h-screen">

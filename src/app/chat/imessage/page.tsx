@@ -3,12 +3,12 @@ import { ChatPlatformPage } from "@/components/chat-platform-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "DX for iMessage",
+  title: "DX for iMessage",
   description:
     "Manage your DX tools from iMessage. Monitor builds, check agent status, and get notifications — all from your favorite messaging app.",
   path: "/chat/imessage",
   og: {
-  title: "DX for iMessage",
+    title: "DX for iMessage",
     description: "Your DX tools, right in Messages",
   },
   keywords: [

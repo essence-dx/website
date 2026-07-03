@@ -37,9 +37,9 @@ export function MCPManus() {
                 Financial data in Manus
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                Connect DX to Manus and automate workflows with AI
-                agents. Query builds, create deploys, and generate
-                reports using natural language.
+                Connect DX to Manus and automate workflows with AI agents. Query
+                builds, create deploys, and generate reports using natural
+                language.
               </p>
             </div>
 

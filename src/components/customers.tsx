@@ -106,9 +106,9 @@ export function Customers() {
                 Customers
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
-                  <span className="text-foreground block">
-                    Know your projects
-                  </span>
+                <span className="text-foreground block">
+                  Know your projects
+                </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">

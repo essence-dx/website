@@ -70,8 +70,7 @@ export function Inbox() {
                 <span className="text-foreground">Builds monitored</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                DX auto-monitors builds and alerts only when something
-                fails.
+                DX auto-monitors builds and alerts only when something fails.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
                 Build logs and deploy results are pulled in from CI/CD, git

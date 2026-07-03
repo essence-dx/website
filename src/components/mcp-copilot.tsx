@@ -1,7 +1,6 @@
 "use client";
 
 import { CopilotMcpLogo } from "@dx/app-store/logos";
-import { Button } from "@dx/ui/button";
 import { Icons } from "@dx/ui/icons";
 import { Input } from "@dx/ui/input";
 import Link from "next/link";
@@ -162,8 +161,8 @@ export function MCPCopilot() {
                 Connection details
               </h3>
               <p className="font-sans text-sm text-muted-foreground">
-                Use these settings when adding DX as an MCP server in
-                Copilot Studio:
+                Use these settings when adding DX as an MCP server in Copilot
+                Studio:
               </p>
               <CodeBlock code={connectionConfig} />
             </div>
@@ -241,8 +240,8 @@ export function MCPCopilot() {
                       Start using DX tools
                     </span>
                     <p className="font-sans text-sm text-muted-foreground mt-1">
-                      DX's tools will appear in your agent. Ask questions
-                       about builds, agents, projects, and more.
+                      DX's tools will appear in your agent. Ask questions about
+                      builds, agents, projects, and more.
                     </p>
                   </div>
                 </li>

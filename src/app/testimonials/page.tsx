@@ -3,8 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Customer Stories",
-  description:
-    "See how developers use DX to build with less friction.",
+  description: "See how developers use DX to build with less friction.",
   path: "/testimonials",
   og: {
     title: "Customer Stories",

@@ -8,17 +8,47 @@ const STYLE_ID = "auto-theme-vars";
 const FONT_LINK_ID = "auto-theme-fonts";
 
 const COLOR_KEYS = new Set([
-  "background", "foreground", "card", "card-foreground",
-  "popover", "popover-foreground", "primary", "primary-foreground",
-  "secondary", "secondary-foreground", "muted", "muted-foreground",
-  "accent", "accent-foreground", "destructive", "destructive-foreground",
-  "border", "input", "ring",
-  "chart-1", "chart-2", "chart-3", "chart-4", "chart-5",
-  "sidebar", "sidebar-foreground", "sidebar-primary", "sidebar-primary-foreground",
-  "sidebar-accent", "sidebar-accent-foreground", "sidebar-border", "sidebar-ring",
+  "background",
+  "foreground",
+  "card",
+  "card-foreground",
+  "popover",
+  "popover-foreground",
+  "primary",
+  "primary-foreground",
+  "secondary",
+  "secondary-foreground",
+  "muted",
+  "muted-foreground",
+  "accent",
+  "accent-foreground",
+  "destructive",
+  "destructive-foreground",
+  "border",
+  "input",
+  "ring",
+  "chart-1",
+  "chart-2",
+  "chart-3",
+  "chart-4",
+  "chart-5",
+  "sidebar",
+  "sidebar-foreground",
+  "sidebar-primary",
+  "sidebar-primary-foreground",
+  "sidebar-accent",
+  "sidebar-accent-foreground",
+  "sidebar-border",
+  "sidebar-ring",
 ]);
 
-const HUE_KEYS = new Set(["primary", "primary-foreground", "accent", "accent-foreground", "ring"]);
+const HUE_KEYS = new Set([
+  "primary",
+  "primary-foreground",
+  "accent",
+  "accent-foreground",
+  "ring",
+]);
 
 const FONT_MAP: Record<string, string> = {
   "font-sans": "--font-hedvig-sans",
@@ -36,14 +66,16 @@ function buildCss(name: string, hueShift: number): string {
   const preset = themePresets[name];
   if (!preset) return "";
 
-  let lv = "", dv = "";
+  let lv = "",
+    dv = "";
 
   for (const [key, value] of Object.entries(preset.styles.light)) {
     if (COLOR_KEYS.has(key) && value) {
       let hsl = toHsl(value);
       if (hsl && HUE_KEYS.has(key) && hueShift) {
         const m = /(\d+),\s*(\d+)%,\s*(\d+)%/.exec(hsl);
-        if (m) hsl = `${((parseInt(m[1]) + hueShift) % 360 + 360) % 360}, ${m[2]}%, ${m[3]}%`;
+        if (m)
+          hsl = `${(((parseInt(m[1], 10) + hueShift) % 360) + 360) % 360}, ${m[2]}%, ${m[3]}%`;
       }
       if (hsl) lv += `--${key}: ${hsl};`;
     }
@@ -54,7 +86,8 @@ function buildCss(name: string, hueShift: number): string {
       let hsl = toHsl(value);
       if (hsl && HUE_KEYS.has(key) && hueShift) {
         const m = /(\d+),\s*(\d+)%,\s*(\d+)%/.exec(hsl);
-        if (m) hsl = `${((parseInt(m[1]) + hueShift) % 360 + 360) % 360}, ${m[2]}%, ${m[3]}%`;
+        if (m)
+          hsl = `${(((parseInt(m[1], 10) + hueShift) % 360) + 360) % 360}, ${m[2]}%, ${m[3]}%`;
       }
       if (hsl) dv += `--${key}: ${hsl};`;
     }
@@ -74,8 +107,21 @@ function buildCss(name: string, hueShift: number): string {
 }
 
 function getPrimaryFont(raw: string): string | null {
-  const name = raw.split(",")[0]?.trim().replace(/^["']|["']$/g, "");
-  if (!name || name === "serif" || name === "sans-serif" || name === "monospace" || name === "ui-serif" || name === "ui-sans-serif" || name === "ui-monospace" || name === "system-ui") return null;
+  const name = raw
+    .split(",")[0]
+    ?.trim()
+    .replace(/^["']|["']$/g, "");
+  if (
+    !name ||
+    name === "serif" ||
+    name === "sans-serif" ||
+    name === "monospace" ||
+    name === "ui-serif" ||
+    name === "ui-sans-serif" ||
+    name === "ui-monospace" ||
+    name === "system-ui"
+  )
+    return null;
   return name;
 }
 
@@ -145,7 +191,7 @@ export function AutoTheme() {
       loadFonts(presetName);
 
       const css = buildCss(presetName, randomShift());
-      let el = document.getElementById(STYLE_ID) as HTMLStyleElement | null;
+      const el = document.getElementById(STYLE_ID) as HTMLStyleElement | null;
       el?.remove();
       if (css) {
         const tag = document.createElement("style");

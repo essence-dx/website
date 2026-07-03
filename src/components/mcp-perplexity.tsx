@@ -111,8 +111,8 @@ export function MCPPerplexity() {
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
                 Connect Perplexity to your DX account to query your toolchain,
-                invoices, and reports with natural language. Get
-                instant answers about your builds, deploys, and agents.
+                invoices, and reports with natural language. Get instant answers
+                about your builds, deploys, and agents.
               </p>
             </div>
 

@@ -106,9 +106,9 @@ export function MCPGemini() {
                 Financial data in Gemini CLI
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                 Connect DX to Gemini CLI and query your builds, agents,
-                and reports directly from your terminal.
-                Authentication is handled automatically via OAuth.
+                Connect DX to Gemini CLI and query your builds, agents, and
+                reports directly from your terminal. Authentication is handled
+                automatically via OAuth.
               </p>
             </div>
 
@@ -175,8 +175,8 @@ export function MCPGemini() {
                         2
                       </span>
                       <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                        When prompted, sign in to DX in your browser and
-                        select a team
+                        When prompted, sign in to DX in your browser and select
+                        a team
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -184,8 +184,7 @@ export function MCPGemini() {
                         3
                       </span>
                       <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                        Use DX tools in Gemini CLI to access your financial
-                        data
+                        Use DX tools in Gemini CLI to access your financial data
                       </span>
                     </li>
                   </ol>

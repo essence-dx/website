@@ -101,9 +101,9 @@ export function MCPWindsurf() {
                 Financial data in Windsurf
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                                 Connect DX to Windsurf and query your builds, agents,
-                and reports directly from your AI IDE. Authentication
-                is handled automatically via OAuth.
+                Connect DX to Windsurf and query your builds, agents, and
+                reports directly from your AI IDE. Authentication is handled
+                automatically via OAuth.
               </p>
             </div>
 
@@ -179,8 +179,8 @@ export function MCPWindsurf() {
                         3
                       </span>
                       <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                        When prompted, sign in to DX in your browser and
-                        select a team
+                        When prompted, sign in to DX in your browser and select
+                        a team
                       </span>
                     </li>
                   </ol>

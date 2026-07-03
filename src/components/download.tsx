@@ -61,18 +61,27 @@ export function Download() {
                 DX for Mac
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
-                Quick access to your development tools in a native Mac experience.
+                Quick access to your development tools in a native Mac
+                experience.
               </p>
             </div>
 
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-md mx-auto justify-center sm:justify-center">
-              <a href="https://github.com/dx/dx/releases/latest" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/dx/dx/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="w-full sm:w-auto h-11 px-6 text-sm font-sans">
                   Apple Silicon
                 </Button>
               </a>
-              <a href="https://github.com/dx/dx/releases/latest" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/dx/dx/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="w-full sm:w-auto h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
@@ -125,18 +134,27 @@ export function Download() {
                 DX for Mac
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-xl mx-auto font-sans text-center">
-                Quick access to your development tools in a native Mac experience.
+                Quick access to your development tools in a native Mac
+                experience.
               </p>
             </div>
 
             {/* Download Buttons */}
             <div className="flex gap-6 justify-center">
-              <a href="https://github.com/dx/dx/releases/latest" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/dx/dx/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="h-11 px-6 text-sm font-sans">
                   Apple Silicon
                 </Button>
               </a>
-              <a href="https://github.com/dx/dx/releases/latest" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/dx/dx/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
@@ -160,8 +178,8 @@ export function Download() {
                   Native performance
                 </h2>
                 <p className="font-sans text-base text-muted-foreground leading-normal">
-                  DX runs fast and light on Apple silicon, so everything
-                  stays responsive and out of your way.
+                  DX runs fast and light on Apple silicon, so everything stays
+                  responsive and out of your way.
                 </p>
               </div>
 
@@ -202,8 +220,8 @@ export function Download() {
                 </h2>
                 <p className="font-sans text-base text-muted-foreground leading-normal">
                   Press <span className="text-foreground font-mono">⇧⌥K</span>{" "}
-                   to search DX from anywhere on your Mac. Instantly find
-                  code snippets, API docs, projects, and team files.
+                  to search DX from anywhere on your Mac. Instantly find code
+                  snippets, API docs, projects, and team files.
                 </p>
               </div>
 

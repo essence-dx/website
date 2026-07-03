@@ -602,7 +602,7 @@ describe("Tax Utilities", () => {
         currency: "USD",
       });
       expect(result).toBe(45.24);
-      expect(result!.toString().split(".")[1]?.length ?? 0).toBeLessThanOrEqual(
+      expect(result?.toString().split(".")[1]?.length ?? 0).toBeLessThanOrEqual(
         2,
       );
     });

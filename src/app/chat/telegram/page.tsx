@@ -3,12 +3,12 @@ import { ChatPlatformPage } from "@/components/chat-platform-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "DX for Telegram",
+  title: "DX for Telegram",
   description:
     "Manage your DX tools from Telegram. Monitor builds, check agent status, and get notifications — all from the messaging app you already use.",
   path: "/chat/telegram",
   og: {
-  title: "DX for Telegram",
+    title: "DX for Telegram",
     description: "Your DX tools, right in Telegram",
   },
   keywords: [

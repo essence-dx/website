@@ -243,8 +243,8 @@ export function MCP() {
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
                 Connect Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed, and more
-                to your DX account. Manage code, builds, agents, media,
-                search, and more from any AI tool.
+                to your DX account. Manage code, builds, agents, media, search,
+                and more from any AI tool.
               </p>
             </div>
 
@@ -284,8 +284,8 @@ export function MCP() {
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-2xl mx-auto font-sans text-center">
                 Connect Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed, and more
-                to your DX account. Manage code, builds, agents, media,
-                search, and more from any AI tool.
+                to your DX account. Manage code, builds, agents, media, search,
+                and more from any AI tool.
               </p>
             </div>
 
@@ -428,13 +428,12 @@ export function MCP() {
               Get started
             </h2>
             <p className="font-sans text-base text-muted-foreground mb-6 max-w-lg mx-auto">
-               Choose your AI client above. DX tools are available to any MCP or DCP client.
+              Choose your AI client above. DX tools are available to any MCP or
+              DCP client.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="h-11 px-6 text-sm font-sans">
-                <Link href="/docs/dx-cli">
-                  View CLI docs
-                </Link>
+                <Link href="/docs/dx-cli">View CLI docs</Link>
               </Button>
             </div>
           </div>

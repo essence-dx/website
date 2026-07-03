@@ -130,7 +130,7 @@ function playNotificationSound() {
   try {
     if (isMuted || !hasUserInteracted || !notificationBuffer) return;
     const ctx = getOrCreateContext();
-    if (!ctx || ctx.state !== "running") return;
+    if (ctx?.state !== "running") return;
     const src = ctx.createBufferSource();
     src.buffer = notificationBuffer;
     src.connect(ctx.destination);
@@ -147,7 +147,7 @@ function createKeyboardAudio(): {
   try {
     if (isMuted || !hasUserInteracted || !keyboardBuffer) return null;
     const ctx = getOrCreateContext();
-    if (!ctx || ctx.state !== "running") return null;
+    if (ctx?.state !== "running") return null;
 
     const maxOffset = Math.max(0, keyboardBuffer.duration - 5);
     const offset = Math.random() * maxOffset;
@@ -760,9 +760,7 @@ function buildGlobalBeats(): DemoBeat[] {
           text: firstStep.text,
           attachment: firstStep.attachment,
         });
-        snap(
-          firstStep.sender === "user" ? HOLD_USER_MESSAGE : HOLD_DX_MESSAGE,
-        );
+        snap(firstStep.sender === "user" ? HOLD_USER_MESSAGE : HOLD_DX_MESSAGE);
 
         if (firstStep.sender === "user") {
           const label =

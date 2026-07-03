@@ -37,9 +37,9 @@ export function MCPCline() {
                 Financial data in VS Code
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                                 Connect DX to Cline and query your builds, agents,
-                and reports directly from VS Code. Authentication is handled
-                automatically via OAuth.
+                Connect DX to Cline and query your builds, agents, and reports
+                directly from VS Code. Authentication is handled automatically
+                via OAuth.
               </p>
             </div>
 

@@ -29,8 +29,8 @@ export function AccountingSection() {
             Pre-accounting, handled
           </h2>
           <p className="hidden sm:block font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-            Builds, agents, and events stay organized automatically so
-            your books are always ready when you need them.
+            Builds, agents, and events stay organized automatically so your
+            books are always ready when you need them.
           </p>
         </div>
 
@@ -75,8 +75,8 @@ export function AccountingSection() {
                       Receipts pulled from email and uploads
                     </span>
                     <span className="hidden sm:inline">
-                      Build results and logs are pulled from CI/CD and monitoring,
-                      then matched to transactions
+                      Build results and logs are pulled from CI/CD and
+                      monitoring, then matched to transactions
                     </span>
                   </span>
                 </div>

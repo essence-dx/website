@@ -44,7 +44,7 @@ export const ChatPanel = forwardRef<ChatPanelRef, ChatPanelProps>(
 
     useEffect(() => {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
+    }, []);
 
     // Disable body scroll when panel is open
     useEffect(() => {
@@ -80,7 +80,7 @@ export const ChatPanel = forwardRef<ChatPanelRef, ChatPanelProps>(
         initialMessageSent.current = true;
         sendMessageFn(initialMessage);
       }
-    }, [isOpen, initialMessage]);
+    }, [isOpen, initialMessage, sendMessageFn, messages.length]);
 
     // Reset when panel closes
     useEffect(() => {

@@ -67,7 +67,8 @@ export function ThemePresetToggle() {
             {presets.map(([key, preset]) => {
               const active = presetName === key;
               const fontSans = preset.styles.light["font-sans"];
-              const fontShort = fontSans?.split(",")[0]?.replace(/["']/g, "") ?? "";
+              const fontShort =
+                fontSans?.split(",")[0]?.replace(/["']/g, "") ?? "";
               return (
                 <button
                   key={key}
@@ -83,7 +84,12 @@ export function ThemePresetToggle() {
                   )}
                 >
                   {active && <Check size={14} className="shrink-0 mt-0.5" />}
-                  <div className={cn("flex flex-col min-w-0", !active && "pl-[22px]")}>
+                  <div
+                    className={cn(
+                      "flex flex-col min-w-0",
+                      !active && "pl-[22px]",
+                    )}
+                  >
                     <span className="truncate">{preset.label ?? key}</span>
                     {fontShort && (
                       <span className="text-[10px] text-muted-foreground/60 truncate">

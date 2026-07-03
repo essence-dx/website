@@ -6,8 +6,7 @@ export default {
   category: "ai-automation",
   active: true,
   logo: Logo,
-  short_description:
-    "Access DX financial data directly from Raycast via MCP.",
+  short_description: "Access DX financial data directly from Raycast via MCP.",
   description: `Connect Raycast to your DX account using the Model Context Protocol (MCP).
 
 **What you can do:**

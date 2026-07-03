@@ -185,8 +185,8 @@ export function MCPCursor() {
                     2
                   </span>
                   <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                    When you first use a DX tool, you'll be prompted to sign
-                    in and select a team
+                    When you first use a DX tool, you'll be prompted to sign in
+                    and select a team
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

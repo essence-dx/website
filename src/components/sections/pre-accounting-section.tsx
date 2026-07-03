@@ -71,9 +71,7 @@ export function PreAccountingSection() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    <span className="sm:hidden">
-                      Blazing-fast build system
-                    </span>
+                    <span className="sm:hidden">Blazing-fast build system</span>
                     <span className="hidden sm:inline">
                       DX build compiles and bundles your projects with
                       parallelized, incremental builds
@@ -105,9 +103,7 @@ export function PreAccountingSection() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    <span className="sm:hidden">
-                      Full-stack web framework
-                    </span>
+                    <span className="sm:hidden">Full-stack web framework</span>
                     <span className="hidden sm:inline">
                       DX www provides a full-stack web framework for building
                       modern websites and applications
@@ -125,9 +121,7 @@ export function PreAccountingSection() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    <span className="sm:hidden">
-                      Media processing pipeline
-                    </span>
+                    <span className="sm:hidden">Media processing pipeline</span>
                     <span className="hidden sm:inline">
                       DX media handles image, video, and audio processing at
                       scale

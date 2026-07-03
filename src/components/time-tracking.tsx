@@ -153,8 +153,7 @@ export function TimeTracking() {
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
                     Turn logged agent runs directly into reports per project or
-                    team, without re-entering data or breaking your
-                    workflow.
+                    team, without re-entering data or breaking your workflow.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">

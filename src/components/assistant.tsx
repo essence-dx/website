@@ -77,8 +77,8 @@ export function Assistant() {
                 logs. Just ask.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Generate boilerplate, check your build status, refactor code,
-                or debug stack traces. Just describe what you need and the
+                Generate boilerplate, check your build status, refactor code, or
+                debug stack traces. Just describe what you need and the
                 assistant handles it.
               </p>
 
@@ -181,8 +181,8 @@ export function Assistant() {
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Generate boilerplate, check your build status, refactor code,
-                or debug stack traces. Just describe what you need and the
+                Generate boilerplate, check your build status, refactor code, or
+                debug stack traces. Just describe what you need and the
                 assistant handles it.
               </p>
 
@@ -287,8 +287,8 @@ export function Assistant() {
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
                     Generate boilerplate, refactor code, run tests, debug stack
-                    traces, and search docs or APIs — all in natural language. No menus,
-                    no forms, just say what you need.
+                    traces, and search docs or APIs — all in natural language.
+                    No menus, no forms, just say what you need.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">

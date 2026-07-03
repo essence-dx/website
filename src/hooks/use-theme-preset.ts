@@ -15,32 +15,62 @@ const FONT_MAP: Record<string, string> = {
 };
 
 const COLOR_KEYS = new Set([
-  "background", "foreground", "card", "card-foreground",
-  "popover", "popover-foreground", "primary", "primary-foreground",
-  "secondary", "secondary-foreground", "muted", "muted-foreground",
-  "accent", "accent-foreground", "destructive", "destructive-foreground",
-  "border", "input", "ring",
-  "chart-1", "chart-2", "chart-3", "chart-4", "chart-5",
-  "sidebar", "sidebar-foreground", "sidebar-primary", "sidebar-primary-foreground",
-  "sidebar-accent", "sidebar-accent-foreground", "sidebar-border", "sidebar-ring",
+  "background",
+  "foreground",
+  "card",
+  "card-foreground",
+  "popover",
+  "popover-foreground",
+  "primary",
+  "primary-foreground",
+  "secondary",
+  "secondary-foreground",
+  "muted",
+  "muted-foreground",
+  "accent",
+  "accent-foreground",
+  "destructive",
+  "destructive-foreground",
+  "border",
+  "input",
+  "ring",
+  "chart-1",
+  "chart-2",
+  "chart-3",
+  "chart-4",
+  "chart-5",
+  "sidebar",
+  "sidebar-foreground",
+  "sidebar-primary",
+  "sidebar-primary-foreground",
+  "sidebar-accent",
+  "sidebar-accent-foreground",
+  "sidebar-border",
+  "sidebar-ring",
 ]);
 
 const HUE_SHIFT_KEYS = new Set([
-  "primary", "primary-foreground",
-  "accent", "accent-foreground",
+  "primary",
+  "primary-foreground",
+  "accent",
+  "accent-foreground",
   "ring",
 ]);
 
 function parseHsl(hsl: string): { h: number; s: number; l: number } | null {
   const m = /(\d+),\s*(\d+)%,\s*(\d+)%/.exec(hsl);
   if (!m) return null;
-  return { h: parseInt(m[1]), s: parseInt(m[2]), l: parseInt(m[3]) };
+  return {
+    h: parseInt(m[1], 10),
+    s: parseInt(m[2], 10),
+    l: parseInt(m[3], 10),
+  };
 }
 
 function shiftHue(hsl: string, shift: number): string {
   const p = parseHsl(hsl);
   if (!p) return hsl;
-  const h = ((p.h + shift) % 360 + 360) % 360;
+  const h = (((p.h + shift) % 360) + 360) % 360;
   return `${h}, ${p.s}%, ${p.l}%`;
 }
 
@@ -51,8 +81,21 @@ function toHsl(value: string): string {
 }
 
 function getPrimaryFont(raw: string): string | null {
-  const name = raw.split(",")[0]?.trim().replace(/^["']|["']$/g, "");
-  if (!name || name === "serif" || name === "sans-serif" || name === "monospace" || name === "ui-serif" || name === "ui-sans-serif" || name === "ui-monospace" || name === "system-ui") return null;
+  const name = raw
+    .split(",")[0]
+    ?.trim()
+    .replace(/^["']|["']$/g, "");
+  if (
+    !name ||
+    name === "serif" ||
+    name === "sans-serif" ||
+    name === "monospace" ||
+    name === "ui-serif" ||
+    name === "ui-sans-serif" ||
+    name === "ui-monospace" ||
+    name === "system-ui"
+  )
+    return null;
   return name;
 }
 
@@ -89,7 +132,10 @@ function loadThemeFonts(presetName: string) {
   document.head.appendChild(link);
 }
 
-function buildPresetCss(presetName: string | null, hueShift: number = 0): string {
+function buildPresetCss(
+  presetName: string | null,
+  hueShift: number = 0,
+): string {
   if (!presetName) return "";
   const preset = themePresets[presetName];
   if (!preset) return "";

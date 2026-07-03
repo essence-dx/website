@@ -4,11 +4,7 @@ const config = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
-  transpilePackages: [
-    "@dx/ui",
-    "@dx/app-store",
-    "next-mdx-remote",
-  ],
+  transpilePackages: ["@dx/ui", "@dx/app-store", "next-mdx-remote"],
   typescript: {
     ignoreBuildErrors: true,
   },

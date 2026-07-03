@@ -1,7 +1,6 @@
 "use client";
 
 import { RaycastMcpLogo } from "@dx/app-store/logos";
-import { Button } from "@dx/ui/button";
 import { Icons } from "@dx/ui/icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -103,9 +102,8 @@ export function MCPRaycast() {
                 Financial tools at your fingertips
               </h2>
               <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                 Access builds, agents, and reports directly from Raycast
-                with a keyboard shortcut. Query your data without
-                switching apps.
+                Access builds, agents, and reports directly from Raycast with a
+                keyboard shortcut. Query your data without switching apps.
               </p>
             </div>
 
@@ -178,8 +176,8 @@ export function MCPRaycast() {
                     3
                   </span>
                   <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                    Open Raycast's "Manage Servers" and edit DX to add your
-                    API key
+                    Open Raycast's "Manage Servers" and edit DX to add your API
+                    key
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

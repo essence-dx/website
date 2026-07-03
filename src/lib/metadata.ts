@@ -13,8 +13,8 @@ type PageMetadataOptions = {
 
 export function createPageMetadata(opts: PageMetadataOptions): Metadata {
   const url = `${baseUrl}${opts.path}`;
-  const ogTitle = opts.og?.title ?? opts.title;
-  const ogDesc = opts.og?.description ?? opts.description;
+  const _ogTitle = opts.og?.title ?? opts.title;
+  const _ogDesc = opts.og?.description ?? opts.description;
   const images = [{ url: `${baseUrl}/og.png`, width: 1200, height: 630 }];
 
   return {

@@ -3,12 +3,12 @@ import { ChatPlatformPage } from "@/components/chat-platform-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "DX for WhatsApp",
+  title: "DX for WhatsApp",
   description:
     "Manage your DX tools from WhatsApp. Monitor builds, check agent status, and get notifications — all from the messaging app you already use.",
   path: "/chat/whatsapp",
   og: {
-  title: "DX for WhatsApp",
+    title: "DX for WhatsApp",
     description: "Your DX tools, right in WhatsApp",
   },
   keywords: [

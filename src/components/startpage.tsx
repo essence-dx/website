@@ -6,14 +6,11 @@ import { Button } from "@dx/ui/button";
 import { Icons } from "@dx/ui/icons";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 // Dynamic imports for animations (5,500+ lines - loaded after hero)
 const InboxMatchAnimation = dynamic(() =>
-  import("@dx/ui/animations/inbox-match").then(
-    (m) => m.InboxMatchAnimation,
-  ),
+  import("@dx/ui/animations/inbox-match").then((m) => m.InboxMatchAnimation),
 );
 const InvoicePaymentAnimation = dynamic(() =>
   import("@dx/ui/animations/invoice-payment").then(
@@ -218,7 +215,7 @@ export function StartPage() {
       video.removeEventListener("timeupdate", handleTimeUpdate);
       video.removeEventListener("loadedmetadata", handleLoadedMetadata);
     };
-  }, [activeVideoId, isVideoModalOpen]);
+  }, [isVideoModalOpen]);
 
   // Inject video modal styles
   useEffect(() => {
@@ -273,7 +270,8 @@ export function StartPage() {
 
                 <p className="text-muted-foreground text-base lg:text-lg leading-relaxed font-sans max-w-xl mx-auto">
                   Repository-managed tools for code, web, agents, media, search,
-                  serialization, and more. DX brings your entire toolchain together.
+                  serialization, and more. DX brings your entire toolchain
+                  together.
                 </p>
               </div>
 
@@ -293,9 +291,7 @@ export function StartPage() {
                       })
                     }
                   >
-                    <span className="text-inherit text-sm">
-                      Explore DX
-                    </span>
+                    <span className="text-inherit text-sm">Explore DX</span>
                   </a>
                 </Button>
 
@@ -420,7 +416,7 @@ export function StartPage() {
                 }}
               >
                 <Image
-                    src="https://cdn.midday.ai/video-poster-v2.jpg"
+                  src="https://cdn.midday.ai/video-poster-v2.jpg"
                   alt="DX dashboard preview"
                   fill
                   fetchPriority="high"

@@ -29,8 +29,8 @@ export default function PrivacyPage() {
 
               <div className="prose prose-sm sm:prose-base max-w-none space-y-6 font-sans text-foreground">
                 <p className="text-muted-foreground leading-relaxed">
-                  DX Labs AB ("us", "we", or "our") operates the DX
-                  application (hereinafter referred to as the "Service").
+                  DX Labs AB ("us", "we", or "our") operates the DX application
+                  (hereinafter referred to as the "Service").
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
@@ -59,8 +59,7 @@ export default function PrivacyPage() {
                         Service
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        Service is the DX application operated by DX
-                        Labs AB
+                        Service is the DX application operated by DX Labs AB
                       </p>
                     </div>
 
@@ -299,8 +298,8 @@ export default function PrivacyPage() {
                     Data Protection Regulation (GDPR)
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    If you are from the European Economic Area (EEA), DX
-                    Labs AB legal basis for collecting and using the personal
+                    If you are from the European Economic Area (EEA), DX Labs AB
+                    legal basis for collecting and using the personal
                     information described in this Privacy Policy depends on the
                     Personal Data we collect and the specific context in which
                     we collect it.
@@ -325,21 +324,21 @@ export default function PrivacyPage() {
                     Retention of Data
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    DX Labs AB will retain your Personal Data only for as
-                    long as is necessary for the purposes set out in this
-                    Privacy Policy. We will retain and use your Personal Data to
-                    the extent necessary to comply with our legal obligations
-                    (for example, if we are required to retain your data to
-                    comply with applicable laws), resolve disputes and enforce
-                    our legal agreements and policies.
+                    DX Labs AB will retain your Personal Data only for as long
+                    as is necessary for the purposes set out in this Privacy
+                    Policy. We will retain and use your Personal Data to the
+                    extent necessary to comply with our legal obligations (for
+                    example, if we are required to retain your data to comply
+                    with applicable laws), resolve disputes and enforce our
+                    legal agreements and policies.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    DX Labs AB will also retain Usage Data for internal
-                    analysis purposes. Usage Data is generally retained for a
-                    shorter period of time, except when this data is used to
-                    strengthen the security or to improve the functionality of
-                    our Service, or we are legally obligated to retain this data
-                    for longer periods.
+                    DX Labs AB will also retain Usage Data for internal analysis
+                    purposes. Usage Data is generally retained for a shorter
+                    period of time, except when this data is used to strengthen
+                    the security or to improve the functionality of our Service,
+                    or we are legally obligated to retain this data for longer
+                    periods.
                   </p>
                 </section>
 
@@ -365,13 +364,12 @@ export default function PrivacyPage() {
                     that transfer.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    DX Labs AB will take all the steps reasonably necessary
-                    to ensure that your data is treated securely and in
-                    accordance with this Privacy Policy and no transfer of your
-                    Personal Data will take place to an organisation or a
-                    country unless there are adequate controls in place
-                    including the security of your data and other personal
-                    information.
+                    DX Labs AB will take all the steps reasonably necessary to
+                    ensure that your data is treated securely and in accordance
+                    with this Privacy Policy and no transfer of your Personal
+                    Data will take place to an organisation or a country unless
+                    there are adequate controls in place including the security
+                    of your data and other personal information.
                   </p>
                 </section>
 
@@ -386,8 +384,8 @@ export default function PrivacyPage() {
                         Business Transaction
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        If DX Labs AB is involved in a merger, acquisition
-                        or asset sale, your Personal Data may be transferred. We
+                        If DX Labs AB is involved in a merger, acquisition or
+                        asset sale, your Personal Data may be transferred. We
                         will provide notice before your Personal Data is
                         transferred and becomes subject to a different Privacy
                         Policy.
@@ -399,9 +397,9 @@ export default function PrivacyPage() {
                         Disclosure for Law Enforcement
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        Under certain circumstances, DX Labs AB may be
-                        required to disclose your Personal Data if required to
-                        do so by law or in response to valid requests by public
+                        Under certain circumstances, DX Labs AB may be required
+                        to disclose your Personal Data if required to do so by
+                        law or in response to valid requests by public
                         authorities (e.g. a court or a government agency).
                       </p>
                     </div>
@@ -411,8 +409,8 @@ export default function PrivacyPage() {
                         Legal Requirements
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
-                        DX Labs AB may disclose your Personal Data in the
-                        good faith belief that such action is necessary to:
+                        DX Labs AB may disclose your Personal Data in the good
+                        faith belief that such action is necessary to:
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                         <li>To comply with a legal obligation</li>
@@ -470,9 +468,9 @@ export default function PrivacyPage() {
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
                     If you are a resident of the European Economic Area (EEA),
-                    you have certain data protection rights. DX Labs AB aims
-                    to take reasonable steps to allow you to correct, amend,
-                    delete or limit the use of your Personal Data.
+                    you have certain data protection rights. DX Labs AB aims to
+                    take reasonable steps to allow you to correct, amend, delete
+                    or limit the use of your Personal Data.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     If you wish to be informed about what Personal Data we hold
@@ -517,8 +515,8 @@ export default function PrivacyPage() {
                     <li>
                       <strong>The right to withdraw consent.</strong> You also
                       have the right to withdraw your consent at any time where
-                      DX Labs AB relied on your consent to process your
-                      personal information.
+                      DX Labs AB relied on your consent to process your personal
+                      information.
                     </li>
                   </ul>
                   <p className="text-muted-foreground leading-relaxed mt-2">

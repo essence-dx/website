@@ -88,27 +88,19 @@ const sections = [
   },
   {
     title: "DX Flow",
-    links: [
-      { title: "Workflow Automation", href: "/docs/dx-flow" },
-    ],
+    links: [{ title: "Workflow Automation", href: "/docs/dx-flow" }],
   },
   {
     title: "DX Forge",
-    links: [
-      { title: "Version Control", href: "/docs/dx-forge" },
-    ],
+    links: [{ title: "Version Control", href: "/docs/dx-forge" }],
   },
   {
     title: "DX Style",
-    links: [
-      { title: "CSS Engine", href: "/docs/dx-style" },
-    ],
+    links: [{ title: "CSS Engine", href: "/docs/dx-style" }],
   },
   {
     title: "DX Media",
-    links: [
-      { title: "Asset Engine", href: "/docs/dx-media" },
-    ],
+    links: [{ title: "Asset Engine", href: "/docs/dx-media" }],
   },
   {
     title: "DX Tools",
@@ -124,15 +116,11 @@ const sections = [
   },
   {
     title: "Providers",
-    links: [
-      { title: "AI Provider Catalog", href: "/docs/providers" },
-    ],
+    links: [{ title: "AI Provider Catalog", href: "/docs/providers" }],
   },
   {
     title: "Extensions",
-    links: [
-      { title: "Host Adapters", href: "/docs/extensions" },
-    ],
+    links: [{ title: "Host Adapters", href: "/docs/extensions" }],
   },
   {
     title: "Build & Runtime",

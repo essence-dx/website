@@ -172,7 +172,7 @@ export function Testimonials() {
               Customer Stories
             </h1>
             <p className="font-sans text-base text-muted-foreground leading-normal mb-8">
-               See how solo founders use DX to run their businesses with less
+              See how solo founders use DX to run their businesses with less
               admin.
             </p>
           </div>

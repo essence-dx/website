@@ -251,7 +251,7 @@ export const LiveWaveform = ({
         animationRef.current = 0;
       }
     };
-  }, [audioElement, fftSize, smoothingTimeConstant]);
+  }, [audioElement, fftSize, smoothingTimeConstant, onAudioContextReady]);
 
   // Animation loop
   useEffect(() => {

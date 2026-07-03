@@ -131,7 +131,7 @@ export function Header({
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const el = document.querySelector('[data-radix-scroll-area-viewport]');
+    const el = document.querySelector("[data-radix-scroll-area-viewport]");
     if (!el) return;
     const onScroll = () => setScrolled(el.scrollTop > 10);
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -181,7 +181,7 @@ export function Header({
         })),
       );
     }
-  }, [isAppsOpen]);
+  }, [isAppsOpen, allIntegrations.keys, visibleIntegrations.length]);
 
   // Randomly fade in/out individual logos
   useEffect(() => {
@@ -217,7 +217,7 @@ export function Header({
     ); // Random interval between 1.5-2.5 seconds
 
     return () => clearInterval(interval);
-  }, [isAppsOpen, visibleIntegrations.length]);
+  }, [isAppsOpen, visibleIntegrations.length, allIntegrations.map]);
 
   // Match Pre-accounting container height to features list and store height for apps dropdown
   useEffect(() => {
@@ -278,17 +278,13 @@ export function Header({
             onClick={() => setIsMenuOpen(false)}
             style={{ WebkitTapHighlightColor: "transparent" }}
             aria-label="DX - Go to homepage"
-            >
-              <div className="w-6 h-6">
-                <img
-                  src="/dx/dx-icon.svg"
-                  alt="DX"
-                  className="w-full h-full"
-                />
-              </div>
-              <span className="font-sans text-base xl:hidden text-foreground">
-                dx
-              </span>
+          >
+            <div className="w-6 h-6">
+              <img src="/dx/dx-icon.svg" alt="DX" className="w-full h-full" />
+            </div>
+            <span className="font-sans text-base xl:hidden text-foreground">
+              dx
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -468,7 +464,7 @@ export function Header({
                                 className="h-auto w-auto max-h-[80px] object-contain hidden dark:block"
                               />
                             </div>
-                              <div className="bg-background border-t border-border p-2.5 flex items-center justify-between gap-4">
+                            <div className="bg-background border-t border-border p-2.5 flex items-center justify-between gap-4">
                               <div className="flex-1">
                                 <span className="font-sans text-xs text-foreground block">
                                   DX Ecosystem

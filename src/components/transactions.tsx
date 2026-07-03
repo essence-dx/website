@@ -67,18 +67,16 @@ export function Transactions() {
                 Transactions
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                  <span className="text-foreground">
-                    All activity together
-                  </span>
-                </h1>
-                <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                  All operations across your DX tools, in one place.
-                </p>
-                <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                  Every build, agent run, and deployment across your DX tools is
-                  automatically collected, categorized, and kept in one place so
-                  nothing gets lost across tools.
-                </p>
+                <span className="text-foreground">All activity together</span>
+              </h1>
+              <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
+                All operations across your DX tools, in one place.
+              </p>
+              <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
+                Every build, agent run, and deployment across your DX tools is
+                automatically collected, categorized, and kept in one place so
+                nothing gets lost across tools.
+              </p>
             </div>
 
             {/* Transactions Illustration */}
@@ -110,9 +108,9 @@ export function Transactions() {
                 Transactions
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
-                  <span className="text-foreground block">
-                    All activity together
-                  </span>
+                <span className="text-foreground block">
+                  All activity together
+                </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
@@ -273,8 +271,8 @@ export function Transactions() {
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
                     Events are automatically categorized and organized in bulk,
-                    so you can review, fix, and export everything in
-                    minutes instead of one by one.
+                    so you can review, fix, and export everything in minutes
+                    instead of one by one.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">

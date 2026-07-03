@@ -63,12 +63,7 @@ export function SupportForm() {
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="w-full space-y-2">
               <label className="font-sans text-sm">Email</label>
-              <Input
-                name="email"
-                placeholder="Email"
-                type="email"
-                required
-              />
+              <Input name="email" placeholder="Email" type="email" required />
             </div>
             <div className="w-full space-y-2">
               <label className="font-sans text-sm">Full Name</label>

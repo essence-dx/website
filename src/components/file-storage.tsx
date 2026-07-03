@@ -113,7 +113,8 @@ export function FileStorage() {
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
                 Smart storage that automatically organizes and connects files to
-                builds, projects, and teams so you can always find what you need.
+                builds, projects, and teams so you can always find what you
+                need.
               </p>
             </div>
 
@@ -228,7 +229,8 @@ export function FileStorage() {
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
                     Find build artifacts, configs, logs, and documents instantly
-                    using a single search with no folders or manual organization.
+                    using a single search with no folders or manual
+                    organization.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">

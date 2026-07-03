@@ -3,12 +3,12 @@ import { ChatPlatformPage } from "@/components/chat-platform-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-    title: "DX for Slack",
+  title: "DX for Slack",
   description:
     "Manage your DX tools from Slack. Monitor builds, check agent status, and get notifications — without leaving your workspace.",
   path: "/chat/slack",
   og: {
-  title: "DX for Slack",
+    title: "DX for Slack",
     description: "Your DX tools, without leaving Slack",
   },
   keywords: [

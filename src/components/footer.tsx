@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@dx/ui/cn";
-import { Icons } from "@dx/ui/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -9,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export function Footer() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [_mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -192,8 +191,6 @@ export function Footer() {
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
 

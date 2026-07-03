@@ -2,17 +2,19 @@ import "@/styles/globals.css";
 import { cn } from "@dx/ui/cn";
 import "@dx/ui/globals.css";
 import { Provider as Analytics } from "@dx/events/client";
+import { ScrollArea } from "@dx/ui/scroll-area";
 import type { Metadata } from "next";
-import { JetBrains_Mono, Hedvig_Letters_Serif } from "next/font/google";
+import { Geist, Hedvig_Letters_Serif, JetBrains_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { ReactElement } from "react";
+import { AutoTheme } from "@/components/auto-theme";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { SunsetBanner } from "@/components/sunset-banner";
-import { ScrollArea } from "@dx/ui/scroll-area";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AutoTheme } from "@/components/auto-theme";
 import { baseUrl } from "./sitemap";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600", "700"],
@@ -116,7 +118,11 @@ const jsonLd = {
 
 export default function Layout({ children }: { children: ReactElement }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("font-sans", geist.variable)}
+    >
       <head>
         <link rel="icon" type="image/svg+xml" href="/dx/dx-icon.svg" />
         <link rel="alternate icon" href="/dx/favicon.svg" />
@@ -146,9 +152,7 @@ export default function Layout({ children }: { children: ReactElement }) {
             <ScrollArea className="h-dvh">
               <AutoTheme />
               <SunsetBanner />
-              <main className="container mx-auto px-4 pt-16">
-                {children}
-              </main>
+              <main className="container mx-auto px-4 pt-16">{children}</main>
               <Footer />
             </ScrollArea>
             <Analytics />

@@ -53,7 +53,7 @@ function ScrambledText() {
       const charIndex = (i * 7 + charTick * 11 + charSeeds[i]) % chars.length;
       return chars[charIndex];
     });
-  }, [tick, charCount, charSeeds, chars]);
+  }, [tick, charCount, charSeeds]);
 
   return (
     <div className="mb-8 relative">
@@ -455,8 +455,8 @@ export function SDKs() {
                   TypeScript SDK
                 </h3>
                 <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-                   A fully typed SDK for interacting with DX's APIs, designed
-                  for modern web and backend applications.
+                  A fully typed SDK for interacting with DX's APIs, designed for
+                  modern web and backend applications.
                 </p>
               </div>
 
@@ -485,7 +485,7 @@ export function SDKs() {
                       Example:
                     </p>
                     <CodeBlock
-                       code={`import { DX } from "@dx/sdk";
+                      code={`import { DX } from "@dx/sdk";
 
 const dx = new DX({
   security: {
@@ -527,9 +527,7 @@ run();`}
                     variant="outline"
                     className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                   >
-                    <a href="https://github.com/dx/dx-ts">
-                      See examples
-                    </a>
+                    <a href="https://github.com/dx/dx-ts">See examples</a>
                   </Button>
                 </div>
               </div>
@@ -601,18 +599,14 @@ func main() {
                     variant="outline"
                     className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                   >
-                    <a href="https://github.com/dx/dx-go">
-                      View Go docs
-                    </a>
+                    <a href="https://github.com/dx/dx-go">View Go docs</a>
                   </Button>
                   <Button
                     asChild
                     variant="outline"
                     className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                   >
-                    <a href="https://github.com/dx/dx-go">
-                      See examples
-                    </a>
+                    <a href="https://github.com/dx/dx-go">See examples</a>
                   </Button>
                 </div>
               </div>
@@ -682,18 +676,14 @@ if ($response->object !== null) {
                     variant="outline"
                     className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                   >
-                    <a href="https://github.com/dx/dx-php">
-                      View PHP docs
-                    </a>
+                    <a href="https://github.com/dx/dx-php">View PHP docs</a>
                   </Button>
                   <Button
                     asChild
                     variant="outline"
                     className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                   >
-                    <a href="https://github.com/dx/dx-php">
-                      See examples
-                    </a>
+                    <a href="https://github.com/dx/dx-php">See examples</a>
                   </Button>
                 </div>
               </div>

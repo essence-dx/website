@@ -752,7 +752,8 @@ export const themePresets: Record<string, ThemePreset> = {
         "sidebar-border": "#505050",
         "sidebar-ring": "#b71c1c",
         "font-sans": '"Oxanium", sans-serif',
-        "font-serif": 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+        "font-serif":
+          'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
         "font-mono": '"Source Code Pro", monospace',
         radius: "0px",
         "shadow-color": "hsl(0 0% 0%)",
@@ -798,7 +799,8 @@ export const themePresets: Record<string, ThemePreset> = {
         "sidebar-border": "#4a4a4a",
         "sidebar-ring": "#e53935",
         "font-sans": '"Oxanium", sans-serif',
-        "font-serif": 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+        "font-serif":
+          'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
         "font-mono": '"Source Code Pro", monospace',
         radius: "0px",
         "shadow-color": "hsl(0 0% 0%)",
@@ -1798,7 +1800,8 @@ export const themePresets: Record<string, ThemePreset> = {
         "sidebar-border": "#dfdfdf",
         "sidebar-ring": "#72e3ad",
         "font-sans": "Outfit, sans-serif",
-        "font-serif": 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+        "font-serif":
+          'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
         "font-mono": "monospace",
         radius: "0.5rem",
         "shadow-color": "#000000",

@@ -186,8 +186,7 @@ const SCENARIOS: Scenario[] = [
             Name: <span className="text-foreground">Build Monitor</span>
           </div>
           <div>
-            Schedule:{" "}
-            <span className="text-foreground">After every push</span>
+            Schedule: <span className="text-foreground">After every push</span>
           </div>
           <div>
             What it does:{" "}
@@ -324,7 +323,7 @@ function Terminal() {
 
   useEffect(() => {
     resetAnimation();
-  }, [activeTab, resetAnimation]);
+  }, [resetAnimation]);
 
   const handleTabClick = (idx: number) => {
     setActiveTab(idx);
@@ -411,7 +410,7 @@ function Terminal() {
         behavior: "smooth",
       });
     }, 30);
-  }, [phase, typed1, typed2, frame]);
+  }, []);
 
   const cursor = (
     <span
@@ -727,9 +726,9 @@ export function Computer() {
               Autonomous agents for your toolchain.
             </h1>
             <p className="text-base leading-normal mt-4 md:mt-8 text-muted-foreground">
-              DX Computer puts your development workflow on autopilot. Agents that run
-              on your schedule, learn over time, and take care of the work you
-              keep putting off.
+              DX Computer puts your development workflow on autopilot. Agents
+              that run on your schedule, learn over time, and take care of the
+              work you keep putting off.
             </p>
           </div>
 
@@ -742,7 +741,7 @@ export function Computer() {
               asChild
               className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
             >
-            <Link href="https://dx.tips/app">Get started</Link>
+              <Link href="https://dx.tips/app">Get started</Link>
             </Button>
             <Button
               asChild
@@ -925,7 +924,7 @@ export function Computer() {
             asChild
             className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
           >
-                <Link href="https://dx.tips/app">Get started</Link>
+            <Link href="https://dx.tips/app">Get started</Link>
           </Button>
         </div>
 
@@ -976,15 +975,15 @@ export function Computer() {
               Get started
             </h2>
             <p className="font-sans text-base mb-6 max-w-lg mx-auto text-muted-foreground">
-              DX Computer puts your development workflow on autopilot. Describe what you
-              need and it takes care of the rest.
+              DX Computer puts your development workflow on autopilot. Describe
+              what you need and it takes care of the rest.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 asChild
                 className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
               >
-              <Link href="https://dx.tips/app">Get started</Link>
+                <Link href="https://dx.tips/app">Get started</Link>
               </Button>
               <Button
                 asChild

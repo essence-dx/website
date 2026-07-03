@@ -279,8 +279,8 @@ export function MCPClaude() {
                         2
                       </span>
                       <span className="font-sans text-sm text-muted-foreground pt-0.5">
-                        When prompted, sign in to DX in your browser and
-                        select a team
+                        When prompted, sign in to DX in your browser and select
+                        a team
                       </span>
                     </li>
                     <li className="flex items-start gap-3">

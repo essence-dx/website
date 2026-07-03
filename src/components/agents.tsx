@@ -109,9 +109,7 @@ function CopyInstall() {
           "repeating-linear-gradient(-60deg, hsla(var(--border), 0.4), hsla(var(--border), 0.4) 1px, transparent 1px, transparent 6px)",
       }}
     >
-      <span className="text-foreground truncate">
-        $ npx dx-cli@latest
-      </span>
+      <span className="text-foreground truncate">$ npx dx-cli@latest</span>
 
       <div className="flex items-center space-x-2 ml-auto">
         {copied ? (
@@ -367,7 +365,7 @@ function Terminal({ pixelFontClass }: { pixelFontClass?: string }) {
 
   useEffect(() => {
     resetAnimation();
-  }, [activeTab, resetAnimation]);
+  }, [resetAnimation]);
 
   const handleTabClick = (idx: number) => {
     setActiveTab(idx);
@@ -454,7 +452,7 @@ function Terminal({ pixelFontClass }: { pixelFontClass?: string }) {
         behavior: "smooth",
       });
     }, 30);
-  }, [phase, typed1, typed2, frame]);
+  }, []);
 
   const cursor = (
     <span
@@ -724,9 +722,8 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
               Let agents run your toolchain.
             </h1>
             <p className="text-[hsl(225,60%,75%)] text-base leading-normal mt-4 md:mt-8">
-              One CLI. 80+ tools. Your agent can manage code, builds,
-              deploys, media, search, and more. Anything you do in DX,
-              it can do too.
+              One CLI. 80+ tools. Your agent can manage code, builds, deploys,
+              media, search, and more. Anything you do in DX, it can do too.
             </p>
           </div>
 
@@ -739,7 +736,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
               asChild
               className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,50%,92%)]"
             >
-                <Link href="https://dx.tips/app">Start automating</Link>
+              <Link href="https://dx.tips/app">Start automating</Link>
             </Button>
             <Button
               asChild
@@ -808,7 +805,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
 
         <SectionDivider />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-4">
           <div className="border border-border p-1 -mt-[1px] -ml-[1px]">
             <div className="p-4 space-y-4">
               <h2 className="text-sm">CLI</h2>
@@ -907,7 +904,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
                 asChild
                 className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,50%,92%)]"
               >
-              <Link href="https://dx.tips/app">Start automating</Link>
+                <Link href="https://dx.tips/app">Start automating</Link>
               </Button>
               <Button
                 asChild

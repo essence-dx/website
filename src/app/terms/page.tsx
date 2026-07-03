@@ -67,8 +67,8 @@ export default function TermsPage() {
                     payment method.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    If automatic billing fails, DX Labs AB will issue an
-                    invoice and require manual payment within a stated deadline.
+                    If automatic billing fails, DX Labs AB will issue an invoice
+                    and require manual payment within a stated deadline.
                   </p>
                 </section>
 
@@ -124,8 +124,8 @@ export default function TermsPage() {
                     </li>
                   </ul>
                   <p className="text-muted-foreground leading-relaxed">
-                    DX Labs AB does not verify the accuracy or suitability
-                    of any financial or tax-related Content shared through the
+                    DX Labs AB does not verify the accuracy or suitability of
+                    any financial or tax-related Content shared through the
                     Service. Use of such Content is at your own risk.
                   </p>
                 </section>
@@ -160,10 +160,10 @@ export default function TermsPage() {
                     6. Financial and Tax Disclaimer
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    DX Labs AB is not a financial advisor, accountant, or
-                    tax consultant. All content and functionality within the
-                    Service are provided for general informational purposes only
-                    and do not constitute financial, legal, or tax advice.
+                    DX Labs AB is not a financial advisor, accountant, or tax
+                    consultant. All content and functionality within the Service
+                    are provided for general informational purposes only and do
+                    not constitute financial, legal, or tax advice.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     You are solely responsible for complying with all applicable
@@ -202,8 +202,8 @@ export default function TermsPage() {
                       jurisdiction;
                     </li>
                     <li>
-                      DX Labs AB is not responsible for payment disputes,
-                      failed payments, chargebacks, or customer disagreements;
+                      DX Labs AB is not responsible for payment disputes, failed
+                      payments, chargebacks, or customer disagreements;
                     </li>
                     <li>
                       Use of third-party payment providers is subject to their
@@ -234,16 +234,16 @@ export default function TermsPage() {
                       without verification or warranty;
                     </li>
                     <li>
-                      DX Labs AB cannot guarantee the completeness,
-                      accuracy, timeliness, or reliability of such data;
+                      DX Labs AB cannot guarantee the completeness, accuracy,
+                      timeliness, or reliability of such data;
                     </li>
                     <li>
                       You are solely responsible for verifying all information
                       before using it for decisions or reporting;
                     </li>
                     <li>
-                      DX Labs AB shall not be liable for any loss, damage,
-                      or liability arising from the use of such data, including
+                      DX Labs AB shall not be liable for any loss, damage, or
+                      liability arising from the use of such data, including
                       errors, omissions, delays, misinterpretations, or
                       disruptions;
                     </li>
@@ -267,9 +267,9 @@ export default function TermsPage() {
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                     <li>
-                      DX Labs AB acts solely as a technical facilitator of
-                      data transfer and does not control, verify, or validate
-                      how third-party accounting systems process, interpret, or
+                      DX Labs AB acts solely as a technical facilitator of data
+                      transfer and does not control, verify, or validate how
+                      third-party accounting systems process, interpret, or
                       apply exported data;
                     </li>
                     <li>
@@ -340,8 +340,8 @@ export default function TermsPage() {
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     We assume no responsibility for third-party content, privacy
-                    policies, or practices. You agree that DX Labs AB shall
-                    not be liable for any loss or damage caused by use of such
+                    policies, or practices. You agree that DX Labs AB shall not
+                    be liable for any loss or damage caused by use of such
                     content or services.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">

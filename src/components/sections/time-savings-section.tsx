@@ -64,8 +64,7 @@ export function TimeSavingsSection() {
                     1–2 hours per week
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Creating builds, checking deploys, and answering
-                    questions.
+                    Creating builds, checking deploys, and answering questions.
                   </p>
                 </div>
               </div>
@@ -104,8 +103,7 @@ export function TimeSavingsSection() {
                     1–2 hours per week
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Creating builds, checking deploys, and answering
-                    questions.
+                    Creating builds, checking deploys, and answering questions.
                   </p>
                 </div>
               </div>

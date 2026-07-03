@@ -30,15 +30,15 @@ export default function StoryPage() {
                   The problem
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-Building software used to require assembling a complex stack of
-disconnected tools. Today, a unified ecosystem changes that.
+                  Building software used to require assembling a complex stack
+                  of disconnected tools. Today, a unified ecosystem changes
+                  that.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Modern development involves code editors, build systems,
-                  web frameworks, AI agents, media pipelines, search engines,
-                  and CLI tools. Most of these are built by different teams,
-                  with different conventions, and rarely work together
-                  seamlessly.
+                  Modern development involves code editors, build systems, web
+                  frameworks, AI agents, media pipelines, search engines, and
+                  CLI tools. Most of these are built by different teams, with
+                  different conventions, and rarely work together seamlessly.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   The result is context switching, configuration overhead, and
@@ -48,9 +48,8 @@ disconnected tools. Today, a unified ecosystem changes that.
                   interfaces, each with its own way of doing things.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  That overhead adds up quickly. You are not lacking tools.
-                  You are lacking an ecosystem that keeps everything
-                  connected.
+                  That overhead adds up quickly. You are not lacking tools. You
+                  are lacking an ecosystem that keeps everything connected.
                 </p>
               </section>
 
@@ -70,11 +69,12 @@ disconnected tools. Today, a unified ecosystem changes that.
                   having to hold it together.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  DX keeps the moving parts of your development process connected
-                  as things change, without you constantly switching contexts or
-                  digging through config files. Code, builds, agents, web
-                  frameworks, media, and CLI tools should not live in silos.
-                  They should reinforce each other and work together seamlessly.
+                  DX keeps the moving parts of your development process
+                  connected as things change, without you constantly switching
+                  contexts or digging through config files. Code, builds,
+                  agents, web frameworks, media, and CLI tools should not live
+                  in silos. They should reinforce each other and work together
+                  seamlessly.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Instead of pulling information out of separate tools, DX
@@ -102,19 +102,19 @@ disconnected tools. Today, a unified ecosystem changes that.
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   DX is built for developers and teams who want a cohesive
-                  toolchain without the complexity of stitching together
-                  dozens of unrelated tools.
+                  toolchain without the complexity of stitching together dozens
+                  of unrelated tools.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   We focus on reducing configuration overhead, keeping tools
-                  consistent and reliable, surfacing the right functionality
-                  at the right time, and making it easy to understand how
+                  consistent and reliable, surfacing the right functionality at
+                  the right time, and making it easy to understand how
                   everything fits together. Most importantly, we build tools
                   that work quietly in the background.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our goal is simple. When you are building software, you
-                  should not have to spend your time managing your toolchain.
+                  Our goal is simple. When you are building software, you should
+                  not have to spend your time managing your toolchain.
                 </p>
                 <p className="text-muted-foreground leading-relaxed font-medium">
                   Your tools should stay organized and work together as you

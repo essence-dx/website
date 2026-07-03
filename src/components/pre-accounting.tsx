@@ -389,8 +389,8 @@ export function PreAccounting() {
               Production-ready, without the back and forth
             </h2>
             <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-              DX prepares clean, validated builds so deploying or syncing
-              to your production environment takes minutes, not days.
+              DX prepares clean, validated builds so deploying or syncing to
+              your production environment takes minutes, not days.
             </p>
           </div>
 

@@ -376,8 +376,7 @@ export const competitors: Competitor[] = [
       },
       {
         title: "Set up your invoice template",
-        description:
-          "Customize your invoice design and payment terms in DX.",
+        description: "Customize your invoice design and payment terms in DX.",
       },
     ],
     faq: [
@@ -644,8 +643,7 @@ export const competitors: Competitor[] = [
       },
       {
         title: "Enjoy premium features",
-        description:
-          "Access DX CLI, AI insights, and global bank support.",
+        description: "Access DX CLI, AI insights, and global bank support.",
       },
     ],
     faq: [
