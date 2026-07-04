@@ -55,30 +55,30 @@ const rows: ComparisonRow[] = [
 
 export default function CompetitorComparison() {
   return (
-    <div className="min-h-screen bg-white p-8 md:p-16 font-sans">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-12">Compare</h1>
+    <div className="w-full py-16 md:py-24 bg-background font-sans">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <h2 className="font-serif text-3xl sm:text-4xl text-foreground mb-12 text-center lg:text-left">Compare</h2>
 
-        <div className="w-full relative">
+        <div className="w-full relative max-w-5xl mx-auto lg:mx-0">
           {/* Header Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 mb-2">
-            <div className="flex items-center px-6 py-4 text-gray-700 font-medium">
+            <div className="flex items-center px-6 py-4 text-muted-foreground font-medium">
               Feature
             </div>
             
             {/* Perplexity Header */}
-            <div className="bg-[#e8fbf0] rounded-t-lg flex items-center px-6 py-4 border-b border-green-100/50">
+            <div className="bg-green-500/10 dark:bg-green-500/20 rounded-t-lg flex items-center px-6 py-4 border-b border-green-500/20">
               <div className="flex items-center gap-2">
-                <Asterisk className="w-6 h-6 text-black" strokeWidth={1.5} />
-                <span className="text-xl font-medium tracking-tight text-black">perplexity</span>
+                <Asterisk className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                <span className="text-xl font-medium tracking-tight text-foreground">perplexity</span>
               </div>
             </div>
 
             {/* Descript Header */}
-            <div className="bg-[#fceeed] rounded-t-lg flex items-center px-6 py-4 border-b border-red-100/50">
+            <div className="bg-red-500/10 dark:bg-red-500/20 rounded-t-lg flex items-center px-6 py-4 border-b border-red-500/20">
               <div className="flex items-center gap-2">
-                <Server className="w-6 h-6 text-black" strokeWidth={1.5} />
-                <span className="text-xl font-bold tracking-tight text-black">descript</span>
+                <Server className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                <span className="text-xl font-bold tracking-tight text-foreground">descript</span>
               </div>
             </div>
           </div>
@@ -91,12 +91,12 @@ export default function CompetitorComparison() {
               return (
                 <div key={row.id} className="grid grid-cols-1 md:grid-cols-3">
                   {/* Feature Name Column */}
-                  <div className="px-6 py-5 border-b border-gray-100 flex items-center text-gray-900 font-medium bg-white">
+                  <div className="px-6 py-5 border-b border-border flex items-center text-foreground font-medium bg-background">
                     {row.feature}
                   </div>
 
                   {/* Perplexity Column */}
-                  <div className={`px-6 py-5 bg-[#eafaf1] flex items-center gap-2 text-gray-900 ${!isLast ? 'border-b border-[#daf5e4]' : 'rounded-b-lg'}`}>
+                  <div className={`px-6 py-5 bg-green-500/5 dark:bg-green-500/10 flex items-center gap-2 text-foreground ${!isLast ? 'border-b border-green-500/10' : 'rounded-b-lg'}`}>
                     {row.perplexity.isPositive && (
                       <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" strokeWidth={2} />
                     )}
@@ -104,7 +104,7 @@ export default function CompetitorComparison() {
                   </div>
 
                   {/* Descript Column */}
-                  <div className={`px-6 py-5 bg-[#fdf0ef] flex items-center gap-2 text-gray-900 ${!isLast ? 'border-b border-[#fbe1df]' : 'rounded-b-lg'}`}>
+                  <div className={`px-6 py-5 bg-red-500/5 dark:bg-red-500/10 flex items-center gap-2 text-foreground ${!isLast ? 'border-b border-red-500/10' : 'rounded-b-lg'}`}>
                     {row.descript.isNegative && (
                       <XCircle className="w-5 h-5 text-red-500 shrink-0" strokeWidth={2} />
                     )}
