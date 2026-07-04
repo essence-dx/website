@@ -177,7 +177,8 @@ export function AutoTheme() {
   const idxRef = useRef(0);
 
   useEffect(() => {
-    queueRef.current = shuffle(Object.keys(themePresets));
+    const keys = Object.keys(themePresets).filter(k => k !== "midday");
+    queueRef.current = ["midday", ...shuffle(keys)];
     idxRef.current = 0;
 
     const apply = () => {
@@ -202,8 +203,21 @@ export function AutoTheme() {
     };
 
     apply();
-    const interval = setInterval(apply, 1000);
-    return () => clearInterval(interval);
+
+    let isBottom = false;
+    const onScroll = () => {
+      // Check if user has scrolled to the bottom of the page (within 10px)
+      const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 10;
+      if (bottom && !isBottom) {
+        isBottom = true;
+        apply();
+      } else if (!bottom) {
+        isBottom = false;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return null;

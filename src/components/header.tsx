@@ -265,10 +265,7 @@ export function Header({
           className={cn(
             "relative py-3 xl:py-4 px-4 sm:px-4 md:px-4 lg:px-4 xl:px-6 2xl:px-8 flex items-center justify-between xl:gap-6",
             (isMenuOpen || scrolled) && "border-b border-border",
-            !transparent && "backdrop-blur-md bg-background-semi-transparent",
-            !transparent &&
-              (isFeaturesOpen || isAppsOpen || scrolled) &&
-              "xl:bg-background",
+            "backdrop-blur-md bg-background-semi-transparent"
           )}
         >
           {/* Logo and Brand */}

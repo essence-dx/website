@@ -124,7 +124,7 @@ const videos = [
 ];
 
 export function StartPage() {
-  const { worldWidth, worldHeight, ...heatmapDefaults } = heatmapPresets[0].params;
+  const { worldWidth, worldHeight, ...heatmapDefaults } = heatmapPresets[0]!.params;
   const [activeFeature, setActiveFeature] = useState(0);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPosterLoaded, setIsPosterLoaded] = useState(false);
