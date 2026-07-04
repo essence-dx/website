@@ -47,6 +47,10 @@ const IntegrationsSection = dynamic(() =>
   import("./sections/integrations-section").then((m) => m.IntegrationsSection),
 );
 
+const CompetitorComparison = dynamic(() =>
+  import("./competitor_comparison").then((m) => m.default),
+);
+
 // Static features data - moved outside component to avoid recreation on each render
 const features = [
   {
@@ -925,6 +929,14 @@ export function StartPage() {
 
       {/* Testimonials Section */}
       <TestimonialsSection />
+
+      {/* Divider */}
+      <div className="max-w-[1400px] mx-auto">
+        <div className="h-px w-full border-t border-border" />
+      </div>
+
+      {/* Competitor Comparison Section */}
+      <CompetitorComparison />
 
       {/* Divider */}
       <div className="max-w-[1400px] mx-auto">
