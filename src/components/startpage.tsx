@@ -7,7 +7,7 @@ import { Icons } from "@dx/ui/icons";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Heatmap, heatmapPresets } from '@paper-design/shaders-react';
+import { Heatmap, heatmapPresets, LiquidMetal } from '@paper-design/shaders-react';
 
 // Dynamic imports for animations (5,500+ lines - loaded after hero)
 const InboxMatchAnimation = dynamic(() =>
@@ -258,13 +258,30 @@ export function StartPage() {
       {/* Hero Section */}
       <div className="bg-background relative min-h-screen overflow-visible lg:overflow-hidden">
         {/* Heatmap Section - 100vh static block */}
-        {/* <div className="w-full min-h-screen flex items-center justify-center overflow-hidden">
-          <div className="relative w-full h-[800px] sm:h-[900px] lg:h-[1000px] overflow-visible">
-            <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.5} colors={heatmapDefaults.colors} image="/images/logos/diamond.svg" suspendWhenProcessingImage={false} />
-          </div>
-        </div> */}
           <div className="relative w-full h-[510px] overflow-visible">
-            <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.8} colors={heatmapDefaults.colors} image="/logo.svg" suspendWhenProcessingImage={false} />
+            <div className="hidden dark:block w-full h-full">
+              <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.8} colors={heatmapDefaults.colors} image="/light.svg" suspendWhenProcessingImage={false} />
+            </div>
+            <div className="block dark:hidden w-full h-full">
+              <LiquidMetal
+                className="w-full h-full"
+                image="/dark.svg"
+                colorBack="#ffffff"
+                colorTint="#ffffff"
+                shape={undefined}
+                repetition={2}
+                softness={0.1}
+                shiftRed={0.3}
+                shiftBlue={0.3}
+                distortion={0.07}
+                contour={0.4}
+                angle={70}
+                speed={1}
+                scale={0.8}
+                fit="contain"
+                suspendWhenProcessingImage={false}
+              />
+            </div>
           </div>
         <div className="flex flex-col min-h-screen relative overflow-hidden">
           {/* Header content - centered on mobile, side-by-side on desktop */}
