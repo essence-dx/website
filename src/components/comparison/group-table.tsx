@@ -34,6 +34,13 @@ const badgeStyles = [
   "bg-card/80 text-primary",
 ];
 
+function rainbowGradient(index: number): string {
+  const hues = [0, 30, 60, 120, 180, 210, 240, 270, 300, 330, 360];
+  const h1 = hues[index % hues.length];
+  const h2 = hues[(index + 3) % hues.length];
+  return `linear-gradient(90deg, hsl(${h1}, 70%, 55%), hsl(${h2}, 70%, 55%))`;
+}
+
 export function GroupTable({ group, variant }: Props) {
   const wins = group.items.filter((r) => r.dxWins).length;
   const total = group.items.length;
@@ -83,7 +90,10 @@ export function GroupTable({ group, variant }: Props) {
                   {row.area}
                 </td>
                 <td className="py-3 px-4">
-                  <code className="font-mono text-sm text-foreground bg-muted/40 px-1.5 py-0.5 rounded text-[13px]">
+                  <code
+                    className="font-mono text-sm bg-clip-text text-transparent px-1.5 py-0.5 rounded text-[13px] font-semibold"
+                    style={{ background: rainbowGradient(variant + i), WebkitBackgroundClip: "text" }}
+                  >
                     {row.dx}
                   </code>
                 </td>
