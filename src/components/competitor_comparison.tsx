@@ -1,10 +1,5 @@
-import React, { useState } from 'react';
-import { CheckCircle2, ArrowUpDown, ChevronUp } from 'lucide-react';
-
-interface Competitor {
-  name: string;
-  logo: string;
-}
+import { useState } from 'react';
+import { ArrowUpDown, ChevronUp } from 'lucide-react';
 
 interface CategoryRow {
   area: string;
@@ -18,14 +13,6 @@ interface CategorySection {
   icon: string;
   rows: CategoryRow[];
 }
-
-const top5: Competitor[] = [
-  { name: 'Competitor 1', logo: '' },
-  { name: 'Competitor 2', logo: '' },
-  { name: 'Competitor 3', logo: '' },
-  { name: 'Competitor 4', logo: '' },
-  { name: 'Competitor 5', logo: '' },
-];
 
 const categories: CategorySection[] = [
   {
@@ -107,7 +94,7 @@ const categories: CategorySection[] = [
       { area: 'Icon search', dx: 'dx icon search', competitors: ['Iconify search', 'Lucide search', 'Material Icons search', 'Phosphor search', 'Heroicons search'] },
       { area: 'Icon export', dx: 'dx icon export', competitors: ['Iconify API export', 'SVGR', 'svgo', 'npm icon packages', 'unplugin-icons'] },
       { area: 'Custom packs', dx: 'dx icon build-index', competitors: ['Iconify collections', 'simple-icons', 'svgl', 'icomoon', 'fontello'] },
-      { area: 'Packs available', dx: '219 packs', competitors: 'Iconify (200k+)', 'Lucide (~1500)', 'Material (10k+)', 'Phosphor (~1000)', 'Heroicons (~500)'] },
+      { area: 'Packs available', dx: '219 packs', competitors: ['Iconify (200k+)', 'Lucide (~1500)', 'Material (10k+)', 'Phosphor (~1000)', 'Heroicons (~500)'] },
   },
   {
     id: 'pkg-add',
@@ -157,7 +144,7 @@ const categories: CategorySection[] = [
       { area: 'Serverless deploy', dx: 'dx deploy', competitors: ['Vercel', 'Netlify', 'AWS Amplify', 'Cloudflare Pages', 'Railway'] },
       { area: 'Container deploy', dx: 'dx deploy --container', competitors: ['Vercel Docker', 'AWS ECS', 'Google Cloud Run', 'Fly.io', 'Railway'] },
       { area: 'Static hosting', dx: 'dx deploy --static', competitors: ['Vercel static', 'Netlify static', 'Cloudflare Pages', 'GitHub Pages', 'Surge'] },
-      { area: 'Receipt handoff', dx: 'dx deploy --receipt', competitors: 'Vercel --confirm', 'Netlify deploy --json', 'AWS CodeDeploy', 'Octopus Deploy'] },
+      { area: 'Receipt handoff', dx: 'dx deploy --receipt', competitors: ['Vercel --confirm', 'Netlify deploy --json', 'AWS CodeDeploy', 'Octopus Deploy'] },
   },
   {
     id: 'serialization',
@@ -166,7 +153,7 @@ const categories: CategorySection[] = [
     rows: [
       { area: 'Schema validation', dx: 'dx serializer', competitors: ['Zod', 'Ajv', 'Joi', 'Valibot', 'ArkType'] },
       { area: 'Format conversion', dx: 'dx serializer --convert', competitors: ['serde (Rust)', 'pydantic (Python)', 'zod (TS)', 'class-transformer', 'marshmallow'] },
-      { area: 'Cache pipeline', dx: 'dx serializer cache', competitors: '.sr → .machine', 'protobuf', 'flatbuffers', 'capnp', 'bincode'] },
+      { area: 'Cache pipeline', dx: 'dx serializer cache', competitors: ['.sr → .machine', 'protobuf', 'flatbuffers', 'capnp', 'bincode'] },
     ],
   },
   {
@@ -360,14 +347,11 @@ function CategoryTable({ section }: { section: CategorySection }) {
                 </td>
                 <td className="py-3 px-4">
                   <div className="flex flex-wrap gap-1.5">
-                    {Array.isArray(row.competitors)
-                      ? row.competitors.map((comp, ci) => (
-                          <span key={ci} className="inline-block font-sans text-xs text-muted-foreground bg-muted/50 px-2 py-1 rounded">
-                            {comp}
-                          </span>
-                        ))
-                      : <span className="font-sans text-sm text-muted-foreground">{row.competitors}</span>
-                    }
+                    {row.competitors.map((comp, ci) => (
+                      <span key={ci} className="inline-block font-sans text-xs text-muted-foreground bg-muted/50 px-2 py-1 rounded">
+                        {comp}
+                      </span>
+                    ))}
                   </div>
                 </td>
               </tr>
