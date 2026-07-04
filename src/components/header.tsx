@@ -843,7 +843,7 @@ export function Header({
               <ThemeToggle />
 
               {/* Sign in */}
-              <div className="border-l border-border pl-4">
+              {/* <div className="border-l border-border pl-4">
                 <Link
                   href="https://github.com/essence-dx"
                   className="text-sm transition-colors text-primary hover:text-primary/80"
@@ -858,7 +858,7 @@ export function Header({
                 >
                   Sign in
                 </Link>
-              </div>
+              </div> */}
             </div>
           )}
 
@@ -1132,7 +1132,7 @@ export function Header({
               </div>
 
               {/* Sign in */}
-              <div className="border-t border-border pt-8 mt-8">
+              {/* <div className="border-t border-border pt-8 mt-8">
                 <Link
                   href="https://github.com/essence-dx"
                   onTouchEnd={(e) => {
@@ -1160,7 +1160,7 @@ export function Header({
                 >
                   Sign in
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

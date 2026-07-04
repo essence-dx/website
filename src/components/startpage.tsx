@@ -259,10 +259,8 @@ export function StartPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <div className="bg-background relative min-h-screen overflow-visible lg:overflow-hidden">
-        {/* Heatmap Section - 100vh static block */}
-          <div className="relative w-full h-[510px] overflow-visible">
+          <div className="relative w-full h-[480px] overflow-visible">
             <div className="hidden dark:block w-full h-full">
               <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.8} colors={heatmapDefaults.colors} image="/light.svg" suspendWhenProcessingImage={false} />
             </div>
@@ -287,8 +285,7 @@ export function StartPage() {
               />
             </div>
           </div>
-        <div className="flex flex-col min-h-screen relative overflow-hidden">
-          {/* Header content - centered on mobile, side-by-side on desktop */}
+        <div className="flex flex-col relative overflow-hidden">
           <div className="flex-1 lg:flex-none flex flex-col justify-center md:justify-start items-center space-y-8 lg:space-y-0 z-20 px-3 sm:px-4 lg:px-0 lg:max-w-[1400px] lg:mx-auto lg:w-full lg:mb-12 xl:mb-12 2xl:mb-12 3xl:mb-16">
             <div className="flex flex-col items-center w-full text-center space-y-6 lg:space-y-8">
               <div className="space-y-5 lg:space-y-6 max-w-4xl 3xl:max-w-5xl mx-auto px-2 lg:px-0">
@@ -332,7 +329,7 @@ export function StartPage() {
                   Development Experience · You Deserve
                 </p>
 
-                <div className="flex items-center justify-center gap-3 pt-4">
+                {/* <div className="flex items-center justify-center gap-3 pt-4">
                   <div className="flex items-center gap-2.5">
                     <a
                       href="/mcp/claude"
@@ -426,18 +423,17 @@ export function StartPage() {
                       </svg>
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
           {/* Video section */}
-          <div
+          {/* <div
             className="mt-8 mb-8 md:mt-12 lg:mt-0 lg:mb-4 3xl:mb-20 overflow-visible lg:w-full"
             ref={videoContainerRef}
           >
             <div className="relative overflow-hidden">
-              {/* Poster image with fade and blur effect */}
               <div
                 className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out z-[1] ${
                   isVideoLoaded
@@ -482,7 +478,6 @@ export function StartPage() {
                 />
               </video>
 
-              {/* Dashboard overlay - different styles for mobile vs desktop */}
               <div className="absolute inset-0 flex items-center justify-center p-0 lg:p-4 z-[2]">
                 <div className="relative lg:static scale-[0.95] md:scale-100 lg:scale-100 lg:h-full lg:flex lg:flex-col lg:items-center lg:justify-center">
                   <Image
@@ -524,7 +519,6 @@ export function StartPage() {
                 </div>
               </div>
 
-              {/* Play Button Overlay */}
               <button
                 type="button"
                 onClick={() => {
@@ -543,12 +537,11 @@ export function StartPage() {
                 </div>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
-      {/* Video Modal */}
-      {isVideoModalOpen && (
+      {/* {isVideoModalOpen && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
@@ -577,7 +570,6 @@ export function StartPage() {
               animation: "fadeIn 200ms ease-out 50ms both",
             }}
           >
-            {/* Video Player - Center */}
             <div className="relative w-full aspect-video bg-background">
               <button
                 type="button"
@@ -605,7 +597,6 @@ export function StartPage() {
               </video>
             </div>
 
-            {/* Video List - Below Video */}
             <div className="relative w-full border-t border-border bg-background overflow-hidden">
               <div
                 ref={videoTagsScrollRef}
@@ -632,10 +623,9 @@ export function StartPage() {
                             const currentScrollLeft =
                               scrollContainer.scrollLeft;
 
-                            // Check if this is the last visible tag and scroll to show next one
                             if (index < videos.length - 1) {
                               const isLastVisible =
-                                buttonRect.right >= containerRect.right - 50; // 50px threshold
+                                buttonRect.right >= containerRect.right - 50;
 
                               if (isLastVisible) {
                                 const nextTag = scrollContainer.querySelector(
@@ -644,11 +634,10 @@ export function StartPage() {
                                 if (nextTag) {
                                   const nextTagRect =
                                     nextTag.getBoundingClientRect();
-                                  // Calculate how much to scroll to show the next tag
                                   const scrollAmount =
                                     nextTagRect.right -
                                     containerRect.right +
-                                    20; // 20px padding
+                                    20;
 
                                   scrollContainer.scrollTo({
                                     left: currentScrollLeft + scrollAmount,
@@ -658,10 +647,9 @@ export function StartPage() {
                               }
                             }
 
-                            // Check if this is the first visible tag and scroll to show previous one
                             if (index > 0) {
                               const isFirstVisible =
-                                buttonRect.left <= containerRect.left + 50; // 50px threshold
+                                buttonRect.left <= containerRect.left + 50;
 
                               if (isFirstVisible) {
                                 const prevTag = scrollContainer.querySelector(
@@ -670,9 +658,8 @@ export function StartPage() {
                                 if (prevTag) {
                                   const prevTagRect =
                                     prevTag.getBoundingClientRect();
-                                  // Calculate how much to scroll to show the previous tag
                                   const scrollAmount =
-                                    containerRect.left - prevTagRect.left + 20; // 20px padding
+                                    containerRect.left - prevTagRect.left + 20;
 
                                   scrollContainer.scrollTo({
                                     left: currentScrollLeft - scrollAmount,
@@ -707,7 +694,6 @@ export function StartPage() {
                   </div>
                 </div>
               </div>
-              {/* Gradient fade-out on the right */}
               <div
                 className="absolute top-0 right-0 bottom-0 w-24 pointer-events-none z-10"
                 style={{
@@ -719,11 +705,8 @@ export function StartPage() {
           </div>
         </div>
       )}
-
-      {/* Features 2-Column Layout Section */}
       <section className="bg-background pt-12 sm:pt-2 lg:pt-6 xl:pt-8 2xl:pt-12 3xl:pt-32 pb-20 lg:pb-24">
         <div className="max-w-[1400px] mx-auto">
-          {/* Mobile: Stacked features */}
           <div className="grid grid-cols-1 gap-12 sm:gap-16 lg:hidden">
             <div className="hidden lg:block text-center mb-2">
               <h2 className="font-serif text-2xl sm:text-2xl text-foreground">
@@ -769,10 +752,8 @@ export function StartPage() {
             ))}
           </div>
 
-          {/* Desktop: Two-column interactive list + canvas */}
           <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 lg:h-[740px]">
             <div className="flex gap-6">
-              {/* Timeline */}
               <div className="flex flex-col justify-center items-center flex-shrink-0 relative">
                 <div className="flex flex-col justify-center space-y-5 lg:space-y-6 mt-2 lg:mt-3">
                   <div
@@ -814,7 +795,6 @@ export function StartPage() {
                 </div>
               </div>
 
-              {/* Text Content */}
               <div className="flex flex-col justify-center space-y-5 lg:space-y-6 flex-1">
                 <div
                   className="flex items-center mb-4 lg:mb-6"
@@ -896,55 +876,43 @@ export function StartPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Divider */}
-      <div className="max-w-[1400px] mx-auto">
+      {/* <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Features Overview Section */}
       <FeaturesGridSection />
 
-      {/* Divider */}
       <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Time Savings Bento Grid Section */}
       <TimeSavingsSection />
 
-      {/* Divider */}
       <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Pre-accounting Features Section */}
       <PreAccountingSection />
 
-      {/* Divider */}
       <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* Divider */}
       <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
-      </div>
+      </div> */}
 
-      {/* Competitor Comparison Section */}
       <CompetitorComparison />
 
-      {/* Divider */}
-      <div className="max-w-[1400px] mx-auto">
+      {/* <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Integrations Section */}
-      <IntegrationsSection />
+      <IntegrationsSection /> */}
     </div>
   );
 }
