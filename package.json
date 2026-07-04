@@ -23,7 +23,7 @@
     "@hookform/resolvers": "^5.4.0",
     "@openpanel/nextjs": "^1.5.1",
     "@openstatus/react": "^0.0.3",
-    "@paper-design/shaders-react": "^0.0.77",
+    "@paper-design/shaders-react": "workspace:*",
     "@shadcn/react": "^0.2.0",
     "@team-plain/typescript-sdk": "^5.12.1",
     "@upstash/ratelimit": "^2.0.8",
