@@ -13,6 +13,7 @@ import { HeaderIntegrationsPreview } from "./header-integrations-preview";
 import type { Testimonial } from "./sections/testimonials-section";
 import { defaultTestimonials } from "./sections/testimonials-section";
 import { ThemeToggle } from "./theme-toggle";
+import { ChevronUp } from "lucide-react";
 
 // All testimonials for header rotation (includes default + new ones)
 const headerTestimonials: Testimonial[] = [
@@ -312,8 +313,8 @@ export function Header({
                   className="text-sm transition-colors text-muted-foreground hover:text-foreground px-3 py-2 flex items-center gap-1"
                 >
                   Features
-                  <Icons.ArrowDropDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isFeaturesOpen ? "rotate-180" : ""}`}
+                  <ChevronUp
+                    className={`w-3 h-3 transition-transform duration-200 ${isFeaturesOpen ? "rotate-180" : ""}`}
                   />
                 </button>
                 {/* Invisible bridge to dropdown */}
@@ -605,8 +606,8 @@ export function Header({
                   className="text-sm transition-colors text-muted-foreground hover:text-foreground px-3 py-2 flex items-center gap-1"
                 >
                   Resources
-                  <Icons.ArrowDropDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isAppsOpen ? "rotate-180" : ""}`}
+                  <ChevronUp
+                    className={`w-3 h-3 transition-transform duration-200 ${isAppsOpen ? "rotate-180" : ""}`}
                   />
                 </button>
                 {/* Invisible bridge to dropdown */}
