@@ -80,12 +80,12 @@ export function GroupTable({ group, variant }: Props) {
             {group.items.map((row, ri) => (
               <tr
                 key={ri}
-                className="transition-colors hover:bg-accent/30"
+                className="transition-colors hover:bg-primary-foreground/20 border-b last:border-0"
               >
-                <td className="font-sans text-sm text-foreground py-3 px-6 font-medium whitespace-nowrap border-b border-border/50 last:border-b-0">
+                <td className="font-sans text-sm text-foreground py-3 px-6 font-medium whitespace-nowrap">
                   {row.area}
                 </td>
-                <td className="py-3 px-4 border-b border-border/50 last:border-b-0">
+                <td className="py-3 px-4">
                   <code className="rainbow-dx font-mono text-sm text-transparent px-1.5 py-0.5 rounded text-[13px] font-semibold whitespace-nowrap">
                     {row.dx}
                   </code>
@@ -94,9 +94,9 @@ export function GroupTable({ group, variant }: Props) {
                   const comp = row.competitors[ci];
                   const logo = comp ? getLogoFile(comp.name) : undefined;
                   return (
-                    <td key={ci} className="py-3 px-3 border-b border-border/50 last:border-b-0">
+                    <td key={ci} className="py-3 px-3">
                       {comp && (
-                        <span className="inline-flex items-center gap-1.5 font-sans text-[12px] text-muted-foreground bg-muted/40 px-2 py-1 rounded-md border border-border/30 whitespace-nowrap">
+                        <span className="hover:bg-primary-foreground/60 inline-flex items-center gap-1.5 font-sans text-[12px] text-muted-foreground bg-muted/40 px-2 py-1 rounded-md border whitespace-nowrap">
                           {logo && (
                             <img
                               src={`/svgl/svgl_${logo}.svg`}
@@ -105,9 +105,8 @@ export function GroupTable({ group, variant }: Props) {
                             />
                           )}
                           <span
-                            className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${
-                              comp.dxWins ? "bg-primary" : "bg-muted-foreground"
-                            }`}
+                            className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${comp.dxWins ? "bg-primary" : "bg-muted-foreground"
+                              }`}
                           />
                           <span>{comp.name}</span>
                         </span>
