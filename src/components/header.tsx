@@ -99,6 +99,7 @@ const APP_ROUTES = [
   "/agents",
   "/computer",
   "/mcp",
+  "/tools",
 ];
 
 export function Header({
@@ -344,24 +345,24 @@ export function Header({
                             <div>
                               {[
                                 {
-                                  href: "/code",
+                                  href: "/tools",
+                                  title: "All Tools",
+                                  desc: "Complete DX ecosystem",
+                                },
+                                {
+                                  href: "/tools/code",
                                   title: "Code",
                                   desc: "High-performance editor",
                                 },
                                 {
-                                  href: "/build",
+                                  href: "/tools/build",
                                   title: "Build",
                                   desc: "Blazing-fast compilation",
                                 },
                                 {
-                                  href: "/agent",
+                                  href: "/tools/agent",
                                   title: "Agent",
                                   desc: "AI-powered automation",
-                                },
-                                {
-                                  href: "/cli",
-                                  title: "CLI",
-                                  desc: "Command-line tools",
                                 },
                               ].map((item, index) => (
                                 <div
@@ -390,24 +391,24 @@ export function Header({
                             <div>
                               {[
                                 {
-                                  href: "/www",
+                                  href: "/tools/cli",
+                                  title: "CLI",
+                                  desc: "Command-line tools",
+                                },
+                                {
+                                  href: "/tools/www",
                                   title: "Web",
                                   desc: "Full-stack web framework",
                                 },
                                 {
-                                  href: "/flow",
+                                  href: "/tools/flow",
                                   title: "Flow",
                                   desc: "Workflow automation",
                                 },
                                 {
-                                  href: "/forge",
-                                  title: "Forge",
-                                  desc: "Build toolchain",
-                                },
-                                {
-                                  href: "/media",
-                                  title: "Media",
-                                  desc: "Media processing",
+                                  href: "/tools/style",
+                                  title: "Style",
+                                  desc: "Rust-native CSS engine",
                                 },
                               ].map((item, index) => (
                                 <div
@@ -641,6 +642,12 @@ export function Header({
                             {/* Column 1 */}
                             <div>
                               {[
+                                {
+                                  href: "/tools",
+                                  title: "DX Tools",
+                                  desc: "Explore the full ecosystem.",
+                                  external: false,
+                                },
                                 {
                                   href: "/integrations",
                                   title: "Integrations",

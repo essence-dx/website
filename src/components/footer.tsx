@@ -29,14 +29,14 @@ export function Footer() {
               </h3>
               <div className="space-y-2.5">
                 {[
-                  { href: "/code", label: "Code" },
-                  { href: "/build", label: "Build" },
-                  { href: "/agent", label: "Agent" },
-                  { href: "/cli", label: "CLI" },
-                  { href: "/www", label: "Web" },
-                  { href: "/flow", label: "Flow" },
-                  { href: "/forge", label: "Forge" },
-                  { href: "/media", label: "Media" },
+                  { href: "/tools", label: "All Tools" },
+                  { href: "/tools/code", label: "Code" },
+                  { href: "/tools/build", label: "Build" },
+                  { href: "/tools/agent", label: "Agent" },
+                  { href: "/tools/cli", label: "CLI" },
+                  { href: "/tools/www", label: "Web" },
+                  { href: "/tools/flow", label: "Flow" },
+                  { href: "/tools/style", label: "Style" },
                 ].map((item) => (
                   <Link
                     key={item.href}
@@ -57,6 +57,7 @@ export function Footer() {
               <div className="space-y-2.5">
                 {[
                   { href: "/download", label: "Download" },
+                  { href: "/tools", label: "Tools" },
                   { href: "/integrations", label: "Integrations" },
                   { href: "/docs", label: "Documentation" },
                   { href: "/testimonials", label: "Testimonials" },
