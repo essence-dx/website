@@ -221,47 +221,31 @@ export function ToolDetail({ tool }: ToolDetailProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
                 >
-                  <Card className="relative overflow-hidden">
-                    <BorderBeam
-                      size={150}
-                      duration={6}
-                      colorFrom={tool.color}
-                      colorTo="transparent"
-                    />
-                    <div
-                      className="absolute inset-0 opacity-30 pointer-events-none"
-                      style={{
-                        background: `radial-gradient(circle at 30% 20%, ${tool.color}25, transparent 60%)`,
-                      }}
-                    />
-                    <CardHeader className="relative text-center pb-2">
-                      <Sparkles
-                        className="h-5 w-5 mx-auto mb-2"
-                        style={{ color: tool.color }}
-                      />
-                      <CardDescription className="uppercase tracking-widest text-[10px]">
+                  <Card className="h-full flex flex-col overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm">
+                    <CardHeader className="text-center pb-6 flex-1 justify-center">
+                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                        <Sparkles className="h-6 w-6 text-primary" />
+                      </div>
+                      <CardDescription className="uppercase tracking-widest text-xs font-semibold text-muted-foreground mb-2">
                         Key performance win
                       </CardDescription>
-                      <CardTitle
-                        className="font-serif text-4xl sm:text-5xl lg:text-6xl tabular-nums"
-                        style={{ color: tool.color }}
-                      >
+                      <CardTitle className="font-serif text-4xl sm:text-5xl lg:text-6xl tabular-nums text-foreground tracking-tight">
                         {tool.headlineMetric}
                       </CardTitle>
                     </CardHeader>
                     {highlightedMetrics.length > 0 && (
-                      <CardFooter className="relative grid grid-cols-2 gap-3 border-t bg-muted/30">
+                      <CardFooter className="grid grid-cols-2 gap-4 border-t bg-muted/30 pt-4 pb-4">
                         {highlightedMetrics.slice(0, 2).map((m) => (
-                          <div key={m.label} className="text-center py-1">
-                            <p className="font-serif text-lg text-foreground tabular-nums">
+                          <div key={m.label} className="text-center">
+                            <p className="font-serif text-xl font-medium text-foreground tabular-nums">
                               {m.value}
                               {m.unit && (
-                                <span className="text-sm text-muted-foreground ml-0.5">
+                                <span className="text-sm text-muted-foreground ml-1">
                                   {m.unit}
                                 </span>
                               )}
                             </p>
-                            <p className="font-sans text-[10px] text-muted-foreground uppercase tracking-wide mt-0.5">
+                            <p className="font-sans text-[11px] font-medium text-muted-foreground uppercase tracking-wider mt-1">
                               {m.label}
                             </p>
                           </div>
