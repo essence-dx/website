@@ -42,6 +42,11 @@ const PerformanceSection = dynamic(() =>
   ),
 );
 
+import { FeaturesGridSection } from "@/components/sections/features-grid-section";
+import { IntegrationsSection } from "@/components/sections/integrations-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { TimeSavingsSection } from "@/components/sections/time-savings-section";
+
 const categoryOrder: ToolCategory[] = [
   "core",
   "runtime",
@@ -266,6 +271,14 @@ export function ToolsLanding() {
 
         <Separator />
 
+        <FeaturesGridSection />
+
+        <Separator />
+
+        <TimeSavingsSection />
+
+        <Separator />
+
         <section className="py-20">
           <div className="max-w-[1400px] mx-auto px-4">
             <SectionHeader
@@ -323,6 +336,14 @@ export function ToolsLanding() {
         </section>
 
         <PerformanceSection />
+
+        <Separator />
+
+        <IntegrationsSection />
+
+        <Separator />
+
+        <TestimonialsSection />
 
         <section className="py-20 border-t border-border">
           <div className="max-w-[1400px] mx-auto px-4">

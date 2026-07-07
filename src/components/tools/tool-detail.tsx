@@ -278,7 +278,7 @@ export function ToolDetail({ tool }: ToolDetailProps) {
                 <TabsTrigger value="achievements">Achievements</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="chart">
+              <TabsContent value="chart" className="max-w-5xl mx-auto">
                 <ToolPerformanceChart tool={tool} />
               </TabsContent>
 
@@ -389,21 +389,21 @@ export function ToolDetail({ tool }: ToolDetailProps) {
 
             <Card>
               <CardContent className="pt-6">
-                <Accordion>
+                <Accordion type="single" className="w-full">
                   {tool.features.map((feature, i) => (
-                    <AccordionItem key={feature} value={`feature-${i}`}>
-                      <AccordionTrigger className="text-base">
-                        <span className="flex items-center gap-3">
+                    <AccordionItem key={feature} value={`feature-${i}`} className="px-4 sm:px-6">
+                      <AccordionTrigger className="text-base hover:no-underline">
+                        <span className="flex items-center gap-4 text-left">
                           <span
-                            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-xs text-muted-foreground"
-                            style={{ backgroundColor: `${tool.color}10` }}
+                            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-xs font-semibold text-muted-foreground"
+                            style={{ backgroundColor: `${tool.color}15` }}
                           >
                             {String(i + 1).padStart(2, "0")}
                           </span>
                           {feature.split("—")[0]?.trim() ?? feature}
                         </span>
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pl-10">
+                      <AccordionContent className="text-muted-foreground pl-12 text-base leading-relaxed pb-4">
                         {feature}
                       </AccordionContent>
                     </AccordionItem>
@@ -504,21 +504,20 @@ export function ToolDetail({ tool }: ToolDetailProps) {
           </>
         )}
 
-        <section className="py-20 border-t border-border">
+        <section className="py-20 border-t border-border bg-muted/10">
           <div className="max-w-[1400px] mx-auto px-4">
-            <Card className="relative overflow-hidden text-center">
-              <BorderBeam size={200} duration={10} />
-              <div className="absolute inset-0 bg-[repeating-linear-gradient(-60deg,hsla(var(--border),0.35),hsla(var(--border),0.35)_1px,transparent_1px,transparent_6px)] pointer-events-none" />
-              <CardHeader className="relative z-10 pb-2">
-                <CardTitle className="font-serif text-2xl sm:text-3xl">
+            <Card className="relative overflow-hidden text-center max-w-4xl mx-auto border-border/50 bg-background/50 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-[repeating-linear-gradient(-60deg,hsla(var(--border),0.25),hsla(var(--border),0.25)_1px,transparent_1px,transparent_6px)] pointer-events-none" />
+              <CardHeader className="relative z-10 pb-6 pt-12 sm:pt-16">
+                <CardTitle className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
                   Ready to use {tool.name}?
                 </CardTitle>
-                <CardDescription className="max-w-md mx-auto text-base">
+                <CardDescription className="max-w-xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Install DX and get {tool.name} alongside every other tool in
                   the ecosystem — one CLI, one workflow.
                 </CardDescription>
               </CardHeader>
-              <CardFooter className="relative z-10 justify-center gap-3 border-0 bg-transparent pb-8">
+              <CardFooter className="relative z-10 justify-center gap-4 border-0 bg-transparent pb-12 sm:pb-16 flex-col sm:flex-row">
                 <Button
                   size="lg"
                   nativeButton={false}
