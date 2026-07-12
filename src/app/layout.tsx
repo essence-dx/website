@@ -10,6 +10,7 @@ import type { ReactElement } from "react";
 import { AutoTheme } from "@/components/auto-theme";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { LandingSections } from "@/components/animated-sections/landing-sections";
 import { SunsetBanner } from "@/components/sunset-banner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
@@ -153,6 +154,7 @@ export default function Layout({ children }: { children: ReactElement }) {
               <AutoTheme />
               <SunsetBanner />
               <main className="container mx-auto px-4 pt-16">{children}</main>
+              <LandingSections />
               <Footer />
             </ScrollArea>
             <Analytics />

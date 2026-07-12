@@ -46,3 +46,14 @@
   --chart-5: 340 75% 55%;
   --chart-6: 221 83% 53%; /* Primary/Blue */
 }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
