@@ -39,6 +39,8 @@ export function HeroSection() {
   const scrollContainer = useScrollContainer();
 
   useEffect(() => {
+    if (!scrollContainer) return;
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
       
@@ -179,17 +181,6 @@ export function HeroSection() {
 
           </div>
         </div>
-      </div>
-
-      <div
-        className="pointer-events-none fixed bottom-0 left-0 right-0 z-10 px-6 pb-12 md:px-12 md:pb-16 lg:px-20 lg:pb-20"
-        style={{ opacity: textOpacity }}
-      >
-        <p className="mx-auto max-w-2xl text-center text-2xl leading-relaxed text-white md:text-3xl lg:text-[2.5rem] lg:leading-snug">
-          Enhanced Development
-          <br />
-          Experience.
-        </p>
       </div>
 
       <div className="h-[200vh]" />

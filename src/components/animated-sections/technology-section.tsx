@@ -10,6 +10,8 @@ function ScrollRevealText({ text }: { text: string }) {
   const scrollContainer = useScrollContainer();
 
   useEffect(() => {
+    if (!scrollContainer) return;
+
     const handleScroll = () => {
       if (!containerRef.current) return;
 
@@ -93,6 +95,8 @@ export function TechnologySection() {
   const descriptionText = "Modern development reimagined. AI-powered assistance, real-time collaboration, and automated workflows combine to create a seamless development environment. Built with cutting-edge technology, DX delivers speed, reliability, and an unparalleled developer experience.";
 
   useEffect(() => {
+    if (!scrollContainer) return;
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
 

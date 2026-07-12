@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { themePresets } from "@/data/theme-presets";
 import { hexToHsl, isHexColor, isOklch, oklchToHsl } from "@/lib/color";

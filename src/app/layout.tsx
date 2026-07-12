@@ -11,6 +11,7 @@ import { AutoTheme } from "@/components/auto-theme";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { LandingSections } from "@/components/animated-sections/landing-sections";
+
 import { SunsetBanner } from "@/components/sunset-banner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
@@ -133,6 +134,11 @@ export default function Layout({ children }: { children: ReactElement }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){try{var e=localStorage.getItem("theme");"system"===e||!e?window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.add("light"):document.documentElement.classList.add(e),"dark"===e?document.documentElement.style.colorScheme="dark":"light"===e&&(document.documentElement.style.colorScheme="light")}catch(e){}}();`,
           }}
         />
       </head>

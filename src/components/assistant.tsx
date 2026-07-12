@@ -3,7 +3,7 @@
 import { AssistantQuestionAnimation } from "@dx/ui/animations/assistant-question";
 import { DashboardAnimation } from "@dx/ui/animations/dashboard";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { HeroImage } from "./hero-image";
 import { FeaturesGridSection } from "./sections/features-grid-section";
 import { IntegrationsSection } from "./sections/integrations-section";

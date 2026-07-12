@@ -4,7 +4,7 @@ import { AIAssistantAnimation } from "@dx/ui/animations/ai-assistant";
 import { BurnrateAnimation } from "@dx/ui/animations/burnrate";
 import { WidgetsAnimation } from "@dx/ui/animations/widgets";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { HeroImage } from "./hero-image";
 import { AudioSummarySection } from "./sections/audio-summary-section";
 import { FeaturesGridSection } from "./sections/features-grid-section";

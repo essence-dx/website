@@ -32,6 +32,8 @@ export function EditorialSection() {
   }, []);
 
   useEffect(() => {
+    if (!scrollContainer) return;
+
     const handleScroll = () => {
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);

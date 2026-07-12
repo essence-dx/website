@@ -3,7 +3,7 @@
 import { CommandPanelAnimation } from "@dx/ui/animations/command-panel";
 import { FileGridAnimation } from "@dx/ui/animations/file-grid";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { HeroImage } from "./hero-image";
 import { FeaturesGridSection } from "./sections/features-grid-section";
 import { IntegrationsSection } from "./sections/integrations-section";
