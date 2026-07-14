@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Heatmap, heatmapPresets, LiquidMetal } from '@paper-design/shaders-react';
+import Link from "next/link";
 
 // Dynamic imports for animations (5,500+ lines - loaded after hero)
 const InboxMatchAnimation = dynamic(() =>
@@ -263,36 +264,36 @@ export function StartPage() {
   return (
     <div className="min-h-screen">
       <div className="bg-background relative min-h-screen overflow-visible lg:overflow-hidden">
-          <div className="relative w-full h-[480px] overflow-visible">
-            <div className="hidden dark:block w-full h-full">
-              <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.8} colors={heatmapDefaults.colors} image="/light.svg" suspendWhenProcessingImage={false} />
-            </div>
-            <div className="block dark:hidden w-full h-full">
-              <LiquidMetal
-                className="w-full h-full"
-                image="/dark.svg"
-                colorBack="#ffffff"
-                colorTint="#ffffff"
-                shape={undefined}
-                repetition={2}
-                softness={0.1}
-                shiftRed={0.3}
-                shiftBlue={0.3}
-                distortion={0.07}
-                contour={0.4}
-                angle={70}
-                speed={1}
-                scale={0.8}
-                fit="contain"
-                suspendWhenProcessingImage={false}
-              />
-            </div>
+        <div className="relative w-full h-[480px] overflow-visible">
+          <div className="hidden dark:block w-full h-full">
+            <Heatmap className="w-full h-full" {...heatmapDefaults} colorBack="transparent" scale={0.8} colors={heatmapDefaults.colors} image="/light.svg" suspendWhenProcessingImage={false} />
           </div>
+          <div className="block dark:hidden w-full h-full">
+            <LiquidMetal
+              className="w-full h-full"
+              image="/dark.svg"
+              colorBack="#ffffff"
+              colorTint="#ffffff"
+              shape={undefined}
+              repetition={2}
+              softness={0.1}
+              shiftRed={0.3}
+              shiftBlue={0.3}
+              distortion={0.07}
+              contour={0.4}
+              angle={70}
+              speed={1}
+              scale={0.8}
+              fit="contain"
+              suspendWhenProcessingImage={false}
+            />
+          </div>
+        </div>
         <div className="flex flex-col relative overflow-hidden">
           <div className="flex-1 lg:flex-none flex flex-col justify-center md:justify-start items-center space-y-8 lg:space-y-0 z-20 px-3 sm:px-4 lg:px-0 lg:max-w-[1400px] lg:mx-auto lg:w-full lg:mb-12 xl:mb-12 2xl:mb-12 3xl:mb-16">
             <div className="flex flex-col items-center w-full text-center space-y-6 lg:space-y-8">
               <div className="space-y-5 lg:space-y-6 max-w-4xl 3xl:max-w-5xl mx-auto px-2 lg:px-0">
-                
+
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl leading-[1.2] tracking-tight text-foreground">
                   Enhanced{" "}
                   <em className="not-italic text-muted-foreground/80">
@@ -909,7 +910,7 @@ export function StartPage() {
         <div className="h-px w-full border-t border-border" />
       </div> */}
 
-      <div className="max-w-[1400px] mx-auto">
+      {/* <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
@@ -919,13 +920,14 @@ export function StartPage() {
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      <CompetitorComparison />
+      <CompetitorComparison /> */}
 
       {/* <div className="max-w-[1400px] mx-auto">
         <div className="h-px w-full border-t border-border" />
       </div>
 
       <IntegrationsSection /> */}
+
     </div>
   );
 }
