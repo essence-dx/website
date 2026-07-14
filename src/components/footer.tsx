@@ -234,10 +234,10 @@ export function Footer() {
       </div>
 
       {/* Large Wordmark */}
-      <div className="absolute bottom-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 translate-y-[5%] sm:translate-y-[10%] bg-background overflow-hidden">
+      <div className="absolute bottom-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 translate-y-[25%] sm:translate-y-[40%] bg-background overflow-hidden">
         <h1
           className={cn(
-            "font-sans text-[200px] sm:text-[350px] leading-none select-none",
+            "font-sans text-[200px] sm:text-[508px] leading-none select-none",
             "text-secondary",
             "[WebkitTextStroke:1px_hsl(var(--muted-foreground))]",
             "[textStroke:1px_hsl(var(--muted-foreground))]",

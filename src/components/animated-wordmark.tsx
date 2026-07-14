@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const WORDS = ["I", "Use", "Dx", "BTW"];
+const WORDS = ["i", "use", "dx", "btw"];
 
 const HOLD_MS = 2600;
 const DISTANCE = 100;
