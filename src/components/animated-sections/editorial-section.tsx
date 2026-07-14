@@ -74,7 +74,7 @@ export function EditorialSection() {
         />
       </div>
 
-      <div className="grid grid-cols-2 border-t border-border md:grid-cols-4">
+      <div className="grid grid-cols-2 border-y border-border md:grid-cols-4">
         {specs.map((spec) => (
           <div
             key={spec.label}

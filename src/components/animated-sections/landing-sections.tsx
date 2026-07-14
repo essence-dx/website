@@ -21,7 +21,7 @@ export function LandingSections() {
       <GallerySection />
       <CollectionSection />
       <EditorialSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </>
   );
 }

@@ -43,18 +43,18 @@ export function HeroSection() {
 
     const handleScroll = () => {
       if (!sectionRef.current) return;
-      
+
       const rect = sectionRef.current.getBoundingClientRect();
       const scrollableHeight = window.innerHeight * 2;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
-      
+
       setScrollProgress(progress);
     };
 
     scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    
+
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
     };
@@ -125,12 +125,14 @@ export function HeroSection() {
                 className="absolute inset-0 z-0 flex items-center justify-center"
                 style={{ opacity: textOpacity, transform: 'translateY(-200px)' }}
               >
-                <h1 className="whitespace-nowrap text-[35vw] font-bold leading-[0.8] tracking-tighter text-black">
+                <h1 className="whitespace-nowrap text-[35vw] font-bold leading-[0.8] tracking-tighter text-secondary">
                   {word.split("").map((letter, index) => (
                     <span
                       key={index}
                       className="inline-block animate-[slideUp_0.8s_ease-out_forwards] opacity-0"
                       style={{
+                        WebkitTextStroke: "1px hsl(var(--muted-foreground))",
+                        color: "hsl(var(--secondary))",
                         animationDelay: `${index * 0.08}s`,
                         transition: 'all 1.5s',
                         transitionTimingFunction: 'cubic-bezier(0.86, 0, 0.07, 1)',

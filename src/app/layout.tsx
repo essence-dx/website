@@ -164,7 +164,7 @@ export default function Layout({ children }: { children: ReactElement }) {
               <main className="container mx-auto px-4 pt-16">{children}</main>
               <LandingSections />
 
-              <div className="my-32 w[50%] lg:w-[50%] mx-auto bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
+              <div className="my-12 w[50%] lg:w-[70%] mx-auto bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
                 <div className="relative z-10">
                   <h2 className="font-serif text-2xl text-foreground mb-4">
                     Ready to try DX?
