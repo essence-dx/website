@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useScrollContainer } from "@/components/animated-sections/use-scroll-container";
 
 const specs = [
@@ -26,7 +26,8 @@ export function EditorialSection() {
     const videoBottom = rect.bottom;
 
     if (videoBottom > 0 && videoTop < windowHeight) {
-      const progress = 1 - (videoTop + rect.height / 2) / (windowHeight + rect.height);
+      const progress =
+        1 - (videoTop + rect.height / 2) / (windowHeight + rect.height);
       setScrollProgress(Math.max(0, Math.min(1, progress)));
     }
   }, []);
@@ -43,7 +44,7 @@ export function EditorialSection() {
 
     scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
     updateParallax();
-    
+
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -56,7 +57,10 @@ export function EditorialSection() {
 
   return (
     <section className="bg-background">
-      <div ref={videoRef} className="relative aspect-[16/9] w-full md:aspect-[21/9] overflow-hidden">
+      <div
+        ref={videoRef}
+        className="relative aspect-[16/9] w-full md:aspect-[21/9] overflow-hidden"
+      >
         <video
           autoPlay
           loop
@@ -66,9 +70,9 @@ export function EditorialSection() {
           style={{
             transform: `scale(1.15) translate3d(0, ${parallaxY}px, 0) translateZ(0)`,
             WebkitTransform: `scale(1.15) translate3d(0, ${parallaxY}px, 0) translateZ(0)`,
-            backfaceVisibility: 'hidden',
-            WebkitBackfaceVisibility: 'hidden',
-            willChange: 'transform',
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            willChange: "transform",
           }}
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/27eb7fb4-0105-4010-ac9e-0ac977a31b05_1-FZ89nvBAAsR3caRJbhYv7T2mjBofth.mp4"
         />
@@ -83,9 +87,7 @@ export function EditorialSection() {
             <p className="mb-2 text-xs uppercase tracking-widest text-muted-foreground">
               {spec.label}
             </p>
-            <p className="font-medium text-foreground text-5xl">
-              {spec.value}
-            </p>
+            <p className="font-medium text-foreground text-5xl">{spec.value}</p>
           </div>
         ))}
       </div>

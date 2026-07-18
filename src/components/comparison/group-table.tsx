@@ -45,14 +45,18 @@ const keyframesStyle = `
 `;
 
 export function GroupTable({ group, variant }: Props) {
-  const maxCompetitors = Math.max(...group.items.map((r) => r.competitors.length));
+  const maxCompetitors = Math.max(
+    ...group.items.map((r) => r.competitors.length),
+  );
   const hs = headerStyles[variant % headerStyles.length];
   const [grad] = hs.split(" ");
 
   return (
     <div className="border border-border rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-sm">
       <style>{keyframesStyle}</style>
-      <div className={`px-6 py-4 bg-gradient-to-r ${grad} flex items-center border-b border-border`}>
+      <div
+        className={`px-6 py-4 bg-gradient-to-r ${grad} flex items-center border-b border-border`}
+      >
         <span className="text-lg font-bold tracking-tight text-foreground">
           {group.group}
         </span>
@@ -105,8 +109,9 @@ export function GroupTable({ group, variant }: Props) {
                             />
                           )}
                           <span
-                            className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${comp.dxWins ? "bg-primary" : "bg-muted-foreground"
-                              }`}
+                            className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${
+                              comp.dxWins ? "bg-primary" : "bg-muted-foreground"
+                            }`}
                           />
                           <span>{comp.name}</span>
                         </span>

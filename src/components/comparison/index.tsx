@@ -1,10 +1,10 @@
 "use client";
 
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { groups } from "@/data/comparison";
 import { GroupTable } from "./group-table";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function ComparisonSection() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -22,8 +22,8 @@ export default function ComparisonSection() {
             DX vs. Industry
           </h2>
           <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
-            27 DX tools compared head-to-head against top alternatives.
-            Every row shows where DX wins or ties.
+            27 DX tools compared head-to-head against top alternatives. Every
+            row shows where DX wins or ties.
           </p>
         </div>
 
@@ -33,7 +33,11 @@ export default function ComparisonSection() {
               <motion.div
                 key={group.id}
                 initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                animate={{ opacity: 1, height: "auto", marginTop: i === 0 ? 0 : 24 }}
+                animate={{
+                  opacity: 1,
+                  height: "auto",
+                  marginTop: i === 0 ? 0 : 24,
+                }}
                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
@@ -56,7 +60,8 @@ export default function ComparisonSection() {
                 </>
               ) : (
                 <>
-                  Show All {groups.length} Comparisons <ChevronDown className="w-4 h-4" />
+                  Show All {groups.length} Comparisons{" "}
+                  <ChevronDown className="w-4 h-4" />
                 </>
               )}
             </button>

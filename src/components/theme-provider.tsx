@@ -1,6 +1,14 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useCallback, useMemo, type ReactNode } from "react";
+import {
+  createContext,
+  type ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 type Theme = "dark" | "light" | "system";
 
@@ -27,7 +35,9 @@ const ThemeContext = createContext<UseThemeProps | undefined>(undefined);
 
 function getSystemTheme(): "dark" | "light" {
   if (typeof window === "undefined") return "light";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 function getTheme(storageKey: string, defaultTheme: Theme): string {
@@ -43,12 +53,18 @@ function applyTheme(theme: string, disableTransition: boolean) {
   const d = document.documentElement;
   if (disableTransition) {
     const style = document.createElement("style");
-    style.appendChild(document.createTextNode("*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}"));
+    style.appendChild(
+      document.createTextNode(
+        "*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}",
+      ),
+    );
     document.head.appendChild(style);
     d.classList.add(theme);
     d.style.colorScheme = theme;
     window.getComputedStyle(d);
-    requestAnimationFrame(() => setTimeout(() => document.head.removeChild(style), 1));
+    requestAnimationFrame(() =>
+      setTimeout(() => document.head.removeChild(style), 1),
+    );
   } else {
     d.classList.remove("dark", "light");
     d.classList.add(theme);
@@ -63,21 +79,31 @@ export function ThemeProvider({
   enableSystem = true,
   disableTransitionOnChange = false,
 }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<string>(() => getTheme(storageKey, defaultTheme));
+  const [theme, setThemeState] = useState<string>(() =>
+    getTheme(storageKey, defaultTheme),
+  );
   const [systemTheme, setSystemTheme] = useState<"dark" | "light">("light");
 
   const resolvedTheme = theme === "system" ? systemTheme : theme;
 
-  const applyAndStore = useCallback((newTheme: string) => {
-    setThemeState(newTheme);
-    try { localStorage.setItem(storageKey, newTheme); } catch {}
-    const resolved = newTheme === "system" ? getSystemTheme() : newTheme;
-    applyTheme(resolved, disableTransitionOnChange);
-  }, [storageKey, disableTransitionOnChange]);
+  const applyAndStore = useCallback(
+    (newTheme: string) => {
+      setThemeState(newTheme);
+      try {
+        localStorage.setItem(storageKey, newTheme);
+      } catch {}
+      const resolved = newTheme === "system" ? getSystemTheme() : newTheme;
+      applyTheme(resolved, disableTransitionOnChange);
+    },
+    [storageKey, disableTransitionOnChange],
+  );
 
-  const setTheme = useCallback((newTheme: string) => {
-    applyAndStore(newTheme);
-  }, [applyAndStore]);
+  const setTheme = useCallback(
+    (newTheme: string) => {
+      applyAndStore(newTheme);
+    },
+    [applyAndStore],
+  );
 
   useEffect(() => {
     applyTheme(resolvedTheme, false);
@@ -101,7 +127,8 @@ export function ThemeProvider({
     const handler = (e: StorageEvent) => {
       if (e.key === storageKey && e.newValue) {
         setThemeState(e.newValue);
-        const resolved = e.newValue === "system" ? getSystemTheme() : e.newValue;
+        const resolved =
+          e.newValue === "system" ? getSystemTheme() : e.newValue;
         applyTheme(resolved, disableTransitionOnChange);
       }
     };
@@ -109,18 +136,19 @@ export function ThemeProvider({
     return () => window.removeEventListener("storage", handler);
   }, [storageKey, disableTransitionOnChange]);
 
-  const value = useMemo(() => ({
-    theme,
-    setTheme,
-    resolvedTheme,
-    themes: enableSystem ? ["light", "dark", "system"] : ["light", "dark"],
-    systemTheme: enableSystem ? systemTheme : undefined,
-  }), [theme, setTheme, resolvedTheme, enableSystem, systemTheme]);
+  const value = useMemo(
+    () => ({
+      theme,
+      setTheme,
+      resolvedTheme,
+      themes: enableSystem ? ["light", "dark", "system"] : ["light", "dark"],
+      systemTheme: enableSystem ? systemTheme : undefined,
+    }),
+    [theme, setTheme, resolvedTheme, enableSystem, systemTheme],
+  );
 
   return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 

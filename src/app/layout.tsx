@@ -7,16 +7,17 @@ import type { Metadata } from "next";
 import { Geist, Hedvig_Letters_Serif, JetBrains_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { ReactElement } from "react";
+import { LandingSections } from "@/components/animated-sections/landing-sections";
 import { AutoTheme } from "@/components/auto-theme";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { LandingSections } from "@/components/animated-sections/landing-sections";
 
 import { SunsetBanner } from "@/components/sunset-banner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
-import Link from "next/link";
-import { Button } from "@dx/ui/button";
+
+// import Link from "next/link";
+// import { Button } from "@dx/ui/button";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -164,6 +165,7 @@ export default function Layout({ children }: { children: ReactElement }) {
               <main className="container mx-auto px-4 pt-16">{children}</main>
               <LandingSections />
 
+              {/* CTA section commented out - routes disabled
               <div className="my-12 w[50%] lg:w-[70%] mx-auto bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
                 <div className="relative z-10">
                   <h2 className="font-serif text-2xl text-foreground mb-4">
@@ -182,6 +184,7 @@ export default function Layout({ children }: { children: ReactElement }) {
                   </div>
                 </div>
               </div>
+              */}
               <Footer />
             </ScrollArea>
             <Analytics />

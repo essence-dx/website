@@ -24,7 +24,10 @@ function ScrollRevealText({ text }: { text: string }) {
       const totalDistance = startOffset - endOffset;
       const currentPosition = startOffset - rect.top;
 
-      const newProgress = Math.max(0, Math.min(1, currentPosition / totalDistance));
+      const newProgress = Math.max(
+        0,
+        Math.min(1, currentPosition / totalDistance),
+      );
       setProgress(newProgress);
     };
 
@@ -43,7 +46,10 @@ function ScrollRevealText({ text }: { text: string }) {
     >
       {words.map((word, index) => {
         const appearProgress = progress * (words.length + 1);
-        const wordAppearProgress = Math.max(0, Math.min(1, appearProgress - index));
+        const wordAppearProgress = Math.max(
+          0,
+          Math.min(1, appearProgress - index),
+        );
         const wordOpacity = wordAppearProgress;
         const wordBlur = (1 - wordAppearProgress) * 40;
 
@@ -54,8 +60,8 @@ function ScrollRevealText({ text }: { text: string }) {
             style={{
               opacity: wordOpacity,
               filter: `blur(${wordBlur}px)`,
-              transition: 'opacity 0.1s linear, filter 0.1s linear',
-              marginRight: '0.3em',
+              transition: "opacity 0.1s linear, filter 0.1s linear",
+              marginRight: "0.3em",
             }}
           >
             {word}
@@ -92,7 +98,8 @@ export function TechnologySection() {
   const [textProgress, setTextProgress] = useState(0);
   const scrollContainer = useScrollContainer();
 
-  const descriptionText = "Modern development reimagined. AI-powered assistance, real-time collaboration, and automated workflows combine to create a seamless development environment. Built with cutting-edge technology, DX delivers speed, reliability, and an unparalleled developer experience.";
+  const descriptionText =
+    "Modern development reimagined. AI-powered assistance, real-time collaboration, and automated workflows combine to create a seamless development environment. Built with cutting-edge technology, DX delivers speed, reliability, and an unparalleled developer experience.";
 
   useEffect(() => {
     if (!scrollContainer) return;
@@ -117,7 +124,10 @@ export function TechnologySection() {
         const totalDistance = startOffset - endOffset;
         const currentPosition = startOffset - textRect.top;
 
-        const newTextProgress = Math.max(0, Math.min(1, currentPosition / totalDistance));
+        const newTextProgress = Math.max(
+          0,
+          Math.min(1, currentPosition / totalDistance),
+        );
         setTextProgress(newTextProgress);
       }
     };
@@ -130,16 +140,16 @@ export function TechnologySection() {
     };
   }, [scrollContainer]);
 
-  const titleOpacity = Math.max(0, 1 - (scrollProgress / 0.2));
+  const titleOpacity = Math.max(0, 1 - scrollProgress / 0.2);
 
   const imageProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.8));
 
-  const centerWidth = 100 - (imageProgress * 58);
-  const centerHeight = 100 - (imageProgress * 30);
+  const centerWidth = 100 - imageProgress * 58;
+  const centerHeight = 100 - imageProgress * 30;
   const sideWidth = imageProgress * 22;
   const sideOpacity = imageProgress;
-  const sideTranslateLeft = -100 + (imageProgress * 100);
-  const sideTranslateRight = 100 - (imageProgress * 100);
+  const sideTranslateLeft = -100 + imageProgress * 100;
+  const sideTranslateRight = 100 - imageProgress * 100;
   const gap = imageProgress * 16;
 
   const grayscaleAmount = Math.round((1 - textProgress) * 100);
@@ -152,7 +162,6 @@ export function TechnologySection() {
             className="relative flex h-full w-full items-stretch justify-center"
             style={{ gap: `${gap}px`, padding: `${imageProgress * 16}px` }}
           >
-
             <div
               className="relative overflow-hidden will-change-transform"
               style={{
@@ -162,15 +171,17 @@ export function TechnologySection() {
                 opacity: sideOpacity,
               }}
             >
-              {sideImages.filter(img => img.position === "left").map((img, idx) => (
-                <Image
-                  key={idx}
-                  src={img.src || "/placeholder.svg"}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                />
-              ))}
+              {sideImages
+                .filter((img) => img.position === "left")
+                .map((img, idx) => (
+                  <Image
+                    key={idx}
+                    src={img.src || "/placeholder.svg"}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                  />
+                ))}
             </div>
 
             <div
@@ -197,8 +208,11 @@ export function TechnologySection() {
                 fill
                 className="absolute inset-0 object-cover"
                 style={{
-                  opacity: Math.max(0, Math.min(1, (scrollProgress - 0.1) / 0.2)),
-                  transition: 'opacity 0.3s ease',
+                  opacity: Math.max(
+                    0,
+                    Math.min(1, (scrollProgress - 0.1) / 0.2),
+                  ),
+                  transition: "opacity 0.3s ease",
                 }}
               />
 
@@ -208,8 +222,11 @@ export function TechnologySection() {
                 fill
                 className="absolute inset-0 object-cover"
                 style={{
-                  opacity: Math.max(0, Math.min(1, (scrollProgress - 0.4) / 0.2)),
-                  transition: 'opacity 0.3s ease',
+                  opacity: Math.max(
+                    0,
+                    Math.min(1, (scrollProgress - 0.4) / 0.2),
+                  ),
+                  transition: "opacity 0.3s ease",
                 }}
               />
 
@@ -219,16 +236,17 @@ export function TechnologySection() {
                 fill
                 className="absolute inset-0 object-cover"
                 style={{
-                  opacity: Math.max(0, Math.min(1, (scrollProgress - 0.7) / 0.2)),
-                  transition: 'opacity 0.3s ease',
+                  opacity: Math.max(
+                    0,
+                    Math.min(1, (scrollProgress - 0.7) / 0.2),
+                  ),
+                  transition: "opacity 0.3s ease",
                 }}
               />
 
               <div className="absolute inset-0 bg-foreground/40" />
 
-              <div
-                className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-              >
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 {textCycles.map((text, cycleIndex) => {
                   const cycleStart = cycleIndex / textCycles.length;
                   const cycleEnd = (cycleIndex + 1) / textCycles.length;
@@ -245,18 +263,31 @@ export function TechnologySection() {
                         let wordOpacity = 0;
                         let wordBlur = 40;
 
-                        if (scrollProgress >= cycleStart && scrollProgress < cycleEnd) {
-                          const localProgress = (scrollProgress - cycleStart) / (cycleEnd - cycleStart);
+                        if (
+                          scrollProgress >= cycleStart &&
+                          scrollProgress < cycleEnd
+                        ) {
+                          const localProgress =
+                            (scrollProgress - cycleStart) /
+                            (cycleEnd - cycleStart);
 
                           if (localProgress < 0.5) {
-                            const appearProgress = (localProgress / 0.5) * (words.length + 1);
-                            const wordAppearProgress = Math.max(0, Math.min(1, appearProgress - wordIndex));
+                            const appearProgress =
+                              (localProgress / 0.5) * (words.length + 1);
+                            const wordAppearProgress = Math.max(
+                              0,
+                              Math.min(1, appearProgress - wordIndex),
+                            );
                             wordOpacity = wordAppearProgress;
                             wordBlur = (1 - wordAppearProgress) * 40;
-                          }
-                          else {
-                            const disappearProgress = ((localProgress - 0.5) / 0.5) * (words.length + 1);
-                            const wordDisappearProgress = Math.max(0, Math.min(1, disappearProgress - wordIndex));
+                          } else {
+                            const disappearProgress =
+                              ((localProgress - 0.5) / 0.5) *
+                              (words.length + 1);
+                            const wordDisappearProgress = Math.max(
+                              0,
+                              Math.min(1, disappearProgress - wordIndex),
+                            );
                             wordOpacity = 1 - wordDisappearProgress;
                             wordBlur = wordDisappearProgress * 40;
                           }
@@ -269,8 +300,9 @@ export function TechnologySection() {
                             style={{
                               opacity: wordOpacity,
                               filter: `blur(${wordBlur}px)`,
-                              transition: 'opacity 0.1s linear, filter 0.1s linear',
-                              marginRight: '0.3em',
+                              transition:
+                                "opacity 0.1s linear, filter 0.1s linear",
+                              marginRight: "0.3em",
                             }}
                           >
                             {word}
@@ -292,17 +324,18 @@ export function TechnologySection() {
                 opacity: sideOpacity,
               }}
             >
-              {sideImages.filter(img => img.position === "right").map((img, idx) => (
-                <Image
-                  key={idx}
-                  src={img.src || "/placeholder.svg"}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                />
-              ))}
+              {sideImages
+                .filter((img) => img.position === "right")
+                .map((img, idx) => (
+                  <Image
+                    key={idx}
+                    src={img.src || "/placeholder.svg"}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                  />
+                ))}
             </div>
-
           </div>
         </div>
       </div>
@@ -316,8 +349,9 @@ export function TechnologySection() {
         <div
           className="absolute top-0 left-0 right-0 z-0 pointer-events-none"
           style={{
-            height: '150px',
-            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)'
+            height: "150px",
+            background:
+              "linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)",
           }}
         />
 

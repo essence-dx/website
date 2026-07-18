@@ -60,16 +60,16 @@ export function HeroSection() {
     };
   }, [scrollContainer]);
 
-  const textOpacity = Math.max(0, 1 - (scrollProgress / 0.2));
+  const textOpacity = Math.max(0, 1 - scrollProgress / 0.2);
 
   const imageProgress = Math.max(0, Math.min(1, (scrollProgress - 0.2) / 0.8));
 
-  const centerWidth = 100 - (imageProgress * 80);
+  const centerWidth = 100 - imageProgress * 80;
   const centerHeight = 100;
   const sideWidth = imageProgress * 40;
   const sideOpacity = imageProgress;
-  const sideTranslateLeft = -100 + (imageProgress * 100);
-  const sideTranslateRight = 100 - (imageProgress * 100);
+  const sideTranslateLeft = -100 + imageProgress * 100;
+  const sideTranslateRight = 100 - imageProgress * 100;
   const borderRadius = 0;
   const gap = imageProgress * 8;
 
@@ -83,7 +83,6 @@ export function HeroSection() {
             className="relative flex h-full w-full items-stretch justify-center"
             style={{ gap: `${gap}px` }}
           >
-
             <div
               className="flex h-full flex-row will-change-transform"
               style={{
@@ -93,23 +92,25 @@ export function HeroSection() {
                 opacity: sideOpacity,
               }}
             >
-              {sideImages.filter(img => img.position === "left").map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative h-full overflow-hidden will-change-transform"
-                  style={{
-                    flex: img.span,
-                    borderRadius: `${borderRadius}px`,
-                  }}
-                >
-                  <Image
-                    src={img.src || "/placeholder.svg"}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {sideImages
+                .filter((img) => img.position === "left")
+                .map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative h-full overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
             </div>
 
             <div
@@ -123,7 +124,10 @@ export function HeroSection() {
             >
               <div
                 className="absolute inset-0 z-0 flex items-center justify-center"
-                style={{ opacity: textOpacity, transform: 'translateY(-200px)' }}
+                style={{
+                  opacity: textOpacity,
+                  transform: "translateY(-200px)",
+                }}
               >
                 <h1 className="whitespace-nowrap text-[35vw] font-bold leading-[0.8] tracking-tighter text-secondary">
                   {word.split("").map((letter, index) => (
@@ -134,8 +138,9 @@ export function HeroSection() {
                         WebkitTextStroke: "1px hsl(var(--muted-foreground))",
                         color: "hsl(var(--secondary))",
                         animationDelay: `${index * 0.08}s`,
-                        transition: 'all 1.5s',
-                        transitionTimingFunction: 'cubic-bezier(0.86, 0, 0.07, 1)',
+                        transition: "all 1.5s",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.86, 0, 0.07, 1)",
                       }}
                     >
                       {letter}
@@ -162,25 +167,26 @@ export function HeroSection() {
                 opacity: sideOpacity,
               }}
             >
-              {sideImages.filter(img => img.position === "right").map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative h-full overflow-hidden will-change-transform"
-                  style={{
-                    flex: img.span,
-                    borderRadius: `${borderRadius}px`,
-                  }}
-                >
-                  <Image
-                    src={img.src || "/placeholder.svg"}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {sideImages
+                .filter((img) => img.position === "right")
+                .map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative h-full overflow-hidden will-change-transform"
+                    style={{
+                      flex: img.span,
+                      borderRadius: `${borderRadius}px`,
+                    }}
+                  >
+                    <Image
+                      src={img.src || "/placeholder.svg"}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
             </div>
-
           </div>
         </div>
       </div>

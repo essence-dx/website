@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useScrollContainer } from "@/components/animated-sections/use-scroll-container";
 
 export function GallerySection() {
@@ -12,7 +12,10 @@ export function GallerySection() {
 
   const images = [
     { src: "/images/landing/mono-1.png", alt: "Modern development at sunrise" },
-    { src: "/images/landing/mono-2.png", alt: "Modern development in daylight" },
+    {
+      src: "/images/landing/mono-2.png",
+      alt: "Modern development in daylight",
+    },
     { src: "/images/landing/mono-3.png", alt: "Modern development at dusk" },
     { src: "/images/landing/mono-4.png", alt: "Modern development at night" },
   ];
@@ -43,7 +46,7 @@ export function GallerySection() {
 
     scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
     updateTransform();
-    
+
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -55,9 +58,16 @@ export function GallerySection() {
   const isLastImage = images.length - 1;
 
   const fullscreenStartProgress = 0.6;
-  const fullscreenProgress = Math.max(0, Math.min(1, (scrollProgress - fullscreenStartProgress) / (1 - fullscreenStartProgress)));
+  const fullscreenProgress = Math.max(
+    0,
+    Math.min(
+      1,
+      (scrollProgress - fullscreenStartProgress) /
+        (1 - fullscreenStartProgress),
+    ),
+  );
 
-  const easedFullscreenProgress = 1 - Math.pow(1 - fullscreenProgress, 3);
+  const easedFullscreenProgress = 1 - (1 - fullscreenProgress) ** 3;
 
   return (
     <section
@@ -71,22 +81,29 @@ export function GallerySection() {
           {images.map((image, index) => {
             const isLast = index === isLastImage;
 
-            const imageProgress = (scrollProgress * images.length) - index;
+            const imageProgress = scrollProgress * images.length - index;
             const stackProgress = Math.max(0, Math.min(1, imageProgress));
 
-            let translateY = (1 - stackProgress) * 100;
-            let scale = 0.8 + (stackProgress * 0.2);
-            let opacity = stackProgress;
+            const translateY = (1 - stackProgress) * 100;
+            let scale = 0.8 + stackProgress * 0.2;
+            const opacity = stackProgress;
 
             if (isLast) {
-              const normalScale = 0.8 + (stackProgress * 0.2);
-              const expandedScale = 1 + (easedFullscreenProgress * 0.8);
-              scale = normalScale + (Math.max(0, stackProgress - 0.8) * 5) * (expandedScale - normalScale);
+              const normalScale = 0.8 + stackProgress * 0.2;
+              const expandedScale = 1 + easedFullscreenProgress * 0.8;
+              scale =
+                normalScale +
+                Math.max(0, stackProgress - 0.8) *
+                  5 *
+                  (expandedScale - normalScale);
             }
 
             const zIndex = index;
 
-            const borderRadius = isLast && easedFullscreenProgress > 0.3 ? (1 - easedFullscreenProgress) * 16 : undefined;
+            const borderRadius =
+              isLast && easedFullscreenProgress > 0.3
+                ? (1 - easedFullscreenProgress) * 16
+                : undefined;
 
             return (
               <div
@@ -97,16 +114,19 @@ export function GallerySection() {
                   transform: `translate3d(0, ${translateY}%, 0) scale(${scale}) translateZ(0)`,
                   WebkitTransform: `translate3d(0, ${translateY}%, 0) scale(${scale}) translateZ(0)`,
                   opacity,
-                  backfaceVisibility: 'hidden',
-                  WebkitBackfaceVisibility: 'hidden',
-                  willChange: 'transform, opacity',
-                  WebkitFontSmoothing: 'antialiased',
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  willChange: "transform, opacity",
+                  WebkitFontSmoothing: "antialiased",
                 }}
               >
                 <div
                   className="relative w-full h-full overflow-hidden rounded-xl md:rounded-2xl"
                   style={{
-                    borderRadius: borderRadius !== undefined ? `${borderRadius}px` : undefined,
+                    borderRadius:
+                      borderRadius !== undefined
+                        ? `${borderRadius}px`
+                        : undefined,
                   }}
                 >
                   <Image

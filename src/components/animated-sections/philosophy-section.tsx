@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useScrollContainer } from "@/components/animated-sections/use-scroll-container";
 
 const titles = [
@@ -39,7 +39,10 @@ export function PhilosophySection() {
       const endTrigger = windowHeight * 0.2;
 
       if (descTop < startTrigger && descTop > endTrigger - descHeight) {
-        const descProgress = Math.max(0, Math.min(1, (startTrigger - descTop) / (startTrigger - endTrigger)));
+        const descProgress = Math.max(
+          0,
+          Math.min(1, (startTrigger - descTop) / (startTrigger - endTrigger)),
+        );
         setDescriptionProgress(descProgress);
       }
     }
@@ -58,7 +61,7 @@ export function PhilosophySection() {
 
     scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
     updateTransforms();
-    
+
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
@@ -75,10 +78,13 @@ export function PhilosophySection() {
             <div
               className="flex items-center justify-center pointer-events-none"
               style={{
-                perspective: '1000px',
+                perspective: "1000px",
               }}
             >
-              <div className="relative w-full" style={{ transformStyle: 'preserve-3d', minHeight: '150px' }}>
+              <div
+                className="relative w-full"
+                style={{ transformStyle: "preserve-3d", minHeight: "150px" }}
+              >
                 {titles.map((title, index) => {
                   const isLastText = index === titles.length - 1;
 
@@ -89,8 +95,12 @@ export function PhilosophySection() {
                   let rotateX = 0;
                   let opacity = 0;
 
-                  if (titleOpacity >= startProgress && titleOpacity < endProgress) {
-                    const localProgress = (titleOpacity - startProgress) / segmentSize;
+                  if (
+                    titleOpacity >= startProgress &&
+                    titleOpacity < endProgress
+                  ) {
+                    const localProgress =
+                      (titleOpacity - startProgress) / segmentSize;
                     rotateX = (1 - localProgress) * 90;
                     opacity = localProgress;
                   } else if (titleOpacity >= endProgress) {
@@ -113,11 +123,11 @@ export function PhilosophySection() {
                       style={{
                         transform: `rotateX(${rotateX}deg) translateZ(0)`,
                         opacity,
-                        transformStyle: 'preserve-3d',
-                        backfaceVisibility: 'hidden',
-                        WebkitBackfaceVisibility: 'hidden',
-                        willChange: 'transform, opacity',
-                        WebkitFontSmoothing: 'antialiased',
+                        transformStyle: "preserve-3d",
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
+                        willChange: "transform, opacity",
+                        WebkitFontSmoothing: "antialiased",
                       }}
                     >
                       {title}
@@ -130,28 +140,36 @@ export function PhilosophySection() {
         </div>
       </div>
 
-      <div ref={descriptionRef} className="px-6 pt-8 pb-20 md:px-12 md:pt-12 md:pb-28 lg:px-20 lg:pt-16 lg:pb-36">
+      <div
+        ref={descriptionRef}
+        className="px-6 pt-8 pb-20 md:px-12 md:pt-12 md:pb-28 lg:px-20 lg:pt-16 lg:pb-36"
+      >
         <div className="text-center">
-
           <p className="mt-8 leading-relaxed text-muted-foreground text-3xl text-center">
-            {("A platform that combines modern tooling with performance and simplicity. Built for developers who refuse to compromise between speed and quality, DX delivers an enhanced experience from ideation to deployment.").split(" ").map((word, index, array) => {
-              const wordProgress = Math.max(0, Math.min(1, (descriptionProgress * array.length) - index));
-              const opacity = wordProgress;
-              const blur = (1 - wordProgress) * 40;
+            {"A platform that combines modern tooling with performance and simplicity. Built for developers who refuse to compromise between speed and quality, DX delivers an enhanced experience from ideation to deployment."
+              .split(" ")
+              .map((word, index, array) => {
+                const wordProgress = Math.max(
+                  0,
+                  Math.min(1, descriptionProgress * array.length - index),
+                );
+                const opacity = wordProgress;
+                const blur = (1 - wordProgress) * 40;
 
-              return (
-                <span
-                  key={index}
-                  style={{
-                    opacity,
-                    filter: `blur(${blur}px)`,
-                    transition: 'opacity 0.3s ease, filter 0.3s ease',
-                  }}
-                >
-                  {word}{index < array.length - 1 ? " " : ""}
-                </span>
-              );
-            })}
+                return (
+                  <span
+                    key={index}
+                    style={{
+                      opacity,
+                      filter: `blur(${blur}px)`,
+                      transition: "opacity 0.3s ease, filter 0.3s ease",
+                    }}
+                  >
+                    {word}
+                    {index < array.length - 1 ? " " : ""}
+                  </span>
+                );
+              })}
           </p>
         </div>
       </div>

@@ -7,7 +7,11 @@ interface FadeImageProps extends Omit<ImageProps, "onLoad"> {
   fadeDelay?: number;
 }
 
-export function FadeImage({ className, fadeDelay = 0, ...props }: FadeImageProps) {
+export function FadeImage({
+  className,
+  fadeDelay = 0,
+  ...props
+}: FadeImageProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -25,7 +29,7 @@ export function FadeImage({ className, fadeDelay = 0, ...props }: FadeImageProps
       {
         threshold: 0.1,
         rootMargin: "50px",
-      }
+      },
     );
 
     if (ref.current) {
@@ -40,7 +44,9 @@ export function FadeImage({ className, fadeDelay = 0, ...props }: FadeImageProps
       <Image
         {...props}
         className={`${className || ""} transition-all duration-700 ease-out ${
-          isVisible && isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"
+          isVisible && isLoaded
+            ? "opacity-100 scale-100"
+            : "opacity-0 scale-[1.02]"
         }`}
         onLoad={() => setIsLoaded(true)}
       />

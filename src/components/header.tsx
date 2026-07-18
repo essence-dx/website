@@ -4,6 +4,7 @@ import { track } from "@dx/events/client";
 import { LogEvents } from "@dx/events/events";
 import { cn } from "@dx/ui/cn";
 import { Icons } from "@dx/ui/icons";
+import { ChevronUp } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,6 @@ import { HeaderIntegrationsPreview } from "./header-integrations-preview";
 import type { Testimonial } from "./sections/testimonials-section";
 import { defaultTestimonials } from "./sections/testimonials-section";
 import { ThemeToggle } from "./theme-toggle";
-import { ChevronUp } from "lucide-react";
 
 // All testimonials for header rotation (includes default + new ones)
 const headerTestimonials: Testimonial[] = [
@@ -267,7 +267,7 @@ export function Header({
           className={cn(
             "relative py-3 xl:py-4 px-4 sm:px-4 md:px-4 lg:px-4 xl:px-6 2xl:px-8 flex items-center justify-between xl:gap-6",
             (isMenuOpen || scrolled) && "border-b border-border",
-            "backdrop-blur-md bg-background-semi-transparent"
+            "backdrop-blur-md bg-background-semi-transparent",
           )}
         >
           {/* Logo and Brand */}

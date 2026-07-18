@@ -391,7 +391,11 @@ export function ToolDetail({ tool }: ToolDetailProps) {
               <CardContent className="pt-6">
                 <Accordion type="single" className="w-full">
                   {tool.features.map((feature, i) => (
-                    <AccordionItem key={feature} value={`feature-${i}`} className="px-4 sm:px-6">
+                    <AccordionItem
+                      key={feature}
+                      value={`feature-${i}`}
+                      className="px-4 sm:px-6"
+                    >
                       <AccordionTrigger className="text-base hover:no-underline">
                         <span className="flex items-center gap-4 text-left">
                           <span

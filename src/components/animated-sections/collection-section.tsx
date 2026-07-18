@@ -38,7 +38,10 @@ export function CollectionSection() {
       <div className="pb-24">
         <div className="flex gap-6 overflow-x-auto px-6 pb-4 md:hidden snap-x snap-mandatory scrollbar-hide">
           {accessories.map((accessory) => (
-            <div key={accessory.id} className="group flex-shrink-0 w-[75vw] snap-center">
+            <div
+              key={accessory.id}
+              className="group flex-shrink-0 w-[75vw] snap-center"
+            >
               <div className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-secondary">
                 <FadeImage
                   src={accessory.image || "/placeholder.svg"}
