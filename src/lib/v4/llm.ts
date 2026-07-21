@@ -97,7 +97,8 @@ export function processMdxForLLMs(content: string, style: Style["name"]) {
         return match
       }
 
-      let source = fs.readFileSync(src, "utf8")
+      const adjustedSrc = (src.startsWith("/app/") || src.startsWith("app/")) ? src.replace(/^\/?app\//, "src/app/v4/") : src
+      let source = fs.readFileSync(adjustedSrc, "utf8")
 
       // Replace all base-specific paths.
       for (const base of BASES) {

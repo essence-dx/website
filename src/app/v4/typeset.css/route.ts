@@ -7,7 +7,7 @@ export const dynamic = "force-static"
 // disk so the copy is always the current source, never a stale snapshot.
 export async function GET() {
   const css = readFileSync(
-    join(process.cwd(), "app/(app)/(typeset)/typeset.css"),
+    join(process.cwd(), "src/app/v4/(app)/(typeset)/typeset.css"),
     "utf-8"
   )
 

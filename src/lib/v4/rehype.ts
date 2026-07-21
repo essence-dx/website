@@ -166,7 +166,8 @@ export function rehypeComponent() {
             return
           }
 
-          const raw = fs.readFileSync(path.join(process.cwd(), src), "utf8")
+          const adjustedSrc = (src.startsWith("/app/") || src.startsWith("app/")) ? src.replace(/^\/?app\//, "src/app/v4/") : src
+          const raw = fs.readFileSync(path.join(process.cwd(), adjustedSrc), "utf8")
           const source = await formatCode(raw, item.styleName)
 
           item.node.children?.push(
