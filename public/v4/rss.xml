@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shadcn/ui</title>
+    <link>http://localhost:3000</link>
+    <description>Beautifully designed components that you can copy and paste into your apps.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Jul 2026 10:08:45 GMT</lastBuildDate>
+    <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>shadcn/ui v4</title>
+      <link>http://localhost:3000/docs</link>
+      <description>Beautifully designed components that you can copy and paste into your apps.</description>
+      <pubDate>Sun, 19 Jul 2026 10:08:45 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

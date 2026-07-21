@@ -2,14 +2,19 @@
   "extends": "@dx/tsconfig/nextjs.json",
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/registry/*": ["./registry/*"],
+      "@/examples/*": ["./examples/*"],
+      "@/content/*": ["./content/*"],
+      "@/.source/*": ["./.source/*"],
+      "@/mdx-components": ["./mdx-components"]
     }
   },
   "include": [
     "next-env.d.ts",
     "next.config.js",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
     "tailwind.config.ts"
   ],

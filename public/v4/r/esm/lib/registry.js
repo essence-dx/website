@@ -1,0 +1,258 @@
+import { promises as fs } from "fs";
+import path from "path";
+import { ExamplesComponents } from "@/examples/__components__";
+import { ExamplesIndex } from "@/examples/__index__";
+import { LRUCache } from "lru-cache";
+import { registryItemSchema } from "shadcn/schema";
+import { readFileFromRoot } from "https://cdn.jsdelivr.net/gh/shadcn-ui/ui@latest/apps/v4/public/r/esm/lib/read-file.js";
+import { Components as StylesComponents } from "@/registry/__components__";
+import { Index as StylesIndex } from "@/registry/__index__";
+import { BASES } from "@/registry/bases";
+import { Components as BasesComponents } from "@/registry/bases/__components__";
+import { Index as BasesIndex } from "@/registry/bases/__index__";
+// LRU cache for cross-request caching of registry items.
+// File reads are I/O-bound, so caching improves dev server performance.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const registryCache = new LRUCache({
+    max: 500,
+    ttl: 1000 * 60 * 5, // 5 minutes (shorter for dev to pick up changes).
+});
+function getBaseForStyle(styleName) {
+    for (const base of BASES) {
+        if (styleName.startsWith(`${base.name}-`)) {
+            return base.name;
+        }
+    }
+    return null;
+}
+function getDemoIndexKey(styleName) {
+    if (ExamplesIndex[styleName]) {
+        return styleName;
+    }
+    const base = getBaseForStyle(styleName);
+    if (base && ExamplesIndex[base]) {
+        return base;
+    }
+    return styleName;
+}
+function getBaseIndex(styleName) {
+    const base = getBaseForStyle(styleName);
+    return base ? BasesIndex[base] : null;
+}
+function getStyleIndex(styleName) {
+    return StylesIndex[styleName] ?? null;
+}
+function getMergedIndexForStyle(styleName) {
+    const styleIndex = getStyleIndex(styleName);
+    const baseIndex = getBaseIndex(styleName);
+    if (styleIndex && baseIndex) {
+        return { ...baseIndex, ...styleIndex };
+    }
+    return styleIndex ?? baseIndex;
+}
+function getRegistryEntry(name, styleName) {
+    return getStyleIndex(styleName)?.[name] ?? getBaseIndex(styleName)?.[name];
+}
+// Lazy components live in dedicated __components__ maps (separate from the
+// metadata indexes) so metadata-only consumers don't pull every component's
+// dynamic import into their module graph. Lookups mirror getRegistryEntry.
+function getRegistryComponentEntry(name, styleName) {
+    const base = getBaseForStyle(styleName);
+    return (StylesComponents[styleName]?.[name] ??
+        (base ? BasesComponents[base]?.[name] : undefined));
+}
+export function getDemoComponent(name, styleName) {
+    const key = getDemoIndexKey(styleName);
+    return ExamplesComponents[key]?.[name];
+}
+export async function getDemoItem(name, styleName) {
+    const key = getDemoIndexKey(styleName);
+    const demo = ExamplesIndex[key]?.[name];
+    if (!demo) {
+        return null;
+    }
+    const content = await readFileFromRoot(demo.filePath);
+    return {
+        name: demo.name,
+        type: "registry:internal",
+        files: [
+            {
+                path: demo.filePath,
+                content,
+                type: "registry:internal",
+            },
+        ],
+    };
+}
+export function getRegistryComponent(name, styleName) {
+    const demoComponent = getDemoComponent(name, styleName);
+    if (demoComponent) {
+        return demoComponent;
+    }
+    return getRegistryComponentEntry(name, styleName);
+}
+export async function getRegistryItems(styleName, filter) {
+    const styleIndex = getMergedIndexForStyle(styleName);
+    if (!styleIndex) {
+        return [];
+    }
+    const entries = Object.values(styleIndex);
+    const filteredEntries = filter ? entries.filter(filter) : entries;
+    return await Promise.all(filteredEntries.map(async (entry) => {
+        const item = await getRegistryItem(entry.name, styleName);
+        return item;
+    })).then((results) => results.filter(Boolean));
+}
+export async function getRegistryItem(name, styleName) {
+    const cacheKey = `${styleName}:${name}`;
+    // Check cache first.
+    if (registryCache.has(cacheKey)) {
+        return registryCache.get(cacheKey);
+    }
+    const item = getRegistryEntry(name, styleName);
+    if (!item) {
+        registryCache.set(cacheKey, null);
+        return null;
+    }
+    const normalizedItem = {
+        ...item,
+        files: item.files.map((file) => typeof file === "string" ? { path: file } : file),
+    };
+    // Convert all file paths to object.
+    // TODO: remove when we migrate to new registry.
+    // Fail early before doing expensive file operations.
+    const result = registryItemSchema.safeParse(normalizedItem);
+    if (!result.success) {
+        registryCache.set(cacheKey, null);
+        return null;
+    }
+    // Read all files in parallel.
+    let files = await Promise.all(item.files.map(async (file) => {
+        const content = await getFileContent(file);
+        const relativePath = path.relative(process.cwd(), file.path);
+        return {
+            ...file,
+            path: relativePath,
+            content,
+        };
+    }));
+    // Fix file paths.
+    files = fixFilePaths(files);
+    const parsed = registryItemSchema.safeParse({
+        ...result.data,
+        files,
+    });
+    if (!parsed.success) {
+        console.error(parsed.error.message);
+        registryCache.set(cacheKey, null);
+        return null;
+    }
+    // Cache the result.
+    registryCache.set(cacheKey, parsed.data);
+    return parsed.data;
+}
+async function getFileContent(file) {
+    let code = await fs.readFile(file.path, "utf-8");
+    // Some registry items uses default export.
+    // We want to use named export instead.
+    if (file.type !== "registry:page") {
+        code = code.replaceAll("export default", "export");
+    }
+    // Fix imports.
+    code = fixImport(code);
+    return code;
+}
+function getFileTarget(file) {
+    let target = file.target;
+    if (!target || target === "") {
+        const fileName = file.path.split("/").pop();
+        if (file.type === "registry:block" ||
+            file.type === "registry:component" ||
+            file.type === "registry:example") {
+            target = `components/${fileName}`;
+        }
+        if (file.type === "registry:ui") {
+            target = `components/ui/${fileName}`;
+        }
+        if (file.type === "registry:hook") {
+            target = `hooks/${fileName}`;
+        }
+        if (file.type === "registry:lib") {
+            target = `lib/${fileName}`;
+        }
+    }
+    return target ?? "";
+}
+function fixFilePaths(files) {
+    if (!files) {
+        return [];
+    }
+    // Resolve all paths relative to the first file's directory.
+    const firstFilePath = files[0].path;
+    const firstFilePathDir = path.dirname(firstFilePath);
+    return files.map((file) => {
+        return {
+            ...file,
+            path: path.relative(firstFilePathDir, file.path),
+            target: getFileTarget(file),
+        };
+    });
+}
+export function fixImport(content) {
+    content = content.replace(/@\/styles\/([\w-]+)\/(ui-rtl|ui)\/([\w-]+)/g, (match, _styleName, type, component) => {
+        if (type === "ui" || type === "ui-rtl") {
+            return `https://cdn.jsdelivr.net/gh/shadcn-ui/ui@latest/apps/v4/public/r/esm/components/ui.js/${component}`;
+        }
+        return match;
+    });
+    const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g;
+    const replacement = (match, path, type, component) => {
+        if (type.endsWith("components")) {
+            return `@/components/${component}`;
+        }
+        else if (type.endsWith("ui")) {
+            return `https://cdn.jsdelivr.net/gh/shadcn-ui/ui@latest/apps/v4/public/r/esm/components/ui.js/${component}`;
+        }
+        else if (type.endsWith("hooks")) {
+            return `@/hooks/${component}`;
+        }
+        else if (type.endsWith("lib")) {
+            return `@/lib/${component}`;
+        }
+        return match;
+    };
+    return content.replace(regex, replacement);
+}
+export function createFileTreeForRegistryItemFiles(files) {
+    const root = [];
+    for (const file of files) {
+        const path = file.target ?? file.path;
+        const parts = path.split("/");
+        let currentLevel = root;
+        for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            const isFile = i === parts.length - 1;
+            const existingNode = currentLevel.find((node) => node.name === part);
+            if (existingNode) {
+                if (isFile) {
+                    // Update existing file node with full path
+                    existingNode.path = path;
+                }
+                else {
+                    // Move to next level in the tree
+                    currentLevel = existingNode.children;
+                }
+            }
+            else {
+                const newNode = isFile
+                    ? { name: part, path }
+                    : { name: part, children: [] };
+                currentLevel.push(newNode);
+                if (!isFile) {
+                    currentLevel = newNode.children;
+                }
+            }
+        }
+    }
+    return root;
+}
