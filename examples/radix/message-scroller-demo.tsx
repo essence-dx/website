@@ -162,6 +162,7 @@ export function MessageScrollerDemo() {
                   return
                 }
                 void sendMessage(nextMessage)
+                chat.advance()
               }}
               className="w-full"
             >

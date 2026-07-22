@@ -1,3 +1,4 @@
+import Script from "next/script"
 import { META_THEME_COLORS } from "@/lib/v4/config"
 import { DOCS_SIDEBAR_SCROLL_RESTORE_SCRIPT } from "@/lib/v4/docs-sidebar-scroll"
 import { fontVariables } from "@/lib/v4/fonts"
@@ -30,12 +31,16 @@ export default function ShadcnLayout({
       data-v4-root
       data-slot="layout"
     >
-      <script
+      <Script
+        id="sidebar-scroll-restore"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: DOCS_SIDEBAR_SCROLL_RESTORE_SCRIPT,
         }}
       />
-      <script
+      <Script
+        id="theme-color"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             try {

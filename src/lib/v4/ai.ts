@@ -19,8 +19,9 @@ class ChatStub {
   }
 
   get(_index: number) {
+    let id = 0;
     return this.messages.map((msg) => ({
-      id: crypto.randomUUID(),
+      id: `msg-${id++}`,
       role: msg.role,
       parts: [{ type: "text" as const, text: msg.content }],
     }));
@@ -30,16 +31,24 @@ class ChatStub {
     return undefined;
   }
 
+  get messagesCount() {
+    return this.messages.length;
+  }
+
   next(_messages: unknown[]) {
-    const remaining = this.messages.slice(this.index);
-    if (remaining.length === 0) return undefined;
-    const next = remaining[0];
-    this.index++;
+    if (this.index >= this.messages.length) return undefined;
+    const next = this.messages[this.index];
     return {
-      id: crypto.randomUUID(),
+      id: `msg-${this.index}`,
       role: next.role,
       parts: [{ type: "text" as const, text: next.content }],
     };
+  }
+
+  advance() {
+    if (this.index < this.messages.length) {
+      this.index++;
+    }
   }
 }
 

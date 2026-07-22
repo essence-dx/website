@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "@dx/ui/globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Hedvig_Letters_Serif, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { cn } from "@dx/ui/cn";
@@ -130,7 +131,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <script
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `!function(){try{var e=localStorage.getItem("theme");"system"===e||!e?window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.add("light"):document.documentElement.classList.add(e),"dark"===e?document.documentElement.style.colorScheme="dark":"light"===e&&(document.documentElement.style.colorScheme="light")}catch(e){}}();`,
           }}

@@ -1,5 +1,6 @@
 import * as React from "react"
 import { type Metadata } from "next"
+import Script from "next/script"
 import { notFound } from "next/navigation"
 
 import { siteConfig } from "@/lib/v4/config"
@@ -26,7 +27,9 @@ const STATIC_PREVIEW_ITEMS = ["preview", "preview-02"] as const
 
 function PreventScrollOnFocusScript() {
   return (
-    <script
+    <Script
+      id="prevent-scroll-on-focus"
+      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
         __html: `(function(){var f=HTMLElement.prototype.focus;HTMLElement.prototype.focus=function(o){f.call(this,Object.assign({},o,{preventScroll:true}))};})();`,
       }}
