@@ -98,7 +98,7 @@ export function TypesetCustomizer() {
               does nothing: hide it. */}
           <OptionPicker
             label="Measure"
-            className="max-[28rem]:hidden"
+            className="max-[448px]:hidden"
             isMobile={isMobile}
             anchorRef={anchorRef}
             param="measure"
