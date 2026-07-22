@@ -18,8 +18,6 @@ interface ThemeProviderProps {
   storageKey?: string;
   enableSystem?: boolean;
   disableTransitionOnChange?: boolean;
-  attribute?: string;
-  themes?: string[];
 }
 
 interface UseThemeProps {
@@ -158,6 +156,10 @@ export function useTheme(): UseThemeProps {
     return {
       themes: [],
       setTheme: () => {},
+      theme: undefined,
+      resolvedTheme: undefined,
+      forcedTheme: undefined,
+      systemTheme: undefined,
     };
   }
   return ctx;

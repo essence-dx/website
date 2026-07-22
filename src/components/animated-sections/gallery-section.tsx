@@ -20,6 +20,7 @@ export function GallerySection() {
     { src: "/images/landing/mono-4.png", alt: "Modern development at night" },
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateTransform = useCallback(() => {
     if (!galleryRef.current) return;
 

@@ -17,6 +17,7 @@ export function PhilosophySection() {
   const rafRef = useRef<number | null>(null);
   const scrollContainer = useScrollContainer();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateTransforms = useCallback(() => {
     if (!sectionRef.current) return;
 

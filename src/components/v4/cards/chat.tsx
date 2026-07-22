@@ -204,7 +204,7 @@ export function CardsChat() {
                   <CommandItem
                     key={user.email}
                     data-active={selectedUsers.includes(user)}
-                    className="data-[active=true]:opacity-50"
+                    className="data-&lsqb;active=true&rsqb;:opacity-50"
                     onSelect={() => {
                       if (selectedUsers.includes(user)) {
                         return setSelectedUsers(

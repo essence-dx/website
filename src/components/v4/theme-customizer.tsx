@@ -66,7 +66,7 @@ export function ThemeCustomizer({ className }: React.ComponentProps<"div">) {
               variant="link"
               size="sm"
               data-active={activeTheme === theme.name}
-              className="flex h-7 cursor-pointer items-center justify-center px-4 text-center text-base font-medium text-muted-foreground capitalize transition-colors hover:text-primary hover:no-underline data-[active=true]:text-primary"
+              className="flex h-7 cursor-pointer items-center justify-center px-4 text-center text-base font-medium text-muted-foreground capitalize transition-colors hover:text-primary hover:no-underline data-&lsqb;active=true&rsqb;:text-primary"
               onClick={() => setActiveTheme(theme.name)}
             >
               {theme.name === "neutral" ? "Default" : theme.name}

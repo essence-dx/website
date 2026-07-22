@@ -199,7 +199,7 @@ export function DocsSidebar({
                           ? pathname === href
                           : pathname.startsWith(href)
                       }
-                      className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
+                      className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-&lsqb;active=true&rsqb;:border-accent data-&lsqb;active=true&rsqb;:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
                     >
                       <Link href={href}>
                         <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />
@@ -245,7 +245,7 @@ export function DocsSidebar({
                           <SidebarMenuButton
                             asChild
                             isActive={page.url === pathname}
-                            className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
+                            className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-&lsqb;active=true&rsqb;:border-accent data-&lsqb;active=true&rsqb;:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
                           >
                             <Link href={page.url}>
                               <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />

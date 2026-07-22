@@ -5,6 +5,14 @@ export default {
   content: ["./src/**/*.{ts,tsx}", "./packages/ui/src/**/*.{ts,tsx}"],
   presets: [baseConfig],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1800px",
+    },
     container: {
       center: true,
     },

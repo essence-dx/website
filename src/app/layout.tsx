@@ -1,23 +1,14 @@
 import "@/styles/globals.css";
-import { cn } from "@dx/ui/cn";
 import "@dx/ui/globals.css";
-import { Provider as Analytics } from "@dx/events/client";
-import { ScrollArea } from "@dx/ui/scroll-area";
 import type { Metadata } from "next";
 import { Geist, Hedvig_Letters_Serif, JetBrains_Mono } from "next/font/google";
+import type { ReactNode } from "react";
+import { cn } from "@dx/ui/cn";
+import { Provider as Analytics } from "@dx/events/client";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
-import type { ReactElement } from "react";
-import { LandingSections } from "@/components/animated-sections/landing-sections";
-import { AutoTheme } from "@/components/auto-theme";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-
-import { SunsetBanner } from "@/components/sunset-banner";
+import { LayoutContent } from "@/components/layout-content";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
-
-// import Link from "next/link";
-// import { Button } from "@dx/ui/button";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -121,7 +112,7 @@ const jsonLd = {
     "Enhanced Development Experience with repository-managed tools for code, web, agents, media, search, serialization, and more.",
 };
 
-export default function Layout({ children }: { children: ReactElement }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
@@ -147,46 +138,17 @@ export default function Layout({ children }: { children: ReactElement }) {
       </head>
       <body
         className={cn(
-          `${jetbrainsMono.variable} ${hedvigSerif.variable} font-sans`,
-          "bg-background overflow-hidden font-sans antialiased",
+          `${jetbrainsMono.variable} ${hedvigSerif.variable}`,
+          "bg-background overflow-hidden antialiased",
         )}
       >
         <NuqsAdapter>
           <ThemeProvider
-            attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            <ScrollArea className="h-dvh">
-              <AutoTheme />
-              <SunsetBanner />
-              <main className="container mx-auto px-4 pt-16">{children}</main>
-              <LandingSections />
-
-              {/* CTA section commented out - routes disabled
-              <div className="my-12 w[50%] lg:w-[70%] mx-auto bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
-                <div className="relative z-10">
-                  <h2 className="font-serif text-2xl text-foreground mb-4">
-                    Ready to try DX?
-                  </h2>
-                  <p className="font-sans text-base text-muted-foreground mb-6 max-w-xl mx-auto">
-                    Try DX and experience a unified development toolchain.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button asChild className="btn-inverse h-11 px-6">
-                      <a href="https://github.com/essence-dx">Explore DX on GitHub</a>
-                    </Button>
-                    <Button asChild variant="outline" className="h-11 px-6">
-                      <Link href="/pricing">View pricing</Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              */}
-              <Footer />
-            </ScrollArea>
+            <LayoutContent>{children}</LayoutContent>
             <Analytics />
           </ThemeProvider>
         </NuqsAdapter>

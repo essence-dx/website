@@ -16,6 +16,7 @@ export function EditorialSection() {
   const rafRef = useRef<number | null>(null);
   const scrollContainer = useScrollContainer();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const updateParallax = useCallback(() => {
     if (!videoRef.current) return;
 

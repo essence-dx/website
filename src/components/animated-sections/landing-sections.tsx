@@ -37,11 +37,6 @@ const EditorialSection = dynamic(() =>
     (m) => m.EditorialSection,
   ),
 );
-const TestimonialsSection = dynamic(() =>
-  import("@/components/animated-sections/testimonials-section").then(
-    (m) => m.TestimonialsSection,
-  ),
-);
 
 export function LandingSections() {
   return (
@@ -53,7 +48,6 @@ export function LandingSections() {
       <GallerySection />
       <CollectionSection />
       <EditorialSection />
-      {/* <TestimonialsSection /> */}
     </>
   );
 }

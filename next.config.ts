@@ -5,10 +5,12 @@ const config = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
-  transpilePackages: ["@dx/ui", "@dx/app-store", "next-mdx-remote"],
+  // Needed for packages/shaders-react ref type conflicts (workspace cross-resolution)
   typescript: {
     ignoreBuildErrors: true,
   },
+  transpilePackages: ["@dx/ui", "@dx/app-store", "next-mdx-remote"],
+
   experimental: {
     inlineCss: true,
     optimizePackageImports: [

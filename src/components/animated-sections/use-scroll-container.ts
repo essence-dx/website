@@ -2,14 +2,23 @@
 
 import { useEffect, useState } from "react";
 
+let cachedContainer: HTMLElement | Window | null = null;
+
 export function useScrollContainer() {
-  const [container, setContainer] = useState<HTMLElement | Window | null>(null);
+  const [container, setContainer] = useState<HTMLElement | Window | null>(
+    () => cachedContainer,
+  );
 
   useEffect(() => {
+    if (cachedContainer) {
+      setContainer(cachedContainer);
+      return;
+    }
     const el = document.querySelector(
       "[data-radix-scroll-area-viewport]",
     ) as HTMLElement | null;
-    setContainer(el || window);
+    cachedContainer = el || window;
+    setContainer(cachedContainer);
   }, []);
 
   return container;
