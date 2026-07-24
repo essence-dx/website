@@ -125,8 +125,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         <link rel="alternate icon" href="/dx/favicon.svg" />
         <link rel="preconnect" href="https://cdn.midday.ai" />
         <link rel="dns-prefetch" href="https://cdn.midday.ai" />
-        <script
+        <Script
+          id="json-ld"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}

@@ -26,7 +26,7 @@ export default function ShadcnLayout({
       className={cn(
         fontVariables,
         "group/body overscroll-none antialiased [--header-height:calc(var(--spacing)*14)] lg:[--header-height:calc(var(--spacing)*16)] [--footer-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]",
-        "group/layout relative z-10 flex min-h-svh flex-col bg-background has-data-[slot=designer]:h-svh has-data-[slot=designer]:overflow-hidden",
+        "group/layout relative z-10 flex h-svh flex-col bg-background has-data-[slot=designer]:h-svh has-data-[slot=designer]:overflow-hidden",
       )}
       data-v4-root
       data-slot="layout"

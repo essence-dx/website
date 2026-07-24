@@ -3,7 +3,7 @@
 
 @import "./legacy-themes.css";
 
-:root {
+[data-v4-root] {
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 2000px;
   --radius-sm: calc(var(--radius, 0.5rem) * 0.6);
